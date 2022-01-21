@@ -1,0 +1,36 @@
+.btn {
+  display: inline-block;
+  cursor: pointer;
+  text-align: center;
+  transition: .35s;
+  font-size: 14px;
+  font-family: $main-font;
+  font-weight: 400;
+  padding: 14px 10px 15px;
+  text-transform: uppercase;
+  line-height: 1;
+  min-width: 175px;
+  &_main{
+    border: 1px solid #000000;
+    color: #000000;
+    &:hover,
+    &:focus{
+      background-color: #000000;
+      color: #ffffff;
+    }
+  }
+}
+
+.btn-close {
+  border: none;
+  background-color: transparent;
+  background-image: url(../assets/img/close.svg);
+  width: 31px;
+  height: 31px;
+  padding: 0;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 30px;
+}
+
+

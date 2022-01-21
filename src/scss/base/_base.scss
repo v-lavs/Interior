@@ -1,0 +1,146 @@
+:root {
+  font-size: 16px;
+}
+
+.wrapper {
+  width: 100%;
+}
+
+body {
+  font: 400 1em/1.2 $main-font;
+  color: #000000;
+  font-feature-settings: 'pnum' on, 'lnum' on;
+  &.modal-open {
+    overflow: hidden;
+    height: 100vh;
+  }
+}
+
+
+.hide {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+.section {
+  &__title {
+  }
+}
+
+.dynamic-content {
+  p {
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1.37;
+    margin-bottom: 35px;
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.contact-btn {
+  position: absolute;
+  right: 50px;
+  top: 30%;
+  width: 90px;
+  height: 90px;
+  background-color: transparent;
+  border-radius: 50%;
+  overflow: hidden;
+  border: none;
+  z-index: 300;
+
+  &.ui.background--dark {
+    filter: invert(1);
+  }
+
+  &.ui.background--white {
+    filter: invert(0);
+  }
+
+  &.sticky {
+    position: fixed;
+    top: 50%;
+  }
+  .img_written {
+    vertical-align: middle;
+    -webkit-animation: spin 4s linear infinite;
+    -moz-animation: spin 4s linear infinite;
+    animation: spin 4s linear infinite;
+    width: 100%;
+    height: auto;
+
+  }
+
+  .wrap-img-written {
+    display: inline-block;
+    background-image: url('../assets/img/svg/big-logo.svg');
+    background-position: center;
+    -webkit-background-size: 24px;
+    background-size: 24px;
+    background-repeat: no-repeat;
+
+  }
+
+  @keyframes spin {
+    100% {
+      -webkit-transform: rotate(360deg);
+      transform: rotate(360deg);
+    }
+  }
+
+  @include respond-to($lg) {
+    width: 76px;
+    height: 76px;
+    right: 30px;
+  }
+  @include respond-to($sm) {
+    position: fixed;
+    bottom: 28px;
+    top: auto;
+    z-index: 300;
+    &.sticky{
+      position: fixed;
+      top: auto;
+      bottom: 28px;
+    }
+  }
+  @include respond-to($xs) {
+    width: 67px;
+    height: 67px;
+    right: 12px;
+    .wrap-img-written {
+      -webkit-background-size: 18px;
+      background-size: 18px;
+    }
+  }
+}
+
+.section_anim {
+  opacity: 0;
+  -webkit-transition: opacity ease-in .5s;
+}
+
+.section_in-view {
+  opacity: 1;
+}
+
+.backdrop {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  //background: $dark;
+  opacity: 0.25;
+  z-index: 500;
+}

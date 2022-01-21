@@ -1,0 +1,43 @@
+.menu{
+  display: flex;
+  justify-content: center;
+  &__item{
+    font-weight: 600;
+    font-size: 16px;
+    transition: .35s;
+    color: #ffffff;
+    line-height: 1;
+    margin-right: 66px;
+    &:last-child{
+      margin-right: 0;
+    }
+    &:hover,
+    &:focus {
+      -webkit-text-stroke: 1px #ffffff;
+    }
+  }
+}
+
+@include respond-to($lg){
+  .menu {
+    flex-direction: column;
+    width: 100%;
+    &__item {
+      color: #000000;
+      font-weight: 500;
+      font-size: 60px;
+      margin: 0 0 36px 0;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .menu{
+    &__item{
+      font-size: 45px;
+    }
+  }
+}
