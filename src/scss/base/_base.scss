@@ -10,12 +10,16 @@ body {
   font: 400 1em/1.2 $main-font;
   color: #000000;
   font-feature-settings: 'pnum' on, 'lnum' on;
+  background-color: #f3f3f3;
   &.modal-open {
     overflow: hidden;
     height: 100vh;
   }
 }
 
+.d-flex {
+  display: flex;
+}
 
 .hide {
   position: absolute;
@@ -34,7 +38,15 @@ body {
     font-size: 64px;
     line-height: 1.17;
   }
-  &__sub-title{
+
+  &__title-big {
+    font-weight: 600;
+    font-size: 154px;
+    color: #e7e7e7;
+    text-transform: uppercase;
+  }
+
+  &__sub-title {
     font-size: 25px;
   }
 }
@@ -55,7 +67,7 @@ body {
 .contact-btn {
   position: absolute;
   right: 50px;
-  top: 30%;
+  bottom: 30%;
   width: 90px;
   height: 90px;
   background-color: transparent;
@@ -76,6 +88,7 @@ body {
     position: fixed;
     top: 50%;
   }
+
   .img_written {
     vertical-align: middle;
     -webkit-animation: spin 4s linear infinite;
@@ -88,7 +101,7 @@ body {
 
   .wrap-img-written {
     display: inline-block;
-    background-image: url('../assets/img/svg/big-logo.svg');
+    background-image: url('../assets/img/logo-small-black.svg');
     background-position: center;
     -webkit-background-size: 24px;
     background-size: 24px;
@@ -113,7 +126,7 @@ body {
     bottom: 28px;
     top: auto;
     z-index: 300;
-    &.sticky{
+    &.sticky {
       position: fixed;
       top: auto;
       bottom: 28px;
@@ -152,10 +165,10 @@ body {
 }
 
 @include respond-to($sm) {
-  .section__title{
+  .section__title {
     font-size: 40px;
   }
-  .section__sub-title{
+  .section__sub-title {
     font-size: 20px;
   }
 }

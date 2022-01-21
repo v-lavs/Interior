@@ -179,15 +179,192 @@
             </div>
         </section>
 
-        <section class="section_anim">
-            <button class="contact-btn  ui">
+        <section class="members-team section_anim">
+            <button class="contact-btn ui">
                 <span class="wrap-img-written">
                     <img src="assets/img/btn-written.svg" alt="" class="img_written">
                 </span>
             </button>
             <div class="container" id="triggerBtnSticky">
-
+                <h2 class="section__title-big">КОМАНДА</h2>
+                <div class="d-flex">
+                    <div class="part part_left">
+                        <div class="swiper-container members-slider" id="sliderMembers">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide members-team__wrap-img">
+                                    <picture>
+                                        <source srcset="assets/img/members/member1.jpg" media="(max-width: 768px)">
+                                        <img src="assets/img/members/member1.jpg" alt="Олег"
+                                             class="members-team__img">
+                                    </picture>
+                                </div>
+                                <div class="swiper-slide members-team__wrap-img">
+                                    <picture>
+                                        <source srcset="assets/img/members/17wm.jpg" media="(max-width: 768px)">
+                                        <img src="assets/img/members/17w.jpg" alt="Лілія"
+                                             class="members-team__img">
+                                    </picture>
+                                </div>
+                                <div class="swiper-slide members-team__wrap-img">
+                                    <picture>
+                                        <source srcset="assets/img/members/18wm.jpg" media="(max-width: 768px)">
+                                        <img src="assets/img/members/18w.jpg" alt="Сабіна"
+                                             class="members-team__img">
+                                    </picture>
+                                </div>
+                                <div class="swiper-slide members-team__wrap-img">
+                                    <picture>
+                                        <source srcset="assets/img/members/19m.jpg" media="(max-width: 768px)">
+                                        <img src="assets/img/members/19.jpg" alt="Данило"
+                                             class="members-teas__img">
+                                    </picture>
+                                </div>
+                                <div class="swiper-slide members-team__wrap-img">
+                                    <picture>
+                                        <source srcset="assets/img/members/memb3m.jpg" media="(max-width: 768px)">
+                                        <img src="assets/img/members/memb3.jpg" alt="Юлія"
+                                             class="members-team__img">
+                                    </picture>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="part part_right">
+                        <h2 class="section__sub-title">Професійних дизайнерів<br>
+                            <span>&#38;</span> архітекторів
+                        </h2>
+                        <div class="section__text">
+                            <p>
+                                Ми ніколи не припиняємо навчання, розширюємо горизонти,
+                                не вдосконалюємо свої навички, не освоюємо нові технології чи покращуємо обслуговування
+                                клієнтів.
+                            </p>
+                        </div>
+                        <ul class="members-team__list" id="membersTeams">
+                            <li class="members-team__item  active">
+                                <span class="member-name">Олег</span>
+                            </li>
+                            <li class="members-team__item">
+                                <span class="member-name">Лілія</span>
+                            </li>
+                            <li class="members-team__item">
+                                <span class="member-name">Сабіна</span>
+                            </li>
+                            <li class="members-team__item">
+                                <span class="member-name">Данило</span>
+                            </li>
+                            <li class="members-team__item">
+                                <span class="member-name">Юлія</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="achievements">
+                        <div class="achievements__item">
+                            <div class="achievements__value timer count-title count-number" data-to="150"
+                                 data-speed="3500"></div>
+                            <div class="achievements__text"><span class="description">Зданих проєктів</span><span
+                                    class="plus">+</span></div>
+                        </div>
+                        <div class="achievements__item">
+                            <div class="wrap-value">
+                                <div class="achievements__value timer count-title count-number" data-to="10"
+                                     data-speed="1500"></div>
+                                <div class="achievements__text"><span class="description">Років досвіду</span></div>
+                            </div>
+                        </div>
+                        <div class="achievements__item">
+                            <div class="wrap-value">
+                                <div class="achievements__value timer count-title count-number" data-to="180"
+                                     data-speed="3500"></div>
+                                <div class="achievements__text"><span class="description">Клієнтів</span><span
+                                        class="plus">+</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
+        </section>
+
+        <section class="our-solutions section_anim">
+            <div class="swiper slider-solutions" id="sliderSolutions">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide slider-solutions__slide">
+                        <div class="part_left">
+                            <div class="slider-solutions__video-wrap">
+                                <img src="assets/img/poster.png" alt="" class="slider-solutions__poster">
+                                <video src="" class="slider-solutions__video">
+
+                                </video>
+                            </div>
+                        </div>
+                        <div class="part_right">
+                            <div class="swiper slider-project" id="sliderProject">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide slider-project__slide"
+                                         style="background-image: url(assets/img/sl-project1.jpg);"></div>
+                                    <div class="swiper-slide slider-project__slide"
+                                         style="background-image: url(assets/img/banner-slide1.jpg);"></div>
+                                </div>
+                            </div>
+                            <div class="swiper-button-next"></div>
+                            <div class="swiper-button-prev">
+                                <a href="`" class="slider-solutions__link">
+                                    <h3 class="slider-solutions__title">Avalon Lux - K</h3>
+                                    <span>Переглянути проєкт</span>
+                                </a>
+                            </div>
+
+                        </div>
+                        <div class="swiper-slide slider-solutions__slide">Slide 2</div>
+                    </div>
+                </div>
+        </section>
+
+        <section class="section-gallery">
+            <div class="container">
+                <h2 class="section__title-big">ПРОЄКТИ</h2>
+            </div>
+            <nav class="category-nav">
+                <a href="page-projects.html" class="category-nav__item">Дизайн квартир</a>
+                <a href="page-projects.html" class="category-nav__item">Дизайн будинку</a>
+                <a href="page-projects.html" class="category-nav__item">Комерційний дизайн</a>
+                <a href="page-projects.html" class="category-nav__item">Архітектура</a>
+                <a href="page-projects.html" class="category-nav__item">Проєкт під ключ</a>
+            </nav>
+
+            <div class="gallery grid">
+                <div class="gallery__item">
+                    <div class="gallery__img-wrap">
+                        <img src="assets/img/g-img-1.jpg" alt="" class="gallery__img">
+                    </div>
+                </div>
+                <div class="gallery__item">
+                    <div class="gallery__img-wrap">
+                        <img src="assets/img/g-img-2.jpg" alt="" class="gallery__img">
+                    </div>
+                </div>
+                <div class="gallery__item">
+                    <div class="gallery__img-wrap">
+                        <img src="assets/img/g-img-5.jpg" alt="" class="gallery__img">
+                    </div>
+                </div>
+                <div class="gallery__item">
+                    <div class="gallery__img-wrap">
+                        <img src="assets/img/g-img-6.jpg" alt="" class="gallery__img">
+                    </div>
+                </div>
+                <div class="gallery__item">
+                    <div class="gallery__img-wrap">
+                        <img src="assets/img/g-img-3.jpg" alt="" class="gallery__img">
+                    </div>
+                </div>
+                <div class="gallery__item">
+                    <div class="gallery__img-wrap">
+                        <img src="assets/img/g-img-4.jpg" alt="" class="gallery__img">
+                    </div>
+                </div>
+            </div>
+            <a href="page-projects.html" class="btn btn_main">ВСІ ПРОЄКТИ</a>
         </section>
 
         <section class="section-partners section_anim">
@@ -311,7 +488,8 @@
                     PROFI INTERIOR
                 </div>
                 <div class="footer__text">
-                    Всі матеріали, опубліковані на сайті в будь-якому вигляді, є об’єктами авторського і майнового права.
+                    Всі матеріали, опубліковані на сайті в будь-якому вигляді, є об’єктами авторського і майнового
+                    права.
                     Будь-яке їх використання повинно бути письмово узгоджене з керівником групи.
                 </div>
             </div>

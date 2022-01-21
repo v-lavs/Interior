@@ -1,7 +1,39 @@
 .section-gallery {
+  text-align: center;
+  padding-bottom: 230px;
+.section__title-big{
+  margin-bottom: 87px;
+  letter-spacing: 0.22em;
+  width: 100%;
 
 }
+}
+.category-nav{
+  font-size: 18px;
+  line-height: 1.17;
+  color: #656565;
+  text-align: center;
+  margin-bottom: 30px;
+  &__item{
+    margin: 0 64px;
+    display: inline-block;
+    transition: .35s;
+    &:hover,
+    &:focus{
+      color: #0000;
+      -webkit-text-stroke: 1px #000000;
+    }
+  }
+}
 
+.gallery{
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 38px;
+  &__item{
+    width: 50%;
+  }
+}
 @include respond-to($lg) {
 
 }

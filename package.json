@@ -29,6 +29,7 @@
     "braces": "^2.3.2",
     "jquery": "^3.5.1",
     "lodash.update": "^4.10.2",
+    "masonry-layout": "^4.2.2",
     "natives": "^1.1.6",
     "simplebar": "^5.3.0",
     "waypoints": "^4.0.1"
