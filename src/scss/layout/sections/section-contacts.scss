@@ -1,13 +1,32 @@
 .section-contacts {
+  padding: 36px 0;
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  background-size: cover;
 
+  .container {
+    display: flex;
+    align-items:flex-end;
   }
+
+  &__heading {
+    width: 45%;
+  }
+
+  &__title {
+    font-weight: 500;
+    font-size: 33px;
+  }
+}
 
 @include respond-to($xl) {
 
 }
+
 @include respond-to($lg) {
 
 }
+
 @include respond-to($sm) {
 
 }

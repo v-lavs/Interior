@@ -63,14 +63,14 @@
                 <span class="line"></span>
                 <span class="line"></span>
             </button>
-            <a href="/" class="header__logo ui">
+            <a href="/" class="header__logo">
                 <picture>
                     <source srcset="assets/img/logo-small.svg" media="(max-width: 980px)">
                     <img src="assets/img/logo-site.svg" alt="Space Cleaning" class="img img-logo">
                 </picture>
             </a>
 
-            <nav class="header-nav">
+            <nav class="header-nav ui">
                 <div class="container">
                     <div class="header-nav__header">
                         <button type="button" class="btn-close" aria-label="Закрити меню"></button>
@@ -137,16 +137,16 @@
                 <div class="swiper-wrapper carousel-inner">
                     <div class="swiper-slide banner-slider__slide">
                         <img src="assets/img/banner-slide1.jpg" class="banner-slider__img" alt="">
-                      <div class="container">
-                          <a href="project-single.html" class="banner-slider__link">
-                              <h2 class="section__title">
-                                  Green Solution
-                              </h2>
-                              <span class="section__sub-title">
+                        <div class="container">
+                            <a href="project-single.html" class="banner-slider__link">
+                                <h2 class="section__title">
+                                    Green Solution
+                                </h2>
+                                <span class="section__sub-title">
                                 Стрийська 82
                             </span>
-                          </a>
-                      </div>
+                            </a>
+                        </div>
                     </div>
                     <div class="swiper-slide banner-slider__slide">
                         <img src="assets/img/project-single/img-full2.jpg" class="banner-slider__img" alt="">
@@ -182,7 +182,7 @@
         <section class="section_anim">
             <button class="contact-btn  ui">
                 <span class="wrap-img-written">
-                    <img src="assets/img/svg/btn-written.svg" alt="" class="img_written">
+                    <img src="assets/img/btn-written.svg" alt="" class="img_written">
                 </span>
             </button>
             <div class="container" id="triggerBtnSticky">
@@ -197,29 +197,124 @@
     </main>
 
     <footer class="footer">
-        <div class="footer_top">
-            <div class="social-bar">
-                <a href="#" class="social__link"><span class="hide">Instagram</span>
-                    <svg class="svg-icon svg-icon_social">
-                        <use xlink:href="#instagram"></use>
-                    </svg>
-                </a>
-
-                <a href="#" class="social__link"><span class="hide">Behance</span>
-                    <svg class="svg-icon svg-icon_social">
-                        <use xlink:href="#facebook"></use>
-                    </svg>
-                </a>
-                <a href="#" class="social__link"><span class="hide">Facebook</span>
-                    <svg class="svg-icon svg-icon_social">
-                        <use xlink:href="#behance"></use>
-                    </svg>
-                </a>
+        <div class="section-contacts" style="background-image: url(assets/img/bg-section.png);">
+            <div class="container">
+                <div class="section-contacts__heading">
+                    <h3 class="section-contacts__title">Безкоштовна консультація</h3>
+                </div>
+                <form action="#" class="form form-contacts">
+                    <div class="form-group">
+                        <label class="hide">Ваше Ім’я </label>
+                        <input type="text" class="input" placeholder="Ваше Ім’я ">
+                    </div>
+                    <div class="form-group">
+                        <label class="hide">Телефон</label>
+                        <input type="text" class="input" placeholder="Тел">
+                    </div>
+                    <button type="submit" class="btn btn_main btn_submit">НАДІСЛАТИ</button>
+                </form>
             </div>
         </div>
+        <div class="container">
+            <div class="contacts">
+                <div class="contacts__item">
+                    <div class="contacts__item-header">
+                        <h3 class="title">PROFI Interior</h3>
+                        <div class="sub-title">Студія Дизайну Інтер’єру</div>
+                    </div>
+                    <div class="name-contact">Олег Ярощук</div>
+                    <div class="activity">CEO</div>
 
-        <div class="copyright">
-            © PROFI Creative Group, 2021.
+                    <a href="tel:+380979641919" class="contacts__link phone">+38 097 964 19 19</a>
+                    <a href="mailto:profi.c.group@gmail.com" class="contacts__link email">profi.c.group@gmail.com</a>
+                    <div class="social-bar">
+                        <a href="#" class="social-bar__link"><span class="hide">Instagram</span>
+                            <svg class="svg-icon svg-icon_social">
+                                <use xlink:href="#instagram"></use>
+                            </svg>
+                        </a>
+
+                        <a href="#" class="social-bar__link"><span class="hide">Behance</span>
+                            <svg class="svg-icon svg-icon_social">
+                                <use xlink:href="#facebook"></use>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-bar__link"><span class="hide">Facebook</span>
+                            <svg class="svg-icon svg-icon_social">
+                                <use xlink:href="#behance"></use>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="contacts__item">
+                    <div class="contacts__item-header">
+                        <h3 class="title">PROFI Creative</h3>
+                        <div class="sub-title">Креативне Агентство</div>
+                    </div>
+                    <div class="name-contact">Юлія Гусар</div>
+                    <div class="activity">CEO</div>
+
+                    <a href="tel:+380971374004" class="contacts__link phone">+38 097 137 40 04</a>
+                    <a href="mailto:skrun6ka@ukr.net" class="contacts__link email">skrun6ka@ukr.net</a>
+                    <div class="social-bar">
+                        <a href="#" class="social-bar__link"><span class="hide">Instagram</span>
+                            <svg class="svg-icon svg-icon_social">
+                                <use xlink:href="#instagram"></use>
+                            </svg>
+                        </a>
+
+                        <a href="#" class="social-bar__link"><span class="hide">Behance</span>
+                            <svg class="svg-icon svg-icon_social">
+                                <use xlink:href="#facebook"></use>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-bar__link"><span class="hide">Facebook</span>
+                            <svg class="svg-icon svg-icon_social">
+                                <use xlink:href="#behance"></use>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="contacts__item">
+                    <div class="contacts__item-header">
+                        <h3 class="title">Контакти</h3>
+                        <div class="sub-title">Львів, Україна, вул. Залізнична 56</div>
+                    </div>
+                    <div class="name-contact">Офіс</div>
+
+                    <a href="tel:+380960833434" class="contacts__link phone">+38 096 08 33 434</a>
+                    <a href="mailto:profi.c.group@gmail.com" class="contacts__link email">profi.c.group@gmail.com</a>
+                    <div class="social-bar">
+                        <a href="#" class="social-bar__link"><span class="hide">Instagram</span>
+                            <svg class="svg-icon svg-icon_social">
+                                <use xlink:href="#instagram"></use>
+                            </svg>
+                        </a>
+
+                        <a href="#" class="social-bar__link"><span class="hide">Behance</span>
+                            <svg class="svg-icon svg-icon_social">
+                                <use xlink:href="#facebook"></use>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-bar__link"><span class="hide">Facebook</span>
+                            <svg class="svg-icon svg-icon_social">
+                                <use xlink:href="#behance"></use>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer_bottom">
+                <div class="copyright">
+                    PROFI INTERIOR
+                </div>
+                <div class="footer__text">
+                    Всі матеріали, опубліковані на сайті в будь-якому вигляді, є об’єктами авторського і майнового права.
+                    Будь-яке їх використання повинно бути письмово узгоджене з керівником групи.
+                </div>
+            </div>
         </div>
     </footer>
 

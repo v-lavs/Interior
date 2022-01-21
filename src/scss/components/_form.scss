@@ -15,5 +15,21 @@
 
   ::placeholder {
     color: rgba(0, 0, 0, .5);
- }
+  }
+}
+
+.form-contacts {
+  width: 55%;
+  display: flex;
+
+  .form-group {
+    max-width: 140px;
+    margin-right: 75px;
+    &:last-child{
+      margin-right: 0;
+    }
+  }
+  .btn_submit{
+    margin-left: auto;
+  }
 }
