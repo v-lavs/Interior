@@ -1,25 +1,28 @@
 .swiper-button-next,
 .swiper-button-prev {
-  width: 18px;
-  height: 21px;
-
-  &:before {
-    position: absolute;
-    content: '';
-    display: block;
-    background-image: url('../../../assets/img/arrow-next.svg');
-    width: 18px;
-    height: 21px;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center;
+  width: 20px;
+  height: 18px;
+  &:after{
+    font-size: 30px;
   }
 
-  &:after {
-    display: none;
-  }
+  //&:before {
+  //  position: absolute;
+  //  content: '';
+  //  display: block;
+  //  background-image: url('../../../assets/img/arrow-next.svg');
+  //  width: 18px;
+  //  height: 21px;
+  //  top: 50%;
+  //  transform: translate(-50%, -50%);
+  //  background-repeat: no-repeat;
+  //  background-size: contain;
+  //  background-position: center;
+  //}
+  //
+  //&:after {
+  //  display: none;
+  //}
 }
 
 //.swiper-button-prev:before {

@@ -142,8 +142,9 @@ $(document).ready(function () {
     }
 
     // SLIDER SOLUTION
-    if ($('.slider-solution').length > 0) {
-        const sliderSolution = new Swiper("#sliderSolution", {
+    if ($('.slider-solutions').length > 0) {
+        const sliderSolution = new Swiper(".slider-solutions", {
+            slidesPerView: 1,
             pagination: {
                 el: ".swiper-pagination",
             },
@@ -156,6 +157,7 @@ $(document).ready(function () {
     //  SLIDER PROJECTS
     if ($('.slider-project').length > 0) {
         const sliderProject = new Swiper("#sliderProject", {
+            allowTouchMove:false,
             autoplay: {
                 delay: 2000,
             },
