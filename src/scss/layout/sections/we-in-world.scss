@@ -1,0 +1,48 @@
+.we-in-world {
+  padding-bottom: 260px;
+  .d-flex{
+    flex-wrap: wrap;
+  }
+  .part_left {
+    position: relative;
+    width: 68%;
+    min-height: 444px;
+    padding-top: 37%;
+    margin-bottom: 125px;
+  }
+.wrap-img{
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 70vw;
+  max-width: 1000px;
+  z-index: 1;
+}
+
+  .part_right {
+    width: 32%;
+    padding-left: 90px;
+
+  }
+  .section__title{
+    margin-bottom: 26px;
+  }
+  .section__text{
+    margin-bottom: 38px;
+  }
+}
+
+.partners{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 -30px;
+  &__item{
+    padding: 0 30px;
+  }
+  &__img{
+      width: auto;
+      height: 27px;
+  }
+}

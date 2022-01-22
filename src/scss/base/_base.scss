@@ -21,6 +21,10 @@ body {
   display: flex;
 }
 
+.text_yellow{
+  color: #ffc200;
+}
+
 .hide {
   position: absolute;
   width: 1px;
@@ -37,6 +41,9 @@ body {
     font-weight: 500;
     font-size: 64px;
     line-height: 1.17;
+    &_sm{
+      font-size: 45px;
+    }
   }
 
   &__title-big {

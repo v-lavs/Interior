@@ -2,9 +2,7 @@
 * to include js file write: `//= include ./path-to-file`
 * */
 
-//= include ../../node_modules/jquery/dist/jquery.js ;
-//= include ../lib/jquery-ui.js ;
-//= include ../../node_modules/masonry-layout/masonry.js
+//= include ../../node_modules/jquery/dist/jquery.js
 //= include ../lib/waypoints/index.js
 //= include ../lib/bg-check.js
 
@@ -130,7 +128,6 @@ $(document).ready(function () {
 
 
     // BANNER SLIDER
-
     if ($('.banner-slider').length > 0) {
         const homeBanner = new Swiper('.banner-slider', {
             loop: true,
@@ -145,26 +142,27 @@ $(document).ready(function () {
     }
 
     // SLIDER SOLUTION
-    let sliderSolution = new Swiper("#sliderSolution", {
-        pagination: {
-            el: ".swiper-pagination",
-        },
-        navigation: {
-            nextEl: ".swiper-button-next",
-            prevEl: ".swiper-button-prev",
-        },
-
-
-    });
-
+    if ($('.slider-solution').length > 0) {
+        const sliderSolution = new Swiper("#sliderSolution", {
+            pagination: {
+                el: ".swiper-pagination",
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+        });
+    }
     //  SLIDER PROJECTS
-    let sliderProject = new Swiper("#sliderProject", {
-        autoplay: {
-            delay: 2000,
-        },
-        loop: true,
-        speed: 2000,
-    });
+    if ($('.slider-project').length > 0) {
+        const sliderProject = new Swiper("#sliderProject", {
+            autoplay: {
+                delay: 2000,
+            },
+            loop: true,
+            speed: 2000,
+        });
+    }
 
     //STICKY BTN
     var sticky = new Waypoint({
@@ -191,7 +189,6 @@ $(document).ready(function () {
 
     // HOVER BLOCK
     const $memberItems = $('#membersTeams .members-team__item');
-
     const sliderMembers = new Swiper('#sliderMembers', {
         slidesPerView: 1,
         loop: false,
@@ -244,10 +241,10 @@ $(document).ready(function () {
         offset: '100%'
     });
 
-    $('.gallery').masonry({
-        // options
-        itemSelector: '.gallery__item',
-        columnWidth: 200
-    });
 
+    let elem = document.querySelector('.grid');
+  let msnry = new Masonry( elem, {
+        // options
+        itemSelector: 'gallery__item',
+    });
 });
