@@ -183,6 +183,12 @@ body.modal-open {
   margin-bottom: 0;
 }
 
+.dynamic-content h1,
+.dynamic-content h2 {
+  font-weight: 500;
+  font-size: 82px;
+}
+
 .contact-btn {
   position: absolute;
   right: 50px;
@@ -437,6 +443,28 @@ body.modal-open {
 .swiper-pagination.bullet-yellow .swiper-pagination-bullet.swiper-pagination-bullet-active {
   background-color: #ffc200;
   border-color: #ffc200;
+}
+
+.services-list {
+  display: flex;
+  align-items: flex-end;
+  padding-bottom: 66px;
+}
+
+.services-list li:last-child .btn-service {
+  margin-right: 0;
+}
+
+.services-list .btn-service {
+  display: inline-block;
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid #ffc200;
+  margin-right: 135px;
+  font-weight: 600;
+  font-size: 20px;
+  color: #000000;
+  font-family: "Raleway", sans-serif;
 }
 
 .section-banner {
@@ -1169,6 +1197,64 @@ body.modal-open {
 .latest-posts__blog-link:hover span,
 .latest-posts__blog-link:focus span {
   color: #000000;
+}
+
+.section-latest-posts {
+  padding-bottom: 96px;
+}
+
+.section-latest-posts .section__title-big {
+  letter-spacing: 0.22em;
+  text-align: left;
+  margin-bottom: 27px;
+}
+
+.section-latest-posts .latest-posts {
+  display: flex;
+  justify-content: space-between;
+}
+
+.section-latest-posts .latest-posts__item {
+  width: 45%;
+  max-width: 472px;
+  overflow: hidden;
+}
+
+.section-latest-posts .latest-posts__item:hover .latest-posts__thumb,
+.section-latest-posts .latest-posts__item:focus .latest-posts__thumb {
+  transform: scale(1.2);
+}
+
+.section-latest-posts .latest-posts__link {
+  display: flex;
+  align-items: flex-end;
+  position: relative;
+  min-height: 192px;
+  padding: 24px 25px;
+}
+
+.section-latest-posts .latest-posts__thumb {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 0;
+  transition: .5s;
+  z-index: 0;
+}
+
+.section-latest-posts .latest-posts__title {
+  position: relative;
+  font-weight: 400;
+  font-size: 16px;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  text-shadow: 0 0 6px rgba(0, 0, 0, 0.5);
+  z-index: 2;
+  vertical-align: bottom;
 }
 
 .container {
