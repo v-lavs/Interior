@@ -164,6 +164,8 @@ body.modal-open {
   font-size: 154px;
   color: #e7e7e7;
   text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 0.3em;
 }
 
 .section__sub-title {
@@ -400,10 +402,6 @@ body.modal-open {
   display: none;
 }
 
-.swiper-button-prev:before {
-  background-image: url("../assets/img/svg/arrow-prev.svg");
-}
-
 .swiper-horizontal > .swiper-pagination-bullets,
 .swiper-pagination-bullets.swiper-pagination-horizontal {
   bottom: 40px;
@@ -454,7 +452,7 @@ body.modal-open {
   right: 0;
   bottom: 0;
   top: 0;
-  background: linear-gradient(0deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.00507926) 23.71%, rgba(0, 0, 0, 0) 40.25%, rgba(0, 0, 0, 0.00507926) 58.16%, rgba(0, 0, 0, 0.5) 85.9%), url(.jpg);
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.00507926) 23.71%, rgba(0, 0, 0, 0) 40.25%, rgba(0, 0, 0, 0.00507926) 58.16%, rgba(0, 0, 0, 0.5) 85.9%);
   z-index: 1;
 }
 
@@ -817,7 +815,6 @@ body.modal-open {
   letter-spacing: 0.26em;
   margin-bottom: 100px;
   width: 100%;
-  text-align: center;
 }
 
 .services-block {
@@ -1012,6 +1009,85 @@ body.modal-open {
 .partners__img {
   width: auto;
   height: 27px;
+}
+
+.section-blog {
+  padding-bottom: 96px;
+}
+
+.section-blog .section__title-big {
+  margin-bottom: 48px;
+}
+
+.section-blog .part_left {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 47.5%;
+}
+
+.section-blog .part_right {
+  width: 52.5%;
+}
+
+.latest-posts {
+  display: flex;
+  margin: 0 -40px;
+  color: #ffffff;
+}
+
+.latest-post {
+  display: flex;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  min-height: 387px;
+  padding: 34px 8px 34px 32px;
+}
+
+.latest-post__link {
+  width: 50%;
+  padding: 0 40px;
+}
+
+.latest-post__content {
+  margin-top: auto;
+}
+
+.latest-posts__blog-link {
+  display: block;
+  max-width: 153px;
+  width: 90%;
+  transition: .5s;
+}
+
+.latest-posts__blog-link svg {
+  display: inline-block;
+  transition: .35s;
+  margin-bottom: 32px;
+  width: 100%;
+}
+
+.latest-posts__blog-link svg path {
+  fill: #ffffff;
+}
+
+.latest-posts__blog-link span {
+  display: block;
+  text-align: center;
+  color: #afafaf;
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.latest-posts__blog-link:hover svg path,
+.latest-posts__blog-link:focus svg path {
+  fill: #ffc200;
+}
+
+.latest-posts__blog-link:hover span,
+.latest-posts__blog-link:focus span {
+  color: #000000;
 }
 
 .container {
