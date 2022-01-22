@@ -173,6 +173,7 @@ $(document).ready(function () {
            speed: 1500,
            pagination: {
                el: ".wrap-pagination .swiper-pagination",
+               clickable: true,
            },
            breakpoints: {
                581: {
