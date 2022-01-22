@@ -164,6 +164,23 @@ $(document).ready(function () {
         });
     }
 
+    //SLIDER TESTIMONIALS
+    if ($('.testimonials').length > 0){
+       const sliderTestimonials = new Swiper(".testimonials", {
+           slidesPerView: 1,
+           spaceBetween: 80,
+           slidesOffsetAfter: 80,
+           speed: 1500,
+           pagination: {
+               el: ".wrap-pagination .swiper-pagination",
+           },
+           breakpoints: {
+               581: {
+                   slidesPerView: 'auto',
+               },
+           },
+        });
+}
     //STICKY BTN
     var sticky = new Waypoint({
         element: $('#triggerBtnSticky')[0],
