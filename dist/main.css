@@ -378,13 +378,38 @@ body.modal-open {
 
 .swiper-button-next,
 .swiper-button-prev {
-  width: 20px;
-  height: 18px;
+  width: 18px;
+  height: 21px;
+}
+
+.swiper-button-next:before,
+.swiper-button-prev:before {
+  position: absolute;
+  content: '';
+  display: block;
+  background-image: url("../../../assets/img/arrow-next.svg");
+  width: 18px;
+  height: 21px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
 }
 
 .swiper-button-next:after,
 .swiper-button-prev:after {
-  font-size: 30px;
+  display: none;
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  filter: invert(100%) sepia(1) saturate(10000%) hue-rotate(-40deg);
+}
+
+.swiper-button-prev:before {
+  background-image: url("../assets/img/arrow-prew.svg");
 }
 
 .swiper-horizontal > .swiper-pagination-bullets,
@@ -793,8 +818,9 @@ body.modal-open {
 }
 
 .slider-solutions {
+  background: rosybrown;
   max-width: 1628px;
-  width: 86%;
+  width: 90%;
 }
 
 .slider-solutions__thumb {
@@ -814,6 +840,7 @@ body.modal-open {
   font-size: 18px;
   color: #818181;
   margin-top: auto;
+  width: 70%;
 }
 
 .slider-solutions__title {
@@ -847,9 +874,11 @@ body.modal-open {
 
 .slider-solutions .navigation-block {
   position: absolute;
-  bottom: 0;
+  bottom: 32px;
   right: 0;
-  width: 60px;
+  display: flex;
+  justify-content: space-between;
+  width: 75px;
 }
 
 .slider-project__slide {

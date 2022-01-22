@@ -3,8 +3,9 @@
 }
 
 .slider-solutions {
+  background: rosybrown;
   max-width: 1628px;
-  width: 86%;
+  width: 90%;
   &__thumb{
     position: absolute;
     left: 0;
@@ -21,7 +22,7 @@
     font-size: 18px;
     color: #818181;
     margin-top: auto;
-
+    width: 70%;
   }
   &__title{
     font-size: 25px;
@@ -50,9 +51,11 @@
   }
   .navigation-block{
     position: absolute;
-    bottom: 0;
+    bottom: 32px;
     right: 0;
-    width: 60px;
+    display: flex;
+    justify-content: space-between;
+    width: 75px;
   }
 }
 
