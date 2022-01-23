@@ -9,6 +9,7 @@
   .latest-posts {
     display: flex;
     justify-content: space-between;
+    margin: 0;
     &__item{
       width: 45%;
       max-width: 472px;

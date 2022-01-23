@@ -175,7 +175,7 @@ body.modal-open {
 .dynamic-content p {
   font-size: 16px;
   font-weight: 300;
-  line-height: 1.37;
+  line-height: 1.8;
   margin-bottom: 117px;
 }
 
@@ -232,7 +232,7 @@ body.modal-open {
 .contact-btn {
   position: absolute;
   right: 50px;
-  bottom: 30%;
+  top: 30%;
   width: 90px;
   height: 90px;
   background-color: transparent;
@@ -248,11 +248,6 @@ body.modal-open {
 
 .contact-btn.ui.background--white {
   filter: invert(0);
-}
-
-.contact-btn.sticky {
-  position: fixed;
-  top: 50%;
 }
 
 .contact-btn .img_written {
@@ -278,6 +273,12 @@ body.modal-open {
     -webkit-transform: rotate(360deg);
     transform: rotate(360deg);
   }
+}
+
+.sticky {
+  position: fixed;
+  top: auto;
+  bottom: 80px;
 }
 
 .section_anim {
@@ -1254,6 +1255,7 @@ body.modal-open {
 .section-latest-posts .latest-posts {
   display: flex;
   justify-content: space-between;
+  margin: 0;
 }
 
 .section-latest-posts .latest-posts__item {
@@ -1540,6 +1542,18 @@ body.modal-open {
   order: 0;
 }
 
+.single-project {
+  padding-top: 164px;
+}
+
+.single-project article {
+  margin-bottom: 170px;
+}
+
+.single-project .description {
+  margin-bottom: 100px;
+}
+
 .single-project .page-title {
   text-align: center;
   margin-bottom: 55px;
@@ -1757,6 +1771,14 @@ body.modal-open {
   .header__icon {
     margin-right: 0;
   }
+
+  .project-masonry-block__inner {
+    margin: 0 -26px;
+  }
+
+  .project-masonry-block__card {
+    padding: 0 26px;
+  }
 }
 
 @media only screen and (max-width: 768px) {
@@ -1812,6 +1834,20 @@ body.modal-open {
   .container {
     max-width: 460px;
     padding: 0 30px;
+  }
+
+  .project-masonry-block .container {
+    padding: 0;
+  }
+
+  .project-masonry-block__text {
+    height: auto;
+    min-height: 0;
+    padding: 40px 30px;
+  }
+
+  .project-masonry-block__card {
+    width: 100%;
   }
 }
 

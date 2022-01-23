@@ -64,7 +64,7 @@ body {
   p {
     font-size: 16px;
     font-weight: 300;
-    line-height: 1.37;
+    line-height: 1.8;
     margin-bottom: 117px;
 
     &:last-of-type {
@@ -114,7 +114,7 @@ body {
 .contact-btn {
   position: absolute;
   right: 50px;
-  bottom: 30%;
+  top: 30%;
   width: 90px;
   height: 90px;
   background-color: transparent;
@@ -131,10 +131,7 @@ body {
     filter: invert(0);
   }
 
-  &.sticky {
-    position: fixed;
-    top: 50%;
-  }
+
 
   .img_written {
     vertical-align: middle;
@@ -189,7 +186,11 @@ body {
     }
   }
 }
-
+.sticky {
+  position: fixed;
+  top: auto;
+  bottom: 80px;
+}
 .section_anim {
   opacity: 0;
   -webkit-transition: opacity ease-in .5s;

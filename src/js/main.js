@@ -102,25 +102,6 @@ $(document).ready(function () {
         $('body').removeClass('modal-open');
     });
 
-    // SMOOTH SCROLL TO ANCHOR
-
-    function smoothScrollToAnchor(selector) {
-        $(selector).on('click', function (event) {
-            var anchor = $.attr(this, 'href');
-
-            if (anchor.match(/^#/) && anchor !== '#') {
-                event.preventDefault();
-
-                $('html, body').animate({
-                    scrollTop: $($.attr(this, 'href')).offset().top - 100
-                }, 1500);
-            }
-        });
-    }
-
-    smoothScrollToAnchor('.scroll-down');
-    smoothScrollToAnchor('.menu .menu__item');
-
     //BG CHECK
     if ($('.ui').length > 0) {
         BackgroundCheck.init({
@@ -205,6 +186,13 @@ $(document).ready(function () {
 
     });
 
+    let grid = document.querySelector('.grid');
+    if (grid) {
+        let msnry = new Masonry(grid, {
+            // options
+            itemSelector: '.gallery__item',
+        });
+    }
 
     //SLIDER TESTIMONIALS
     if ($('.testimonials').length > 0) {
@@ -231,7 +219,7 @@ $(document).ready(function () {
     if (stickyEl) {
         const sticky = new Waypoint({
             element: stickyEl,
-            offset: '50%',
+            offset: '75%',
             handler: function (direction) {
                 if (direction === 'down') {
                     $('.contact-btn').addClass('sticky');
@@ -241,14 +229,6 @@ $(document).ready(function () {
             },
         });
     }
-
-    //HIDE TEXT
-
-    $('.text-hide .open-up').on('click', function (e) {
-        e.preventDefault();
-        $('.text-hide .mob-hide').removeClass('mob-hide');
-        $(this).hide();
-    });
 
 
     // HOVER BLOCK
@@ -285,7 +265,6 @@ $(document).ready(function () {
     }, 300);
 
     // COUNTER
-
     $('.achievements').waypoint(function (direction) {
         jQuery(function ($) {
             // custom formatting example
@@ -309,13 +288,7 @@ $(document).ready(function () {
     });
 
 
-    let grid = document.querySelector('.grid');
-    if (grid) {
-        let msnry = new Masonry(grid, {
-            // options
-            itemSelector: '.gallery__item',
-        });
-    }
+
 
     // $(window).resize(function(){
     //     mySwiper.reInit() // or mySwiper.resizeFix()

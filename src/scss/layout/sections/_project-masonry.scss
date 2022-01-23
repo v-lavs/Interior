@@ -34,3 +34,30 @@
     }
   }
 }
+
+@include respond-to($lg){
+  .project-masonry-block{
+    &__inner {
+      margin: 0 -26px;
+    }
+    &__card {
+      padding: 0 26px;
+    }
+  }
+}
+
+@include respond-to($sm){
+  .project-masonry-block{
+.container{
+  padding: 0;
+}
+    &__text {
+      height: auto;
+      min-height: 0;
+      padding: 40px 30px;
+    }
+    &__card {
+      width: 100%;
+    }
+  }
+}
