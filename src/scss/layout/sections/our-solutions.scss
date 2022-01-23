@@ -37,6 +37,9 @@
   }
   .part_right{
     position: relative;
+    flex-direction: column;
+    display: flex;
+
     font-size: 25px;
     line-height: 29px;
     color: #000000;

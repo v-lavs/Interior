@@ -1,3 +1,25 @@
-.single-article{
+.single-article {
+  .page__title {
+    font-weight: 500;
+    font-size: 82px;
+    line-height: 1.17;
+    color: #FFFFFF;
+  }
+}
 
+.section-intro {
+  display: flex;
+  align-items: center;
+  min-height: 544px;
+  padding-top: 120px;
+  padding-bottom: 30px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  margin-bottom: 107px;
+}
+
+.article {
+  color: #000000;
+  padding-bottom: 167px;
 }

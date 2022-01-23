@@ -1,0 +1,30 @@
+.blog {
+  padding-top: 188px;
+
+  .section__title-big {
+    margin-bottom: 37px;
+  }
+}
+
+.blog-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -62px;
+
+  &__item {
+    width: 33.33%;
+    padding: 0 62px;
+  }
+  .card-post__title{
+    font-weight: 500;
+    font-size: 19px;
+    line-height: 1.16;
+    color: #000000;
+  }
+  .card-post__wrap-thumb{
+    min-height: 416px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+}

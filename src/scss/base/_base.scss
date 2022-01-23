@@ -65,7 +65,7 @@ body {
     font-size: 16px;
     font-weight: 300;
     line-height: 1.37;
-    margin-bottom: 35px;
+    margin-bottom: 117px;
 
     &:last-of-type {
       margin-bottom: 0;
@@ -75,6 +75,40 @@ body {
     font-weight: 500;
     font-size: 82px;
   }
+  h3{
+    font-weight: 500;
+    font-size: 45px;
+    line-height: 1.33;
+    margin-bottom: 40px;
+  }
+  h4{
+    font-weight: 600;
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+    &.alignleft {
+      float: left;
+      margin: 10px 73px 117px 0;
+    }
+    &.alignright {
+      float: right;
+      margin: 473px 0 117px 117px;
+    }
+    &.aligncenter {
+      display: block;
+      margin: 0 auto 117px;
+      clear: both;
+    }
+  }
+}
+.clearfix:after {
+  content: "";
+  clear: both;
+  display: block;
 }
 
 .contact-btn {
@@ -172,8 +206,7 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
-  //background: $dark;
-  opacity: 0.25;
+  background-color: rgba(0,0,0, .5);
   z-index: 500;
 }
 

@@ -1,0 +1,36 @@
+.project-block_margin {
+  margin-bottom: 120px;
+}
+
+.project-masonry-block {
+  font-size: 16px;
+  line-height: 1.8;
+  &__inner {
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    margin: 0 -52px;
+  }
+  &__card {
+    display: flex;
+    flex-direction: column;
+    padding: 0 52px;
+    width: 50%;
+  }
+
+  &__img-wrap {
+    order: 1;
+  }
+
+  &__text {
+    min-height: 310px;
+    &_bottom {
+      display: flex;
+      align-items: flex-end;
+      order: 2;
+    }
+    &_top {
+      order: 0;
+    }
+  }
+}

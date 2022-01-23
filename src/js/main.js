@@ -122,9 +122,11 @@ $(document).ready(function () {
     smoothScrollToAnchor('.menu .menu__item');
 
     //BG CHECK
-    BackgroundCheck.init({
-        targets: '.ui',
-    });
+    if ($('.ui').length > 0) {
+        BackgroundCheck.init({
+            targets: '.ui',
+        });
+    }
 
 
     // BANNER SLIDER
@@ -156,8 +158,8 @@ $(document).ready(function () {
             observeParents: true,
             on: {
                 slideChange: function (frame) {
-                     $('.swiper-slide').each(function () {
-                      let  youtubePlayer = $(this).find('iframe').get(0);
+                    $('.swiper-slide').each(function () {
+                        let youtubePlayer = $(this).find('iframe').get(0);
                         if (youtubePlayer) {
                             youtubePlayer.contentWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
                         }
@@ -167,23 +169,23 @@ $(document).ready(function () {
         });
     }
 
-  // const video = document.querySelector('.slider-solutions__thumb');
-  //
-  //   if (video) {
-  //       const partnerSectionAnim = new Waypoint({
-  //           element: video,
-  //           handler: function (direction) {
-  //               this.element.play();
-  //           },
-  //           offset: '50%'
-  //       });
-  //   }
+    // const video = document.querySelector('.slider-solutions__thumb');
+    //
+    //   if (video) {
+    //       const partnerSectionAnim = new Waypoint({
+    //           element: video,
+    //           handler: function (direction) {
+    //               this.element.play();
+    //           },
+    //           offset: '50%'
+    //       });
+    //   }
 
 
     //  SLIDER PROJECTS
     if ($('.slider-project').length > 0) {
         const sliderProject = new Swiper("#sliderProject", {
-            allowTouchMove:false,
+            allowTouchMove: false,
             autoplay: {
                 delay: 2000,
             },
@@ -192,37 +194,53 @@ $(document).ready(function () {
         });
     }
 
-    //SLIDER TESTIMONIALS
-    if ($('.testimonials').length > 0){
-       const sliderTestimonials = new Swiper(".testimonials", {
-           slidesPerView: 1,
-           spaceBetween: 80,
-           slidesOffsetAfter: 80,
-           speed: 1500,
-           pagination: {
-               el: ".wrap-pagination .swiper-pagination",
-               clickable: true,
-           },
-           breakpoints: {
-               581: {
-                   slidesPerView: 'auto',
-               },
-           },
+    //  Single PROJECT
+
+    // project-masonry-block
+    $('.project-masonry-block').each(function (index, element) {
+        let msnry = new Masonry(element, {
+            // options
+            itemSelector: '.project-masonry-block__card',
         });
-}
-    //STICKY BTN
-    var sticky = new Waypoint({
-        element: $('#triggerBtnSticky')[0],
-        offset: '50%',
-        handler: function (direction) {
-            if (direction === 'down') {
-                $('.contact-btn').addClass('sticky');
-            } else if (direction === 'up') {
-                $('.contact-btn').removeClass('sticky');
-            }
-        },
+
     });
 
+
+    //SLIDER TESTIMONIALS
+    if ($('.testimonials').length > 0) {
+        const sliderTestimonials = new Swiper(".testimonials", {
+            slidesPerView: 1,
+            spaceBetween: 80,
+            slidesOffsetAfter: 80,
+            speed: 1500,
+            pagination: {
+                el: ".wrap-pagination .swiper-pagination",
+                clickable: true,
+            },
+            breakpoints: {
+                581: {
+                    slidesPerView: 'auto',
+                },
+            },
+        });
+    }
+
+    //STICKY BTN
+    const stickyEl = document.getElementById('triggerBtnSticky');
+
+    if (stickyEl) {
+        const sticky = new Waypoint({
+            element: stickyEl,
+            offset: '50%',
+            handler: function (direction) {
+                if (direction === 'down') {
+                    $('.contact-btn').addClass('sticky');
+                } else if (direction === 'up') {
+                    $('.contact-btn').removeClass('sticky');
+                }
+            },
+        });
+    }
 
     //HIDE TEXT
 
@@ -234,24 +252,27 @@ $(document).ready(function () {
 
 
     // HOVER BLOCK
-    const $memberItems = $('#membersTeams .members-team__item');
-    const sliderMembers = new Swiper('#sliderMembers', {
-        slidesPerView: 1,
-        loop: false,
-        effect: 'fade',
-        spaceBetween: 10,
-        pagination: {
-            el: '.swiper-pagination',
-            clickable: true,
-        },
-    });
+    if (document.getElementById('sliderMembers')) {
+        const $memberItems = $('#membersTeams .members-team__item');
 
-    $memberItems.hover(function () {
-        $memberItems.removeClass('active');
-        $(this).addClass('active');
-        const index = $(this).index();
-        sliderMembers.slideTo(index);
-    });
+        const sliderMembers = new Swiper('#sliderMembers', {
+            slidesPerView: 1,
+            loop: false,
+            effect: 'fade',
+            spaceBetween: 10,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+        });
+
+        $memberItems.hover(function () {
+            $memberItems.removeClass('active');
+            $(this).addClass('active');
+            const index = $(this).index();
+            sliderMembers.slideTo(index);
+        });
+    }
 
     //ANIMATIOON
 
@@ -288,11 +309,13 @@ $(document).ready(function () {
     });
 
 
-    let elem = document.querySelector('.grid');
-  let msnry = new Masonry( elem, {
-        // options
-        itemSelector: 'gallery__item',
-    });
+    let grid = document.querySelector('.grid');
+    if (grid) {
+        let msnry = new Masonry(grid, {
+            // options
+            itemSelector: '.gallery__item',
+        });
+    }
 
     // $(window).resize(function(){
     //     mySwiper.reInit() // or mySwiper.resizeFix()
