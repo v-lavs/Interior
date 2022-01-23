@@ -8,21 +8,14 @@
     margin: 40px auto 0;
   }
 
-  .mob-hide {
-    position: absolute;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-  }
-
   article {
     margin-bottom: 170px;
   }
 
   .description {
     margin-bottom: 100px;
-    p{
+
+    p {
       margin-bottom: 1em;
     }
   }
@@ -92,6 +85,8 @@
       }
 
       strong {
+        width: 30%;
+        flex-shrink: 0;
         font-size: 16px;
       }
     }
@@ -99,9 +94,23 @@
 }
 
 @include respond-to($sm) {
+
   .single-project {
+    .text-hide {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+    }
+
+    .description {
+      margin-bottom: 40px;
+    }
+
     .btn-more {
       display: block;
+      margin-bottom: 50px;
     }
   }
 }

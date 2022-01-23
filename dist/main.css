@@ -1551,14 +1551,6 @@ body.modal-open {
   margin: 40px auto 0;
 }
 
-.single-project .mob-hide {
-  position: absolute;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-}
-
 .single-project article {
   margin-bottom: 170px;
 }
@@ -1850,6 +1842,8 @@ body.modal-open {
   }
 
   .single-project .properties-block strong {
+    width: 30%;
+    flex-shrink: 0;
     font-size: 16px;
   }
 }
@@ -1919,8 +1913,21 @@ body.modal-open {
     width: 100%;
   }
 
+  .single-project .text-hide {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+  }
+
+  .single-project .description {
+    margin-bottom: 40px;
+  }
+
   .single-project .btn-more {
     display: block;
+    margin-bottom: 50px;
   }
 }
 
@@ -1967,6 +1974,12 @@ body.modal-open {
 
   .single-project .description {
     margin-bottom: 50px;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .container {
+    padding: 0 15px;
   }
 }
 

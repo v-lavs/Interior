@@ -23,4 +23,7 @@
   @include respond-to($xs) {
     max-width: 100%;
   }
+  @media screen and (max-width: 375px){
+    padding: 0 15px;
+  }
 }

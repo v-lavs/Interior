@@ -232,9 +232,9 @@ $(document).ready(function () {
 
     //HIDE TEXT
 
-    $('.text-hide .open-up').on('click', function (e) {
+    $(' .open-up').on('click', function (e) {
         e.preventDefault();
-        $('.text-hide .mob-hide').removeClass('mob-hide');
+        $('.description').removeClass('text-hide');
         $(this).hide();
     });
 
