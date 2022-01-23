@@ -274,27 +274,30 @@ $(document).ready(function () {
     }, 300);
 
     // COUNTER
-    $('.achievements').waypoint(function (direction) {
-        jQuery(function ($) {
-            // custom formatting example
-            $('.count-number').data('countToOptions', {
-                formatter: function (value, options) {
-                    return value.toFixed(options.decimals).replace(/\B(?=(?:\d{3})+(?!\d))/g, ',');
+    if ($('.achievements').length > 0){
+        $('.achievements').waypoint(function (direction) {
+            jQuery(function ($) {
+                // custom formatting example
+                $('.count-number').data('countToOptions', {
+                    formatter: function (value, options) {
+                        return value.toFixed(options.decimals).replace(/\B(?=(?:\d{3})+(?!\d))/g, ',');
+                    }
+                });
+
+                // start all the timers
+                $('.timer').each(count);
+
+                function count(options) {
+                    var $this = $(this);
+                    options = $.extend({}, options || {}, $this.data('countToOptions') || {});
+                    $this.countTo(options);
                 }
             });
-
-            // start all the timers
-            $('.timer').each(count);
-
-            function count(options) {
-                var $this = $(this);
-                options = $.extend({}, options || {}, $this.data('countToOptions') || {});
-                $this.countTo(options);
-            }
+        }, {
+            offset: '100%'
         });
-    }, {
-        offset: '100%'
-    });
+    }
+
 
 
 
