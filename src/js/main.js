@@ -230,6 +230,14 @@ $(document).ready(function () {
         });
     }
 
+    //HIDE TEXT
+
+    $('.text-hide .open-up').on('click', function (e) {
+        e.preventDefault();
+        $('.text-hide .mob-hide').removeClass('mob-hide');
+        $(this).hide();
+    });
+
 
     // HOVER BLOCK
     if (document.getElementById('sliderMembers')) {
