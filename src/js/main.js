@@ -3,6 +3,7 @@
 * */
 
 //= include ../../node_modules/jquery/dist/jquery.js
+//= include ../lib/masonry.pkgd.min.js
 //= include ../lib/waypoints/index.js
 //= include ../lib/bg-check.js
 
@@ -188,7 +189,7 @@ $(document).ready(function () {
 
     let grid = document.querySelector('.grid');
     if (grid) {
-        let msnry = new Masonry(grid, {
+        let msnry2 = new Masonry(grid, {
             // options
             itemSelector: '.gallery__item',
         });
