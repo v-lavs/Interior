@@ -1,34 +1,41 @@
 .section-latest-posts {
   padding-bottom: 96px;
+
   .section__title-big {
     letter-spacing: 0.22em;
+    font-size: 99px;
     text-align: left;
     margin-bottom: 27px;
+    padding: 0;
   }
 
   .latest-posts {
     display: flex;
     justify-content: space-between;
     margin: 0;
-    &__item{
+
+    &__item {
       width: 45%;
       max-width: 472px;
       overflow: hidden;
+
       &:hover,
       &:focus {
-        .latest-posts__thumb{
+        .latest-posts__thumb {
           transform: scale(1.2);
         }
       }
     }
-    &__link{
+
+    &__link {
       display: flex;
       align-items: flex-end;
       position: relative;
       min-height: 192px;
       padding: 24px 25px;
     }
-    &__thumb{
+
+    &__thumb {
       position: absolute;
       left: 0;
       right: 0;
@@ -36,11 +43,12 @@
       bottom: 0;
       background-repeat: no-repeat;
       background-size: cover;
-      background-position: 0 ;
+      background-position: 0;
       transition: .5s;
       z-index: 0;
     }
-    &__title{
+
+    &__title {
       position: relative;
       font-weight: 400;
       font-size: 16px;
@@ -50,5 +58,41 @@
       z-index: 2;
       vertical-align: bottom;
     }
+  }
+}
+
+@include respond-to($lg) {
+  .section-latest-posts {
+    .section__title-big {
+      font-size: 75px;
+    }
+    .latest-posts__link {
+      min-height: 150px;
+    }
+  }
+}
+
+@include respond-to($sm) {
+  .section-latest-posts {
+    padding-bottom: 62px;
+    .section__title-big {
+      font-size: 50px;
+    }
+    .latest-posts__link{
+      min-height: 190px;
+    }
+    .latest-posts__item {
+      width: 100%;
+
+      &:last-child{
+        display: none;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .section-latest-posts  .section__title-big{
+    font-size: 43px;
   }
 }

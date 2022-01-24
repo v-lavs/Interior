@@ -48,8 +48,9 @@
       margin-left: 16px;
     }
   }
-  .project__img_fullwidth{
-    img{
+
+  .project__img_fullwidth {
+    img {
       display: block;
       margin: 0 auto;
     }
@@ -102,6 +103,10 @@
 @include respond-to($sm) {
 
   .single-project {
+    article {
+      margin-bottom: 130px;
+    }
+
     .text-hide {
       overflow: hidden;
       text-overflow: ellipsis;

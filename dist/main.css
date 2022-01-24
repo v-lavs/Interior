@@ -503,6 +503,7 @@ body.modal-open {
   background-color: transparent;
   border: none;
   border-bottom: 2px solid #ffc200;
+  padding-bottom: 3px;
   margin-right: 135px;
   font-weight: 600;
   font-size: 20px;
@@ -1249,8 +1250,10 @@ body.modal-open {
 
 .section-latest-posts .section__title-big {
   letter-spacing: 0.22em;
+  font-size: 99px;
   text-align: left;
   margin-bottom: 27px;
+  padding: 0;
 }
 
 .section-latest-posts .latest-posts {
@@ -1713,6 +1716,14 @@ body.modal-open {
     margin-bottom: 23px;
   }
 
+  .section-latest-posts .section__title-big {
+    font-size: 75px;
+  }
+
+  .section-latest-posts .latest-posts__link {
+    min-height: 150px;
+  }
+
   .container {
     max-width: 720px;
   }
@@ -1903,12 +1914,36 @@ body.modal-open {
     bottom: 25px;
   }
 
+  .services-list {
+    padding-bottom: 10px;
+  }
+
   .services-list .btn-service {
     margin-right: 40px;
   }
 
   .banner-slider__slide {
     padding-bottom: 63px;
+  }
+
+  .section-latest-posts {
+    padding-bottom: 62px;
+  }
+
+  .section-latest-posts .section__title-big {
+    font-size: 50px;
+  }
+
+  .section-latest-posts .latest-posts__link {
+    min-height: 190px;
+  }
+
+  .section-latest-posts .latest-posts__item {
+    width: 100%;
+  }
+
+  .section-latest-posts .latest-posts__item:last-child {
+    display: none;
   }
 
   .container {
@@ -1943,6 +1978,10 @@ body.modal-open {
 
   .project-masonry-block__card {
     width: 100%;
+  }
+
+  .single-project article {
+    margin-bottom: 130px;
   }
 
   .single-project .text-hide {
@@ -1981,6 +2020,7 @@ body.modal-open {
   }
 
   .services-list .btn-service {
+    font-size: 16px;
     margin-right: 23px;
   }
 
@@ -2032,6 +2072,10 @@ body.modal-open {
 
   .menu__item {
     font-size: 40px;
+  }
+
+  .section-latest-posts .section__title-big {
+    font-size: 43px;
   }
 
   .header {

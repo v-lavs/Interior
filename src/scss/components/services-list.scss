@@ -13,6 +13,7 @@
     background-color: transparent;
     border: none;
     border-bottom: 2px solid #ffc200;
+    padding-bottom: 3px;
     margin-right: 135px;
     font-weight: 600;
     font-size: 20px;
@@ -32,6 +33,7 @@
 
 @include respond-to($sm){
   .services-list{
+    padding-bottom: 10px;
     .btn-service{
       margin-right: 40px;
     }
@@ -41,6 +43,7 @@
 @include respond-to($xs){
   .services-list{
     .btn-service{
+      font-size: 16px;
       margin-right: 23px;
     }
   }
