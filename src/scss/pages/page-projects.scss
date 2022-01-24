@@ -1,0 +1,31 @@
+@import "../layout/sections/project-masonry";
+
+.projects{
+  .project-block_margin {
+    margin-bottom: 64px;
+  }
+
+  .project-masonry-block {
+    &__inner {
+      margin: 0 -52px;
+    }
+
+    &__card {
+      padding: 0 52px;
+      width: 30%;
+
+    }
+    &__img-wrap {
+      order: 0;
+    }
+
+    &__title h3 {
+      font-weight: 500;
+      font-size: 19px;
+      line-height: 1.157;
+      color: #000000;
+      margin-top: 14px;
+
+    }
+  }
+}
