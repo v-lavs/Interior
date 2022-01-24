@@ -1,4 +1,14 @@
 .projects {
+  padding-top: 185px;
+
+  .section__title-big {
+    margin-bottom: 45px;
+  }
+
+  .projects-list {
+    padding-bottom: 102px;
+  }
+
   .project-block_margin {
     margin-bottom: 64px;
   }
@@ -36,21 +46,43 @@
   }
 }
 
+@include respond-to($md) {
+  .projects .project-masonry-block {
+    &__inner {
+      margin: 0 -40px;
+    }
+
+    &__card {
+      padding: 0 40px;
+    }
+  }
+}
+
 @include respond-to($sm) {
   .projects {
+
     .project-block_margin {
       margin-bottom: 85px;
     }
 
-    .project-masonry-block{
-      &__card {
-      width: 100%;
-      min-height: 38px;
+    .projects-list {
+      padding-bottom: 40px;
     }
+
+    .project-masonry-block {
+      &__card {
+        width: 100%;
+
+        &.break {
+          display: none;
+        }
+      }
+
       &__img-wrap {
         position: relative;
         padding-top: 95%;
       }
+
       &__img {
         position: absolute;
         left: 0;
@@ -61,6 +93,11 @@
         width: 100%;
         object-fit: cover;
       }
+
+      &__title {
+        padding-left: 30px;
+      }
     }
   }
 }
+

@@ -1,0 +1,132 @@
+
+.category-filter{
+  margin-bottom: 60px;
+}
+
+.category-filter__list {
+  font-size: 19px;
+  line-height: 1.157;
+  color: #8c8c8c;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 0 -56px;
+}
+
+.category-filter__item {
+  padding: 10px 56px;
+  //margin: 0 22px;
+  transition: .35s;
+  &:hover,
+  &:focus {
+    -webkit-text-stroke: 1px #000000;
+  }
+}
+
+ .category-filter__item .active {
+  color: #000000;
+  font-weight: 700;
+}
+.category-filter__item:first-child,
+.category-filter__current{
+  display: none;
+}
+
+@include respond-to($xxl){
+  .category-filter__list {
+    margin-left: -35px;
+    margin-right: -35px;
+  }
+
+  .category-filter__item {
+    padding-left: 35px;
+    padding-right: 35px;
+  }
+}
+@include respond-to($xl){
+
+  .category-filter {
+    max-width: 380px;
+    width: 100%;
+    margin: 0 auto 45px;
+  }
+
+  .category-filter__list {
+    font-weight: 600;
+    padding-top: 12px;
+    justify-content: flex-start;
+    color: #000000;
+  }
+
+   .category-filter__item {
+     width: 100%;
+     margin: 0 0 12px 0;
+     &:hover,
+     &:focus {
+       -webkit-text-stroke: 0px;
+     }
+  }
+
+ .category-filter__item .active {
+    color: #FBD300;
+  }
+
+  .category-filter__link {
+
+    color: inherit;
+    display: block;
+  }
+
+  .category-filter__item:hover,
+  .category-filter__item:focus {
+    color: #FBD300;
+    font-weight: 700;
+    transition: .35s;
+  }
+
+  .category-filter__link {
+    padding: 5px 0;
+    margin-left: 0;
+  }
+
+  .category-filter__current {
+    display: block;
+    position: relative;
+    font-weight: 600;
+    font-size: 21px;
+    line-height: 1;
+    padding-bottom: 17px;
+    border-bottom: 2px solid #FBD300;
+    cursor: pointer;
+    &:after {
+      position: absolute;
+      content: '';
+      background-image: url(../assets/img/arrow-down.svg);
+      width: 14px;
+      height: 9px;
+      background-repeat: no-repeat;
+      background-position: center;
+      -webkit-background-size: contain;
+      background-size: contain;
+      right: 0;
+      bottom: 17px;
+    }
+  }
+  .category-filter__item:first-child,
+  .category-filter__current {
+    display: block;
+  }
+  .category-filter__list-wrap {
+    display: none;
+  }
+  .opened.category-filter__current, .opened.active {
+    color: #FBD300;
+  }
+}
+
+@include respond-to($xs){
+  .category-filter{
+    margin-bottom: 45px;
+  }
+}

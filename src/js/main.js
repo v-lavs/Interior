@@ -176,12 +176,11 @@ $(document).ready(function () {
         });
     }
 
-    //  Single PROJECT
+    //  SINGLE PROJECT
 
     // project-masonry-block
     $('.project-masonry-block__inner').each(function (index, element) {
         let msnry = new Masonry(element, {
-            // options
             itemSelector: '.project-masonry-block__card',
         });
 
@@ -190,7 +189,6 @@ $(document).ready(function () {
     let grid = document.querySelector('.grid');
     if (grid) {
         let msnry2 = new Masonry(grid, {
-            // options
             itemSelector: '.gallery__item',
         });
     }
@@ -263,6 +261,26 @@ $(document).ready(function () {
         });
     }
 
+    //   CATEGORY NAV
+    if (($(window).outerWidth() <= 1200) & ($('.category-filter').length > 0)) {
+        $('.category-filter__current').click(function (e) {
+            $(this).parents('.category-filter').toggleClass('opened');
+            $('.category-filter__list-wrap').slideToggle(700);
+        });
+
+        $('.category-filter__link').click(function (e) {
+            $('.category-filter__link').removeClass('active');
+            const activeText = $(this).text();
+            $(this).addClass('active');
+
+            $('.category-filter__current').text(activeText);
+
+            $(this).parents('.category-filter').removeClass('opened');
+            $('.category-filter__list-wrap').slideToggle(700);
+        });
+    }
+
+
     //ANIMATIOON
 
     setTimeout(function () {
@@ -274,7 +292,7 @@ $(document).ready(function () {
     }, 300);
 
     // COUNTER
-    if ($('.achievements').length > 0){
+    if ($('.achievements').length > 0) {
         $('.achievements').waypoint(function (direction) {
             jQuery(function ($) {
                 // custom formatting example
@@ -297,9 +315,6 @@ $(document).ready(function () {
             offset: '100%'
         });
     }
-
-
-
 
 
     // $(window).resize(function(){
