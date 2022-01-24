@@ -4,8 +4,6 @@
   margin: 0 auto;
   padding: 0 20px;
 
-  background: rosybrown;
-
   @include respond-to($xxl) {
     max-width: 1120px;
   }
