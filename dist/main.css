@@ -1505,58 +1505,17 @@ body.modal-open {
   text-transform: uppercase;
 }
 
-.project-block_margin {
-  margin-bottom: 120px;
-}
-
-.project-masonry-block {
-  font-size: 16px;
-  line-height: 1.8;
-}
-
-.project-masonry-block__inner {
-  display: flex;
-  flex-wrap: wrap;
-  position: relative;
-  margin: 0 -52px;
-}
-
-.project-masonry-block__card {
-  display: flex;
-  flex-direction: column;
-  padding: 0 52px;
-  width: 50%;
-}
-
-.project-masonry-block__img-wrap {
-  order: 1;
-}
-
-.project-masonry-block__text {
-  min-height: 310px;
-}
-
-.project-masonry-block__text_bottom {
-  display: flex;
-  align-items: flex-end;
-  order: 2;
-}
-
-.project-masonry-block__text_top {
-  order: 0;
-}
-
 .projects .project-block_margin {
   margin-bottom: 64px;
 }
 
 .projects .project-masonry-block__inner {
-  margin: 0 -52px;
+  margin: 0 -58px;
 }
 
 .projects .project-masonry-block__card {
-  padding: 0 52px;
-  width: 30%;
+  padding: 0 58px;
+  width: 33.33%;
 }
 
 .projects .project-masonry-block__img-wrap {
@@ -1893,14 +1852,6 @@ body.modal-open {
   .project-masonry-block__card {
     padding: 0 26px;
   }
-
-  .project-masonry-block__inner {
-    margin: 0 -26px;
-  }
-
-  .project-masonry-block__card {
-    padding: 0 26px;
-  }
 }
 
 @media only screen and (max-width: 768px) {
@@ -1923,10 +1874,6 @@ body.modal-open {
   .footer__text {
     width: 100%;
     margin-top: 9px;
-  }
-
-  .project-block_margin {
-    margin-bottom: 80px;
   }
 
   .project-block_margin {
@@ -2027,35 +1974,6 @@ body.modal-open {
   .container {
     max-width: 460px;
     padding: 0 30px;
-  }
-
-  .project-block_margin {
-    margin-bottom: 40px;
-  }
-
-  .project-masonry-block .container {
-    padding: 0;
-  }
-
-  .project-masonry-block__text {
-    height: auto;
-    min-height: 0;
-    padding-left: 30px;
-    padding-right: 30px;
-  }
-
-  .project-masonry-block__text_bottom {
-    padding-top: 40px;
-    padding-bottom: 0;
-  }
-
-  .project-masonry-block__text_top {
-    padding-top: 0;
-    padding-bottom: 40px;
-  }
-
-  .project-masonry-block__card {
-    width: 100%;
   }
 
   .project-block_margin {
