@@ -9,22 +9,47 @@
 .blog-list {
   display: flex;
   flex-wrap: wrap;
-  margin: 0 -62px;
+  margin: 0 -42px 70px;
 
   &__item {
     width: 33.33%;
     padding: 0 62px;
+    margin-bottom: 143px;
   }
-  .card-post__title{
+
+  .card-post__title {
     font-weight: 500;
     font-size: 19px;
     line-height: 1.16;
     color: #000000;
   }
-  .card-post__wrap-thumb{
+
+  .card-post__wrap-thumb {
     min-height: 416px;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+    margin-bottom: 11px;
   }
 }
+
+@include respond-to($xl) {
+  .blog-list {
+    &__item {
+      width: 50%;
+    }
+  }
+}
+
+@include respond-to($md) {
+  .blog-list {
+    margin-right: -40px;
+    margin-left: -40px;
+
+    &__item {
+      margin-bottom: 120px;
+      padding: 0 40px;
+    }
+  }
+}
+

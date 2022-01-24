@@ -1684,12 +1684,13 @@ body.modal-open {
 .blog-list {
   display: flex;
   flex-wrap: wrap;
-  margin: 0 -62px;
+  margin: 0 -42px 70px;
 }
 
 .blog-list__item {
   width: 33.33%;
   padding: 0 62px;
+  margin-bottom: 143px;
 }
 
 .blog-list .card-post__title {
@@ -1704,6 +1705,7 @@ body.modal-open {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  margin-bottom: 11px;
 }
 
 .single-article .page__title {
@@ -1844,6 +1846,10 @@ body.modal-open {
 
   .container {
     max-width: 940px;
+  }
+
+  .blog-list__item {
+    width: 50%;
   }
 }
 
@@ -2056,6 +2062,16 @@ body.modal-open {
     width: 30%;
     flex-shrink: 0;
     font-size: 16px;
+  }
+
+  .blog-list {
+    margin-right: -40px;
+    margin-left: -40px;
+  }
+
+  .blog-list__item {
+    margin-bottom: 120px;
+    padding: 0 40px;
   }
 }
 
