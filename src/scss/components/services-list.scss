@@ -1,5 +1,6 @@
 .services-list{
   display: flex;
+  flex-wrap: wrap;
   align-items: flex-end;
   padding-bottom: 66px;
   li:last-child{
@@ -17,5 +18,30 @@
     font-size: 20px;
     color: #000000;
     font-family: $main-font;
+  }
+}
+
+@include respond-to($lg){
+  .services-list{
+    .btn-service{
+      margin-right: 90px;
+      margin-bottom: 23px;
+    }
+  }
+}
+
+@include respond-to($sm){
+  .services-list{
+    .btn-service{
+      margin-right: 40px;
+    }
+  }
+}
+
+@include respond-to($xs){
+  .services-list{
+    .btn-service{
+      margin-right: 23px;
+    }
   }
 }

@@ -48,6 +48,12 @@
       margin-left: 16px;
     }
   }
+  .project__img_fullwidth{
+    img{
+      display: block;
+      margin: 0 auto;
+    }
+  }
 }
 
 @include respond-to($xxl) {
@@ -114,7 +120,6 @@
     }
   }
 }
-
 
 @include respond-to($xs) {
   .single-project {

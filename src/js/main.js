@@ -179,7 +179,7 @@ $(document).ready(function () {
     //  Single PROJECT
 
     // project-masonry-block
-    $('.project-masonry-block').each(function (index, element) {
+    $('.project-masonry-block__inner').each(function (index, element) {
         let msnry = new Masonry(element, {
             // options
             itemSelector: '.project-masonry-block__card',

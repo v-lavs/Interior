@@ -166,6 +166,7 @@ body.modal-open {
   text-transform: uppercase;
   text-align: center;
   letter-spacing: 0.3em;
+  padding: 0 30px;
 }
 
 .section__sub-title {
@@ -488,6 +489,7 @@ body.modal-open {
 
 .services-list {
   display: flex;
+  flex-wrap: wrap;
   align-items: flex-end;
   padding-bottom: 66px;
 }
@@ -601,7 +603,7 @@ body.modal-open {
   display: flex;
   flex-wrap: wrap;
   margin-bottom: 38px;
-  height: 100% !important;
+  position: relative;
 }
 
 .gallery__img-wrap {
@@ -1305,6 +1307,7 @@ body.modal-open {
   max-width: 1240px;
   margin: 0 auto;
   padding: 0 20px;
+  background: rosybrown;
 }
 
 .header {
@@ -1591,6 +1594,11 @@ body.modal-open {
   margin-left: 16px;
 }
 
+.single-project .project__img_fullwidth img {
+  display: block;
+  margin: 0 auto;
+}
+
 .blog {
   padding-top: 188px;
 }
@@ -1649,6 +1657,10 @@ body.modal-open {
 }
 
 @media only screen and (max-width: 1440px) {
+  .section__title-big {
+    font-size: 118px;
+  }
+
   .container {
     max-width: 1120px;
   }
@@ -1675,6 +1687,10 @@ body.modal-open {
     right: 30px;
   }
 
+  .section__title-big {
+    font-size: 95px;
+  }
+
   .menu {
     flex-direction: column;
     width: 100%;
@@ -1691,6 +1707,11 @@ body.modal-open {
 
   .menu__item:last-child {
     margin-bottom: 0;
+  }
+
+  .services-list .btn-service {
+    margin-right: 90px;
+    margin-bottom: 23px;
   }
 
   .container {
@@ -1799,6 +1820,10 @@ body.modal-open {
 }
 
 @media only screen and (max-width: 768px) {
+  .members-team .section__title-big {
+    letter-spacing: 0.22em;
+  }
+
   .container {
     max-width: 610px;
   }
@@ -1869,9 +1894,18 @@ body.modal-open {
     font-size: 20px;
   }
 
+  .section__title-big {
+    font-size: 70px;
+    letter-spacing: 0.06em;
+  }
+
   .swiper-horizontal > .swiper-pagination-bullets,
   .swiper-pagination-bullets.swiper-pagination-horizontal {
     bottom: 25px;
+  }
+
+  .services-list .btn-service {
+    margin-right: 40px;
   }
 
   .banner-slider__slide {
@@ -1942,6 +1976,15 @@ body.modal-open {
     background-size: 18px;
   }
 
+  .section__title-big {
+    font-size: 50px;
+    letter-spacing: 0.06em;
+  }
+
+  .services-list .btn-service {
+    margin-right: 23px;
+  }
+
   .container {
     max-width: 100%;
   }
@@ -1983,6 +2026,11 @@ body.modal-open {
 }
 
 @media screen and (max-width: 360px) {
+  .section__title-big {
+    font-size: 43px;
+    padding: 0 15px;
+  }
+
   .menu__item {
     font-size: 40px;
   }

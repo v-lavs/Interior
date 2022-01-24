@@ -53,6 +53,7 @@ body {
     text-transform: uppercase;
     text-align: center;
     letter-spacing: 0.3em;
+    padding: 0 30px;
   }
 
   &__sub-title {
@@ -211,11 +212,43 @@ body {
   z-index: 500;
 }
 
+@include respond-to($xxl){
+  .section__title-big{
+    font-size: 118px;
+  }
+}
+
+@include respond-to($lg){
+  .section__title-big{
+    font-size: 95px;
+  }
+}
+
+
+
 @include respond-to($sm) {
   .section__title {
     font-size: 40px;
   }
   .section__sub-title {
     font-size: 20px;
+  }
+  .section__title-big{
+    font-size: 70px;
+    letter-spacing: 0.06em;
+  }
+}
+
+@include respond-to($xs) {
+  .section__title-big{
+    font-size: 50px;
+    letter-spacing: 0.06em;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .section__title-big{
+    font-size: 43px;
+    padding: 0 15px;
   }
 }

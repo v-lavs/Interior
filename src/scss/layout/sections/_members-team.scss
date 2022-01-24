@@ -117,3 +117,9 @@
     }
   }
 }
+
+@include respond-to($md){
+  .members-team  .section__title-big{
+    letter-spacing: 0.22em;
+  }
+}
