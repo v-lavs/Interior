@@ -35,20 +35,44 @@
 
 @include respond-to($xl) {
   .blog-list {
-    &__item {
-      width: 50%;
-    }
-  }
-}
-
-@include respond-to($md) {
-  .blog-list {
     margin-right: -40px;
     margin-left: -40px;
 
     &__item {
       margin-bottom: 120px;
       padding: 0 40px;
+    }
+    .card-post__wrap-thumb{
+      min-height: 326px;
+    }
+  }
+}
+
+@include respond-to($lg) {
+  .blog-list {
+    &__item {
+      width: 50%;
+    }
+    .card-post__wrap-thumb{
+      min-height: 360px;
+    }
+  }
+}
+
+
+@include respond-to($sm) {
+  .blog-list {
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 50px;
+    &__item {
+      width: 100%;
+      padding-left: 0;
+      padding-right: 0;
+      margin-bottom: 90px;
+    }
+    .card-post__wrap-thumb{
+      min-height: 382px;
     }
   }
 }

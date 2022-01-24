@@ -1848,8 +1848,18 @@ body.modal-open {
     max-width: 940px;
   }
 
+  .blog-list {
+    margin-right: -40px;
+    margin-left: -40px;
+  }
+
   .blog-list__item {
-    width: 50%;
+    margin-bottom: 120px;
+    padding: 0 40px;
+  }
+
+  .blog-list .card-post__wrap-thumb {
+    min-height: 326px;
   }
 }
 
@@ -2002,6 +2012,14 @@ body.modal-open {
   .project-masonry-block__card {
     padding: 0 26px;
   }
+
+  .blog-list__item {
+    width: 50%;
+  }
+
+  .blog-list .card-post__wrap-thumb {
+    min-height: 360px;
+  }
 }
 
 @media only screen and (max-width: 768px) {
@@ -2062,16 +2080,6 @@ body.modal-open {
     width: 30%;
     flex-shrink: 0;
     font-size: 16px;
-  }
-
-  .blog-list {
-    margin-right: -40px;
-    margin-left: -40px;
-  }
-
-  .blog-list__item {
-    margin-bottom: 120px;
-    padding: 0 40px;
   }
 }
 
@@ -2228,6 +2236,23 @@ body.modal-open {
   .single-project .btn-more {
     display: block;
     margin-bottom: 50px;
+  }
+
+  .blog-list {
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 50px;
+  }
+
+  .blog-list__item {
+    width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+    margin-bottom: 90px;
+  }
+
+  .blog-list .card-post__wrap-thumb {
+    min-height: 382px;
   }
 }
 
