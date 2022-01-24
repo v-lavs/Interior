@@ -231,7 +231,8 @@ body.modal-open {
 }
 
 .contact-btn {
-  position: absolute;
+  position: sticky;
+  position: -webkit-sticky;
   right: 50px;
   top: 30%;
   width: 90px;
@@ -241,6 +242,7 @@ body.modal-open {
   overflow: hidden;
   border: none;
   z-index: 300;
+  left: 93%;
 }
 
 .contact-btn.ui.background--dark {
@@ -280,6 +282,7 @@ body.modal-open {
   position: fixed;
   top: auto;
   bottom: 80px;
+  right: 7%;
 }
 
 .section_anim {
@@ -779,6 +782,7 @@ body.modal-open {
 }
 
 .members-team {
+  position: relative;
   padding-top: 170px;
   padding-bottom: 260px;
 }
@@ -1844,6 +1848,10 @@ body.modal-open {
     color: #FBD300;
   }
 
+  .section-banner .section__title {
+    font-size: 48px;
+  }
+
   .container {
     max-width: 940px;
   }
@@ -2125,6 +2133,10 @@ body.modal-open {
 
   .banner-slider__slide {
     padding-bottom: 63px;
+  }
+
+  .banner-slider .section__title {
+    font-size: 40px;
   }
 
   .section-latest-posts {

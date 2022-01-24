@@ -186,12 +186,12 @@ $(document).ready(function () {
 
     });
 
-    let grid = document.querySelector('.grid');
-    if (grid) {
-        let msnry2 = new Masonry(grid, {
-            itemSelector: '.gallery__item',
-        });
-    }
+    // let grid = document.querySelector('.grid');
+    // if (grid) {
+    //     let msnry2 = new Masonry(grid, {
+    //         itemSelector: '.gallery__item',
+    //     });
+    // }
 
     //SLIDER TESTIMONIALS
     if ($('.testimonials').length > 0) {

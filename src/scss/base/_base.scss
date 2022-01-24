@@ -113,7 +113,8 @@ body {
 }
 
 .contact-btn {
-  position: absolute;
+  position: sticky;
+  position: -webkit-sticky;
   right: 50px;
   top: 30%;
   width: 90px;
@@ -123,7 +124,7 @@ body {
   overflow: hidden;
   border: none;
   z-index: 300;
-
+  left: 93%;
   &.ui.background--dark {
     filter: invert(1);
   }
@@ -191,6 +192,7 @@ body {
   position: fixed;
   top: auto;
   bottom: 80px;
+  right: 7%;
 }
 .section_anim {
   opacity: 0;

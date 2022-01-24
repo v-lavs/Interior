@@ -58,15 +58,28 @@
   }
 }
 
+@include respond-to($xl) {
+.section-banner {
+  .section__title{
+    font-size: 48px;
+  }
+}
+}
+
 
 @include respond-to($md) {
+  .section-banner {
 
+  }
 }
 
 @include respond-to($sm) {
   .banner-slider {
     &__slide {
       padding-bottom: 63px;
+    }
+    .section__title{
+      font-size: 40px;
     }
   }
 }
