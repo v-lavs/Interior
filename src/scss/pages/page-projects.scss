@@ -1,4 +1,4 @@
-.projects{
+.projects {
   .project-block_margin {
     margin-bottom: 64px;
   }
@@ -13,6 +13,7 @@
       width: 33.33%;
 
     }
+
     &__img-wrap {
       order: 0;
     }
@@ -23,6 +24,43 @@
       line-height: 1.157;
       color: #000000;
       margin-top: 14px;
+    }
+  }
+}
+
+@include respond-to($lg) {
+  .projects {
+    .project-masonry-block__card {
+      width: 50%;
+    }
+  }
+}
+
+@include respond-to($sm) {
+  .projects {
+    .project-block_margin {
+      margin-bottom: 85px;
+    }
+
+    .project-masonry-block{
+      &__card {
+      width: 100%;
+      min-height: 38px;
+    }
+      &__img-wrap {
+        position: relative;
+        padding-top: 95%;
+      }
+      &__img {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+      }
     }
   }
 }

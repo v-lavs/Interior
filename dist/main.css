@@ -1845,6 +1845,10 @@ body.modal-open {
     margin-right: 0;
   }
 
+  .projects .project-masonry-block__card {
+    width: 50%;
+  }
+
   .project-masonry-block__inner {
     margin: 0 -26px;
   }
@@ -1974,6 +1978,31 @@ body.modal-open {
   .container {
     max-width: 460px;
     padding: 0 30px;
+  }
+
+  .projects .project-block_margin {
+    margin-bottom: 85px;
+  }
+
+  .projects .project-masonry-block__card {
+    width: 100%;
+    min-height: 38px;
+  }
+
+  .projects .project-masonry-block__img-wrap {
+    position: relative;
+    padding-top: 95%;
+  }
+
+  .projects .project-masonry-block__img {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
   }
 
   .project-block_margin {
