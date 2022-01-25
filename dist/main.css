@@ -678,8 +678,22 @@ body.modal-open {
 }
 
 .gallery__item {
+  position: relative;
   width: 50%;
   overflow: hidden;
+}
+
+.gallery__item:before {
+  position: absolute;
+  content: '';
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-image: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.3));
+  opacity: 0;
+  z-index: 1;
+  transition: opacity .5s;
 }
 
 .gallery__item .signature {
@@ -691,6 +705,13 @@ body.modal-open {
   z-index: 2;
   opacity: 0;
   transition: opacity .5s;
+  text-align: left;
+  width: 80%;
+}
+
+.gallery__item:hover:before,
+.gallery__item:focus:before {
+  opacity: 1;
 }
 
 .gallery__item:hover .gallery__img,
@@ -1842,6 +1863,10 @@ body.modal-open {
     padding-right: 35px;
   }
 
+  .category-nav__item {
+    margin: 0 30px 30px;
+  }
+
   .testimonials__slide {
     width: 450px;
     padding-left: 110px;
@@ -1948,6 +1973,11 @@ body.modal-open {
     font-size: 48px;
   }
 
+  .category-nav {
+    margin-bottom: 0;
+    font-size: 16px;
+  }
+
   .section-contacts__heading {
     width: 35%;
   }
@@ -2015,6 +2045,14 @@ body.modal-open {
   .services-list .btn-service {
     margin-right: 90px;
     margin-bottom: 23px;
+  }
+
+  .section-gallery {
+    padding-bottom: 190px;
+  }
+
+  .category-nav {
+    display: none;
   }
 
   .section-contacts .container {
@@ -2256,6 +2294,18 @@ body.modal-open {
     clear: both;
   }
 
+  .gallery__item {
+    width: 100%;
+  }
+
+  .gallery__item_md {
+    width: 60%;
+  }
+
+  .gallery__item_sm {
+    width: 40%;
+  }
+
   .members-team .section__title-big {
     letter-spacing: 0.22em;
   }
@@ -2485,6 +2535,10 @@ body.modal-open {
     clear: both;
   }
 
+  .btn {
+    padding: 12px 10px 13px;
+  }
+
   .swiper-horizontal > .swiper-pagination-bullets,
   .swiper-pagination-bullets.swiper-pagination-horizontal {
     bottom: 25px;
@@ -2506,8 +2560,37 @@ body.modal-open {
     font-size: 40px;
   }
 
+  .section-gallery {
+    padding-bottom: 107px;
+  }
+
+  .section-gallery .section__title-big {
+    margin-bottom: 30px;
+  }
+
+  .gallery {
+    margin-bottom: 30px;
+  }
+
+  .gallery__item {
+    width: 50%;
+  }
+
+  .gallery__item .signature {
+    bottom: 25px;
+    left: 25px;
+  }
+
+  .gallery__img-wrap {
+    padding-top: 129%;
+  }
+
   .section-testimonials {
     padding-bottom: 104px;
+  }
+
+  .section-testimonials .section__title-big {
+    margin-bottom: 30px;
   }
 
   .testimonials__slide-link {
@@ -2803,6 +2886,10 @@ body.modal-open {
 
   .category-filter {
     margin-bottom: 45px;
+  }
+
+  .gallery__item .signature {
+    font-size: 14px;
   }
 
   .section-testimonials .container {

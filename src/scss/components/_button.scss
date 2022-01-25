@@ -33,4 +33,10 @@
   background-size: 30px;
 }
 
+@include respond-to($sm){
+  .btn{
+    padding: 12px 10px 13px;
+  }
+}
+
 
