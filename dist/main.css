@@ -1232,6 +1232,7 @@ body.modal-open {
 
 .section-blog .part_right {
   width: 52.5%;
+  min-width: 630px;
 }
 
 .latest-posts {
@@ -1241,12 +1242,31 @@ body.modal-open {
 }
 
 .latest-post {
+  position: relative;
   display: flex;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   min-height: 387px;
   padding: 34px 8px 34px 32px;
+}
+
+.latest-post:before {
+  position: absolute;
+  content: '';
+  display: block;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 0;
+  z-index: 1;
+  background-color: rgba(0, 0, 0, 0.5);
+  transition: .8s;
+}
+
+.latest-post:hover:before,
+.latest-post:focus:before {
+  height: 100%;
 }
 
 .latest-post__link {
@@ -1256,6 +1276,17 @@ body.modal-open {
 
 .latest-post__content {
   margin-top: auto;
+}
+
+.latest-post__title,
+.latest-post__date {
+  position: relative;
+  z-index: 2;
+}
+
+.latest-post__title {
+  font-size: 21px;
+  font-weight: 500;
 }
 
 .latest-posts__blog-link {
@@ -1270,6 +1301,7 @@ body.modal-open {
   transition: .35s;
   margin-bottom: 32px;
   width: 100%;
+  height: auto;
 }
 
 .latest-posts__blog-link svg path {
@@ -1360,10 +1392,6 @@ body.modal-open {
   max-width: 1240px;
   margin: 0 auto;
   padding: 0 20px;
-}
-
-.container {
-  background: rosybrown;
 }
 
 .header {
@@ -1973,6 +2001,30 @@ body.modal-open {
     display: none;
   }
 
+  .section-blog .part_right {
+    min-width: 360px;
+  }
+
+  .latest-posts {
+    margin: 0 -20px;
+  }
+
+  .latest-posts__blog-link {
+    width: 103px;
+  }
+
+  .latest-post {
+    min-height: 278px;
+  }
+
+  .latest-post__title {
+    font-size: 16px;
+  }
+
+  .latest-post__link {
+    padding: 0 20px;
+  }
+
   .section-latest-posts .section__title-big {
     font-size: 75px;
   }
@@ -2300,6 +2352,33 @@ body.modal-open {
     max-width: 230px;
     text-align: center;
     margin-bottom: 14px;
+  }
+
+  .latest-post__link:last-child {
+    display: none;
+  }
+
+  .section-blog .part_right {
+    width: 50%;
+    min-width: 0;
+  }
+
+  .latest-posts {
+    margin: 0;
+  }
+
+  .latest-posts__blog-link span {
+    font-size: 14px;
+    text-transform: uppercase;
+  }
+
+  .latest-post {
+    padding: 38px 19px;
+  }
+
+  .latest-post__link {
+    padding: 0;
+    width: 100%;
   }
 
   .section-latest-posts {
