@@ -1,5 +1,7 @@
 .services {
   padding-bottom: 280px;
+  overflow: hidden;
+
   .section__title-big {
     letter-spacing: 0.26em;
     margin-bottom: 100px;
@@ -14,6 +16,7 @@
   flex-wrap: wrap;
   justify-content: space-between;
   padding-bottom: 30px;
+
   &__btn {
     position: relative;
     background-color: transparent;
@@ -23,137 +26,280 @@
     text-align: left;
     line-height: 1.17;
     margin-bottom: 100px;
+
+    font-weight: 500;
+    font-size: 45px;
+    font-family: $main-font;
+
     transition: .5s;
-    &:before{
+
+    &:before {
       position: absolute;
       content: '';
       display: block;
-      width: 137px;
-      height: 146px;
+      width: 3.044em;
+      height: 3.24em;
       background-image: url(../assets/img/plus.svg);
       background-size: contain;
       background-repeat: no-repeat;
       background-position: center;
-      top: -95px;
-      left: -95px;
+      top: -2.11em;
+      left: -2.11em;
       opacity: 0;
       transition: .5s;
     }
+
     &:hover,
-    &:focus{
-      .text_md{
+    &:focus {
+      .text_md {
         color: #ffc200;
+
       }
-      &:before{
+
+      &:before {
         opacity: 1;
       }
     }
 
   }
 
-  .text_md {
-    font-weight: 500;
-    font-size: 45px;
-    display: block;
-  }
-
   .text_small {
+    display: block;
     font-weight: 400;
     font-size: 16px;
   }
 }
-.wrap-realization{
+
+.wrap-realization {
   padding-bottom: 75px;
 }
-.slider-realization{
+
+.slider-realization {
   margin: 0 -44px;
   overflow: visible;
+
+  .swiper-pagination {
+    display: none;
+  }
 }
-.realization{
+
+.realization {
   position: relative;
   display: flex;
   justify-content: space-between;
   counter-reset: list;
-  &:before{
+
+  &:before {
     position: absolute;
     content: '';
     display: block;
     width: 100vw;
     height: 1px;
     left: 50%;
-    transform: translateX( -50%);
+    transform: translateX(-50%);
     bottom: 0;
     background-color: #ffc200;
 
   }
-  &__step{
-    position: relative;
+
+  &__step {
+    display: flex;
+    justify-content: center;
     padding: 25px 0;
     width: 17%;
     text-align: center;
-    &:hover,
-    &:focus{
-      &:before{
-        opacity: 1;
-      }
-    }
-    &:before{
-      counter-increment: list;
-      content: counter(list) " ";
-      position: absolute;
-      font-size: 154px;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%,-50%);
-      color: #ffffff;
-      z-index: -1;
-      opacity: 0;
-      transition: .5s;
-    }
-    &:after{
-      position: absolute;
-      content: '';
-      display: block;
-      width: 3px;
-      height: 13px;
-      background-color: #ffc200;
-      bottom: 0;
-      left: 50%;
-      transform: translateX(-50%);
-    }
+    flex-shrink: 1;
+    min-height: 84px;
 
-    &:nth-child(odd){
-      transform: translateY(100%);
-      &:after{
+    .title {
+      position: relative;
+      display: inline-block;
+      font-weight: 400;
+      font-size: 19px;
+      line-height: .9;
+      color: #6c6c6c;
+
+      &:after {
         position: absolute;
         content: '';
         display: block;
         width: 3px;
         height: 13px;
         background-color: #ffc200;
+
         left: 50%;
         transform: translateX(-50%);
-        top: 0;
       }
     }
-  }
-}
-@include respond-to($xxl) {
 
+    &:nth-child(odd) {
+      align-items: flex-end;
+
+      .title:after {
+        bottom: -25px;
+      }
+    }
+
+    &:nth-child(even) {
+      transform: translateY(100%);
+      align-items: flex-start;
+
+      .title:after {
+        top: -25px;
+      }
+    }
+
+    &:hover,
+    &:focus {
+      &:before {
+        opacity: 1;
+      }
+    }
+
+    &:before {
+      counter-increment: list;
+      content: counter(list) " ";
+      position: absolute;
+      font-size: 154px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: #ffffff;
+      z-index: -1;
+      opacity: 0;
+      transition: .5s;
+    }
+  }
+
+  .text_mob {
+    display: none;
+    font-size: 16px;
+    line-height: 22px;
+    text-align: center;
+    color: #000000;
+  }
 }
 
 @include respond-to($xl) {
-
+  .services {
+    padding-bottom: 200px;
+  }
 }
 
 @include respond-to($lg) {
+  .services-block__btn {
+    font-size: 33px;
+  }
+  .slider-realization {
+    margin: 0;
+  }
+}
 
+@include respond-to($md) {
+  .services {
+    padding-bottom: 120px;
+  }
+  .services-block {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .services-block__btn {
+    width: 100%;
+    margin: 0 auto 50px;
+    text-align: center;
+    display: block;
+
+    &:before {
+      display: none;
+    }
+
+    .text_md {
+      color: #ffc200;
+      margin-bottom: 13px;
+    }
+  }
+  .slider-realization {
+    overflow: hidden;
+  }
+
+  .realization__step {
+    flex-shrink: 0;
+    flex-direction: column;
+
+    &:nth-child(n) {
+      align-items: center;
+      padding: 17px 0;
+      transform: translateY(0);
+
+      &:before {
+        font-size: 124px;
+        opacity: 1;
+        top: 0;
+        transform: translate(-50%, -13px);
+      }
+
+      .title:after {
+        bottom: 0;
+        top: auto;
+      }
+    }
+
+    .title {
+      position: relative;
+      display: flex;
+      align-items: flex-end;
+      min-height: 90px;
+      font-weight: 500;
+      font-size: 33px;
+      padding-bottom: 30px;
+      color: #000000;
+
+      &:before {
+        position: absolute;
+        content: '';
+        display: block;
+        width: 100vw;
+        height: 1px;
+        background-color: #ffc200;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+    }
+  }
+  .realization {
+    &:before {
+      display: none;
+    }
+
+    .text_mob {
+      display: block;
+      padding-top: 12px;
+    }
+  }
+  .slider-realization {
+    padding-bottom: 30px;
+
+    .swiper-pagination {
+      display: block;
+      bottom: 0;
+    }
+  }
 }
 
 @include respond-to($sm) {
-
+  .slider-realization {
+    .swiper-pagination {
+      bottom: 0;
+    }
+  }
 }
 
 @include respond-to($xs) {
-
+  .services {
+    .section__title-big {
+      margin-bottom: 35px;
+    }
+  }
 }
