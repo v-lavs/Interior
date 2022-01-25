@@ -5,7 +5,8 @@
 .slider-solutions {
   max-width: 1628px;
   width: 90%;
-  &__thumb{
+
+  &__thumb {
     position: absolute;
     left: 0;
     top: 0;
@@ -16,42 +17,48 @@
     object-fit: cover;
     z-index: 1;
   }
-  &__link{
+
+  &__link {
     display: block;
     font-size: 18px;
     color: #818181;
     margin-top: auto;
     width: 70%;
   }
-  &__title{
+
+  &__title {
     font-size: 25px;
     font-weight: 400;
     color: #000000;
   }
-  .part_left{
+
+  .part_left {
     position: relative;
     width: 54%;
     padding-top: 35.32%;
     max-width: 879px;
   }
-  .part_right{
+
+  .part_right {
     position: relative;
     flex-direction: column;
     display: flex;
 
     font-size: 25px;
-    line-height: 29px;
+    line-height: 1.16;
     color: #000000;
     width: 46%;
     padding-left: 135px;
     padding-bottom: 32px;
   }
-  .swiper-pagination{
+
+  .swiper-pagination {
     bottom: 0;
     text-align: left;
     padding-left: 135px;
   }
-  .navigation-block{
+
+  .navigation-block {
     position: absolute;
     bottom: 32px;
     right: 0;
@@ -61,27 +68,75 @@
   }
 }
 
-.slider-project{
-  &__slide{
+.slider-project {
+  &__slide {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 0 0;
-      padding-top: 53.75%;
+    padding-top: 53.75%;
   }
 }
 
-@media only screen and (max-width: 1661px) {
-
-}
-
 @include respond-to($xl) {
-
+  .slider-solutions {
+    .part_right {
+      padding-left: 80px;
+    }
+  }
 }
 
 @include respond-to($lg) {
+  .our-solutions {
+    padding-bottom: 120px;
 
+    .d-flex {
+      flex-wrap: wrap;
+    }
+  }
+  .slider-solutions {
+
+    .part_left {
+      width: 100%;
+      padding-top: 65.23%;
+    }
+
+    .part_right {
+      width: 100%;
+      padding: 30px 30px 0;
+    }
+  }
+  .wrap-slider-projects {
+    display: none;
+  }
+  .slider-solutions {
+    .swiper-pagination {
+      text-align: right;
+      padding-left: 0;
+    }
+
+    .navigation-block {
+      display: none;
+    }
+  }
+}
+
+@include respond-to($md) {
+  .slider-solutions {
+    width: 100%;
+  }
 }
 
 @include respond-to($sm) {
-
+  .our-solutions {
+    padding-bottom: 70px;
+    .swiper-pagination-bullets{
+      bottom: 10px;
+    }
+  }
+  .slider-solutions__title {
+    font-size: 19px;
+  }
+  .slider-solutions__link{
+    font-size: 15px;
+  }
 }

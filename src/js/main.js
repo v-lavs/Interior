@@ -129,8 +129,12 @@ $(document).ready(function () {
     if ($('.slider-solutions').length > 0) {
         const sliderSolution = new Swiper(".slider-solutions", {
             slidesPerView: 1,
+            spaceBetween: 15,
+            speed: 2000,
             pagination: {
                 el: ".swiper-pagination",
+                clickable: true,
+                dynamicBullets: true,
             },
             navigation: {
                 nextEl: ".swiper-button-next",
@@ -162,54 +166,44 @@ $(document).ready(function () {
         }
     }
 
-    if(($(window).outerWidth() <= 768) ) {
+    if (($(window).outerWidth() <= 768)) {
         sliderRealization = new Swiper(".slider-realization", {
             slidesPerView: 1,
-            spaceBetween:20,
+            spaceBetween: 20,
             pagination: {
                 el: ".swiper-pagination",
-                clickable:true,
+                clickable: true,
             },
             breakpoints: {
-                640:{
+                640: {
                     slidesPerView: 2,
                 }
             }
         });
-    }
-    else {
+    } else {
         destroySwiper(sliderRealization);
     }
 
-    // const video = document.querySelector('.slider-solutions__thumb');
-    //
-    //   if (video) {
-    //       const partnerSectionAnim = new Waypoint({
-    //           element: video,
-    //           handler: function (direction) {
-    //               this.element.play();
-    //           },
-    //           offset: '50%'
-    //       });
-    //   }
-
 
     //  SLIDER PROJECTS
-    if ($('.slider-project').length > 0) {
-        const sliderProject = new Swiper("#sliderProject", {
+    let sliderProject;
+    if (($(window).outerWidth() > 991) && ($('.slider-project').length > 0)) {
+        sliderProject = new Swiper("#sliderProject", {
             allowTouchMove: false,
-            spaceBetween:20,
+            spaceBetween: 15,
             autoplay: {
                 delay: 2000,
             },
             loop: true,
             speed: 2000,
         });
+    } else {
+        destroySwiper(sliderProject);
     }
 
-    //  SINGLE PROJECT
 
-    // project-masonry-block
+//  SINGLE PROJECT
+// project-masonry-block
     $('.project-masonry-block__inner').each(function (index, element) {
         let msnry = new Masonry(element, {
             itemSelector: '.project-masonry-block__card',
@@ -218,7 +212,7 @@ $(document).ready(function () {
     });
 
 
-    //SLIDER TESTIMONIALS
+//SLIDER TESTIMONIALS
     if ($('.testimonials').length > 0) {
         const sliderTestimonials = new Swiper(".testimonials", {
             slidesPerView: 1,
@@ -230,17 +224,17 @@ $(document).ready(function () {
                 clickable: true,
             },
             breakpoints: {
-                480:{
+                480: {
                     slidesPerView: 'auto',
                 },
-                991:{
+                991: {
                     spaceBetween: 80,
                 }
             },
         });
     }
 
-    //STICKY BTN
+//STICKY BTN
     const stickyEl = document.getElementById('triggerBtnSticky');
 
     if (stickyEl) {
@@ -257,7 +251,7 @@ $(document).ready(function () {
         });
     }
 
-    //HIDE TEXT
+//HIDE TEXT
 
     $(' .open-up').on('click', function (e) {
         e.preventDefault();
@@ -266,7 +260,7 @@ $(document).ready(function () {
     });
 
 
-    // HOVER BLOCK
+// HOVER BLOCK
     if (document.getElementById('sliderMembers')) {
         const $memberItems = $('#membersTeams .members-team__item');
 
@@ -289,27 +283,41 @@ $(document).ready(function () {
         });
     }
 
-    //   CATEGORY NAV
-    if (($(window).outerWidth() <= 1200) & ($('.category-filter').length > 0)) {
-        $('.category-filter__current').click(function (e) {
-            $(this).parents('.category-filter').toggleClass('opened');
-            $('.category-filter__list-wrap').slideToggle(700);
-        });
+//   CATEGORY NAV
+    function onFileterClick(e) {
+        $(this).parents('.category-filter').toggleClass('opened');
+        $('.category-filter__list-wrap').slideToggle(700);
+    }
 
-        $('.category-filter__link').click(function (e) {
-            $('.category-filter__link').removeClass('active');
-            const activeText = $(this).text();
-            $(this).addClass('active');
+    function onFilterLinkClick(e) {
+        console.log(123)
+        $('.category-filter__link').removeClass('active');
+        const activeText = $(this).text();
+        $(this).addClass('active');
 
-            $('.category-filter__current').text(activeText);
+        $('.category-filter__current').text(activeText);
 
-            $(this).parents('.category-filter').removeClass('opened');
-            $('.category-filter__list-wrap').slideToggle(700);
-        });
+        $(this).parents('.category-filter').removeClass('opened');
+        $('.category-filter__list-wrap').slideUp(700);
     }
 
 
-    //ANIMATIOON
+    function initCatFilter() {
+        if (($(window).outerWidth() <= 1200) && ($('.category-filter').length > 0)) {
+            $(".category-filter__current").bind("click", onFileterClick);
+            $(".category-filter__link").bind("click", onFilterLinkClick);
+        } else {
+            $(".category-filter__current").unbind("click", onFileterClick);
+            $(".category-filter__link").unbind("click", onFilterLinkClick);
+
+            $('.category-filter').removeClass('opened');
+            $('.category-filter__list-wrap').css({display: ''});
+        }
+    }
+
+    initCatFilter();
+
+//ANIMATIOON
 
     setTimeout(function () {
         var waypoints = $('.section_anim').waypoint(function (direction) {
@@ -319,7 +327,7 @@ $(document).ready(function () {
         });
     }, 300);
 
-    // COUNTER
+// COUNTER
     if ($('.achievements').length > 0) {
         $('.achievements').waypoint(function (direction) {
             jQuery(function ($) {
@@ -344,8 +352,13 @@ $(document).ready(function () {
         });
     }
 
+    $(window).on('resize', function () {
+        clearTimeout(window.resizedFinished);
+        window.resizedFinished = setTimeout(function () {
+            initCatFilter();
 
-    // $(window).resize(function(){
-    //     mySwiper.reInit() // or mySwiper.resizeFix()
-    // });
+            console.log('Resized finished.');
+        }, 250);
+    });
+
 });
