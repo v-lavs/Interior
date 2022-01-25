@@ -4,6 +4,7 @@
 
 .wrapper {
   width: 100%;
+  flex: 1 0 auto;
 }
 
 body {
@@ -11,6 +12,10 @@ body {
   color: #000000;
   font-feature-settings: 'pnum' on, 'lnum' on;
   background-color: #f3f3f3;
+
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
   &.modal-open {
     overflow: hidden;
     height: 100vh;

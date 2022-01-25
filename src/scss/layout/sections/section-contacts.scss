@@ -6,7 +6,7 @@
 
   .container {
     display: flex;
-    align-items:flex-end;
+    align-items: flex-end;
   }
 
   &__heading {
@@ -17,18 +17,63 @@
     font-weight: 500;
     font-size: 33px;
   }
+
+  .btn_main.btn-mob {
+    display: none;
+    background-color: transparent;
+  }
 }
 
 @include respond-to($xl) {
-
+  .section-contacts{
+    &__heading{
+      width: 35%;
+    }
+  &__title {
+      font-size: 27px;
+    }
+    .form-contacts {
+      width: 65%;
+    }
+  }
 }
 
 @include respond-to($lg) {
-
+  .section-contacts {
+    .container{
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .btn_main.btn-mob {
+      display: block;
+    }
+   &__heading {
+      width: 55%;
+     span{
+       color: #ffc200;
+     }
+    }
+    .form-contacts{
+      display: none;
+    }
+  }
 }
 
 @include respond-to($sm) {
-
+.section-contacts{
+  padding-top: 14px;
+  padding-bottom: 30px;
+  .container{
+    justify-content: center;
+  }
+  &__heading{
+    width: 100%;
+    max-width: 230px;
+    text-align: center;
+    margin-bottom: 14px;
+  }
+}
 }
 
 @media only screen and (max-width: 360px) {
