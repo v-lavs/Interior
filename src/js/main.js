@@ -290,7 +290,7 @@ $(document).ready(function () {
     }
 
     function onFilterLinkClick(e) {
-        console.log(123)
+
         $('.category-filter__link').removeClass('active');
         const activeText = $(this).text();
         $(this).addClass('active');
@@ -298,7 +298,7 @@ $(document).ready(function () {
         $('.category-filter__current').text(activeText);
 
         $(this).parents('.category-filter').removeClass('opened');
-        $('.category-filter__list-wrap').slideUp(700);
+        $('.category-filter__list-wrap').slideToggle(700);
     }
 
 

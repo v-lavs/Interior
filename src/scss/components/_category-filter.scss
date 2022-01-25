@@ -16,7 +16,6 @@
 
 .category-filter__item {
   padding: 10px 56px;
-  //margin: 0 22px;
   transition: .35s;
   &:hover,
   &:focus {
@@ -120,7 +119,7 @@
   .category-filter__list-wrap {
     display: none;
   }
-  .opened.category-filter__current, .opened.active {
+  .category-filter.opened > .category-filter__current, .opened.active {
     color: #FBD300;
   }
 }

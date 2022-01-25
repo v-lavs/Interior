@@ -1964,7 +1964,7 @@ body.modal-open {
     display: none;
   }
 
-  .opened.category-filter__current,
+  .category-filter.opened > .category-filter__current,
   .opened.active {
     color: #FBD300;
   }
