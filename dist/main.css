@@ -1298,13 +1298,13 @@ body.modal-open {
 
 .latest-posts__blog-link svg {
   display: inline-block;
-  transition: .35s;
   margin-bottom: 32px;
   width: 100%;
   height: auto;
 }
 
 .latest-posts__blog-link svg path {
+  transition: .5s;
   fill: #ffffff;
 }
 

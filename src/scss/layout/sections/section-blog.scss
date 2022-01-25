@@ -61,6 +61,7 @@
   &__content {
     margin-top: auto;
   }
+
   &__title,
   &__date {
     position: relative;
@@ -78,15 +79,15 @@
   max-width: 153px;
   width: 90%;
   transition: .5s;
-
   svg {
     display: inline-block;
-    transition: .35s;
+
     margin-bottom: 32px;
     width: 100%;
     height: auto;
 
     path {
+      transition: .5s;
       fill: #ffffff;
     }
   }
