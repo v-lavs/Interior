@@ -713,6 +713,7 @@ body.modal-open {
 
 .section-testimonials {
   padding-bottom: 190px;
+  overflow: hidden;
 }
 
 .section-testimonials .wrap-pagination {
@@ -1529,6 +1530,7 @@ body.modal-open {
 
 .footer {
   flex: 0 0 auto;
+  overflow: hidden;
 }
 
 .footer .contacts {
