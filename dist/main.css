@@ -177,7 +177,7 @@ body.modal-open {
   font-size: 16px;
   font-weight: 300;
   line-height: 1.8;
-  margin-bottom: 2em;
+  margin-bottom: 2.2em;
 }
 
 .dynamic-content p:last-of-type {
@@ -193,14 +193,17 @@ body.modal-open {
 .dynamic-content h3 {
   font-weight: 500;
   font-size: 45px;
-  line-height: 1.33;
   margin-bottom: 40px;
+  margin-top: 40px;
+  line-height: 1.5;
 }
 
 .dynamic-content h4 {
   font-weight: 600;
   font-size: 20px;
   margin-bottom: 20px;
+  margin-top: 40px;
+  line-height: 1.5;
 }
 
 .dynamic-content img {
@@ -210,17 +213,17 @@ body.modal-open {
 
 .dynamic-content img.alignleft {
   float: left;
-  margin: 10px 73px 117px 0;
+  margin: 117px 73px 117px 0;
 }
 
 .dynamic-content img.alignright {
   float: right;
-  margin: 473px 0 117px 117px;
+  margin: 73px 0 117px 117px;
 }
 
 .dynamic-content img.aligncenter {
   display: block;
-  margin: 0 auto 117px;
+  margin: 117px auto 117px;
   clear: both;
 }
 
@@ -511,7 +514,6 @@ body.modal-open {
   font-weight: 600;
   font-size: 20px;
   color: #000000;
-  font-family: "Raleway", sans-serif;
 }
 
 .category-filter {
@@ -583,7 +585,7 @@ body.modal-open {
 }
 
 .banner-slider .swiper-slide-active .banner-slider__img {
-  animation: zoom 20s;
+  animation: zoom 30s;
 }
 
 .banner-slider__img {
@@ -648,11 +650,11 @@ body.modal-open {
 .gallery__img-wrap {
   position: relative;
   width: 100%;
-  padding-top: 50.6%;
+  padding-top: 50.65%;
 }
 
 .gallery__img-wrap_md {
-  padding-top: 84.25%;
+  padding-top: 84.3%;
 }
 
 .gallery__img-wrap_sm {
@@ -668,7 +670,7 @@ body.modal-open {
   height: 100%;
   width: 100%;
   object-fit: cover;
-  transition: transform .5s;
+  transition: transform 2.5s;
 }
 
 .gallery__item {
@@ -800,7 +802,7 @@ body.modal-open {
   font-weight: 500;
   font-size: 45px;
   color: #000000;
-  line-height: 1.5;
+  line-height: 1.33;
   padding-top: 32px;
 }
 
@@ -1309,7 +1311,7 @@ body.modal-open {
 
 .section-latest-posts .latest-posts__item:hover .latest-posts__thumb,
 .section-latest-posts .latest-posts__item:focus .latest-posts__thumb {
-  transform: scale(1.2);
+  transform: scale(1.1);
 }
 
 .section-latest-posts .latest-posts__link {
@@ -1329,7 +1331,7 @@ body.modal-open {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 0;
-  transition: .5s;
+  transition: 1.5s;
   z-index: 0;
 }
 
@@ -1569,8 +1571,23 @@ body.modal-open {
   width: 33.33%;
 }
 
+.projects .project-masonry-block__card:hover .project-masonry-block__img,
+.projects .project-masonry-block__card:focus .project-masonry-block__img {
+  transform: scale(1.05);
+}
+
+.projects .project-masonry-block__card.break:hover .project-masonry-block__img,
+.projects .project-masonry-block__card.break:focus .project-masonry-block__img {
+  transform: none;
+}
+
 .projects .project-masonry-block__img-wrap {
   order: 0;
+  overflow: hidden;
+}
+
+.projects .project-masonry-block__img {
+  transition: 2.5s;
 }
 
 .projects .project-masonry-block__title h3 {
@@ -1719,6 +1736,11 @@ body.modal-open {
   color: #FFFFFF;
 }
 
+.single-article .article {
+  color: #000000;
+  padding-bottom: 167px;
+}
+
 .section-intro {
   display: flex;
   align-items: center;
@@ -1729,11 +1751,6 @@ body.modal-open {
   background-size: cover;
   background-position: center;
   margin-bottom: 107px;
-}
-
-.article {
-  color: #000000;
-  padding-bottom: 167px;
 }
 
 @media only screen and (max-width: 1440px) {
@@ -2028,9 +2045,39 @@ body.modal-open {
   .blog-list .card-post__wrap-thumb {
     min-height: 360px;
   }
+
+  .single-article .section-intro {
+    min-height: 380px;
+  }
 }
 
 @media only screen and (max-width: 768px) {
+  .dynamic-content h1,
+  .dynamic-content h2 {
+    font-size: 68px;
+  }
+
+  .dynamic-content img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .dynamic-content img.alignleft {
+    float: left;
+    margin: 63px 73px 63px 0;
+  }
+
+  .dynamic-content img.alignright {
+    float: right;
+    margin: 73px 0 63px 63px;
+  }
+
+  .dynamic-content img.aligncenter {
+    display: block;
+    margin: 63px auto 63px;
+    clear: both;
+  }
+
   .members-team .section__title-big {
     letter-spacing: 0.22em;
   }
@@ -2089,6 +2136,14 @@ body.modal-open {
     flex-shrink: 0;
     font-size: 16px;
   }
+
+  .single-article .page__title {
+    font-size: 68px;
+  }
+
+  .single-article .article {
+    padding-bottom: 125px;
+  }
 }
 
 @media only screen and (max-width: 640px) {
@@ -2116,6 +2171,42 @@ body.modal-open {
   .section__title-big {
     font-size: 70px;
     letter-spacing: 0.06em;
+  }
+
+  .dynamic-content p {
+    margin-bottom: 20px;
+  }
+
+  .dynamic-content hi,
+  .dynamic-content h2 {
+    font-size: 50px;
+  }
+
+  .dynamic-content h3 {
+    font-size: 30px;
+    margin-top: 0;
+  }
+
+  .dynamic-content h4 {
+    font-size: 20px;
+    margin-top: 0;
+  }
+
+  .dynamic-content img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .dynamic-content img.alignright,
+  .dynamic-content img.alignleft {
+    float: none;
+    margin: 43px 0;
+  }
+
+  .dynamic-content img.aligncenter {
+    display: block;
+    margin: 43px auto 43px;
+    clear: both;
   }
 
   .swiper-horizontal > .swiper-pagination-bullets,
@@ -2266,6 +2357,14 @@ body.modal-open {
   .blog-list .card-post__wrap-thumb {
     min-height: 382px;
   }
+
+  .single-article .section-intro {
+    margin-bottom: 70px;
+  }
+
+  .single-article .page__title {
+    font-size: 50px;
+  }
 }
 
 @media only screen and (max-width: 480px) {
@@ -2283,6 +2382,18 @@ body.modal-open {
   .section__title-big {
     font-size: 50px;
     letter-spacing: 0.06em;
+  }
+
+  .dynamic-content hi,
+  .dynamic-content h2 {
+    font-size: 40px;
+  }
+
+  .dynamic-content h3,
+  .dynamic-content h4 {
+    font-size: 20px;
+    margin-top: 0;
+    margin-bottom: 12px;
   }
 
   .services-list .btn-service {
@@ -2325,6 +2436,16 @@ body.modal-open {
 
   .single-project .description {
     margin-bottom: 50px;
+  }
+
+  .single-article .section-intro {
+    min-height: 630px;
+    align-items: flex-end;
+    margin-bottom: 40px;
+  }
+
+  .single-article .page__title {
+    font-size: 40px;
   }
 }
 

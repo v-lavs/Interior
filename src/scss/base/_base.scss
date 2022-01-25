@@ -66,7 +66,7 @@ body {
     font-size: 16px;
     font-weight: 300;
     line-height: 1.8;
-    margin-bottom: 2em;
+    margin-bottom: 2.2em;
 
     &:last-of-type {
       margin-bottom: 0;
@@ -79,13 +79,16 @@ body {
   h3{
     font-weight: 500;
     font-size: 45px;
-    line-height: 1.33;
     margin-bottom: 40px;
+    margin-top: 40px;
+    line-height: 1.5;
   }
   h4{
     font-weight: 600;
     font-size: 20px;
     margin-bottom: 20px;
+    margin-top: 40px;
+    line-height: 1.5;
   }
 
   img {
@@ -93,15 +96,15 @@ body {
     height: auto;
     &.alignleft {
       float: left;
-      margin: 10px 73px 117px 0;
+      margin: 117px 73px 117px 0;
     }
     &.alignright {
       float: right;
-      margin: 473px 0 117px 117px;
+      margin: 73px 0 117px 117px;
     }
     &.aligncenter {
       display: block;
-      margin: 0 auto 117px;
+      margin: 117px auto 117px;
       clear: both;
     }
   }
@@ -226,7 +229,30 @@ body {
   }
 }
 
-
+@include respond-to($md){
+  .dynamic-content{
+    h1,h2{
+      font-size: 68px;
+    }
+    img {
+      max-width: 100%;
+      height: auto;
+      &.alignleft {
+        float: left;
+        margin: 63px 73px 63px 0;
+      }
+      &.alignright {
+        float: right;
+        margin: 73px 0 63px 63px;
+      }
+      &.aligncenter {
+        display: block;
+        margin: 63px auto 63px;
+        clear: both;
+      }
+    }
+  }
+}
 
 @include respond-to($sm) {
   .section__title {
@@ -239,12 +265,54 @@ body {
     font-size: 70px;
     letter-spacing: 0.06em;
   }
+  .dynamic-content{
+    p{
+      margin-bottom: 20px;
+    }
+    hi,h2{
+      font-size: 50px;
+    }
+    h3{
+      font-size: 30px;
+      margin-top: 0;
+    }
+    h4{
+      font-size: 20px;
+      margin-top: 0;
+    }
+    img {
+      max-width: 100%;
+      height: auto;
+      &.alignright,
+      &.alignleft {
+        float: none;
+        margin:  43px 0;
+      }
+      &.aligncenter {
+        display: block;
+        margin: 43px auto 43px;
+        clear: both;
+      }
+    }
+  }
+
 }
 
 @include respond-to($xs) {
   .section__title-big{
     font-size: 50px;
     letter-spacing: 0.06em;
+  }
+  .dynamic-content{
+
+    hi,h2{
+      font-size: 40px;
+    }
+    h3, h4{
+      font-size: 20px;
+      margin-top: 0;
+      margin-bottom: 12px;
+    }
   }
 }
 
@@ -253,4 +321,5 @@ body {
     font-size: 43px;
     padding: 0 15px;
   }
+
 }

@@ -5,6 +5,10 @@
     line-height: 1.17;
     color: #FFFFFF;
   }
+  .article {
+    color: #000000;
+    padding-bottom: 167px;
+  }
 }
 
 .section-intro {
@@ -19,7 +23,45 @@
   margin-bottom: 107px;
 }
 
-.article {
-  color: #000000;
-  padding-bottom: 167px;
+@include respond-to($lg){
+  .single-article{
+.section-intro{
+  min-height: 380px;
+}
+  }
+}
+
+@include respond-to($md){
+  .single-article{
+    .page__title{
+      font-size: 68px;
+    }
+    .article{
+      padding-bottom: 125px;
+    }
+  }
+}
+
+@include respond-to($sm){
+  .single-article{
+   .section-intro{
+     margin-bottom: 70px;
+   }
+    .page__title{
+      font-size: 50px;
+    }
+  }
+}
+
+@include respond-to($xs){
+  .single-article{
+    .section-intro{
+      min-height: 630px;
+      align-items: flex-end;
+      margin-bottom: 40px;
+    }
+    .page__title{
+      font-size: 40px;
+    }
+  }
 }

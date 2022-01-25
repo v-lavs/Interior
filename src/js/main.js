@@ -115,7 +115,7 @@ $(document).ready(function () {
     if ($('.banner-slider').length > 0) {
         const homeBanner = new Swiper('.banner-slider', {
             loop: true,
-            speed: 2000,
+            speed: 3000,
             autoplay: {
                 delay: 4500,
             },

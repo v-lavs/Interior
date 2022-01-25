@@ -7,6 +7,7 @@
 
   .projects-list {
     padding-bottom: 102px;
+
   }
 
   .project-block_margin {
@@ -22,10 +23,30 @@
       padding: 0 58px;
       width: 33.33%;
 
+      &:hover,
+      &:focus {
+        .project-masonry-block__img {
+          transform: scale(1.05);
+        }
+      }
+    }
+
+    &__card.break {
+      &:hover,
+      &:focus {
+        .project-masonry-block__img {
+          transform: none;
+        }
+      }
     }
 
     &__img-wrap {
       order: 0;
+      overflow: hidden;
+    }
+
+    &__img {
+      transition: 2.5s;
     }
 
     &__title h3 {
