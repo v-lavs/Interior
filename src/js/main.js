@@ -222,7 +222,7 @@ $(document).ready(function () {
     if ($('.testimonials').length > 0) {
         const sliderTestimonials = new Swiper(".testimonials", {
             slidesPerView: 1,
-            spaceBetween: 80,
+            spaceBetween: 30,
             slidesOffsetAfter: 80,
             speed: 1500,
             pagination: {
@@ -230,9 +230,12 @@ $(document).ready(function () {
                 clickable: true,
             },
             breakpoints: {
-                581: {
+                480:{
                     slidesPerView: 'auto',
                 },
+                991:{
+                    spaceBetween: 80,
+                }
             },
         });
     }

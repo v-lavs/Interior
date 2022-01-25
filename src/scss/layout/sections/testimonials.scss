@@ -1,5 +1,6 @@
 .section-testimonials {
   padding-bottom: 190px;
+
   .wrap-pagination {
     position: relative;
     padding-top: 8px;
@@ -29,7 +30,8 @@
     background-color: #ffffff;
     color: #a5a5a5;
     line-height: 1.5;
-    &:before{
+
+    &:before {
       position: absolute;
       left: 29px;
       top: 29px;
@@ -70,5 +72,51 @@
     color: #000000;
     margin-bottom: 18px;
     line-height: .9;
+  }
+}
+
+@include respond-to($xxl) {
+  .testimonials__slide {
+    width: 450px;
+    padding-left: 110px;
+  }
+}
+
+@include respond-to($sm) {
+  .section-testimonials{
+    padding-bottom: 104px;
+  }
+  .testimonials {
+    &__slide-link{
+      margin-top: 0;
+      padding-top: 44px;
+      padding-bottom: 0;
+    }
+    &__slide {
+      width: 350px;
+      padding: 32px 30px 16px;
+      text-align: center;
+      font-size: 15px;
+
+      &:before {
+        display: none;
+      }
+    }
+
+    &__title {
+      font-size: 33px;
+      margin-bottom: 30px;
+    }
+  }
+}
+
+@include respond-to($xs) {
+  .section-testimonials {
+    .container {
+      padding: 0;
+    }
+    .testimonials__slide{
+      width: 100%;
+    }
   }
 }
