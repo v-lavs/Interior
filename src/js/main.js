@@ -134,7 +134,7 @@ $(document).ready(function () {
             pagination: {
                 el: ".swiper-pagination",
                 clickable: true,
-                dynamicBullets: true,
+                // dynamicBullets: true,
             },
             navigation: {
                 nextEl: ".swiper-button-next",
@@ -283,7 +283,7 @@ $(document).ready(function () {
         });
     }
 
-//   CATEGORY NAV
+//   CATEGORY FILTER
     function onFileterClick(e) {
         $(this).parents('.category-filter').toggleClass('opened');
         $('.category-filter__list-wrap').slideToggle(700);
@@ -300,7 +300,6 @@ $(document).ready(function () {
         $(this).parents('.category-filter').removeClass('opened');
         $('.category-filter__list-wrap').slideToggle(700);
     }
-
 
     function initCatFilter() {
         if (($(window).outerWidth() <= 1200) && ($('.category-filter').length > 0)) {
