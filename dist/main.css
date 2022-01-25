@@ -1419,7 +1419,7 @@ body.modal-open {
 }
 
 .container {
-  background: rosybrown;
+  background: wheat;
 }
 
 .header {
@@ -2045,6 +2045,35 @@ body.modal-open {
 
   .slider-realization {
     margin: 0;
+  }
+
+  .we-in-world {
+    padding-bottom: 190px;
+  }
+
+  .partners {
+    flex-wrap: wrap;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .partners__item {
+    width: 30%;
+    margin-bottom: 56px;
+    padding: 0;
+  }
+
+  .partners__item img {
+    display: block;
+    margin: 0 auto;
+  }
+
+  .partners__item:nth-child(4) {
+    order: 3;
+  }
+
+  .partners__item:nth-child(5) {
+    order: -1;
   }
 
   .section-blog .part_right {
@@ -2786,6 +2815,14 @@ body.modal-open {
 
   .services .section__title-big {
     margin-bottom: 35px;
+  }
+
+  .we-in-world {
+    padding-bottom: 90px;
+  }
+
+  .partners__img {
+    height: 20px;
   }
 
   .container {
