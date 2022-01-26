@@ -113,10 +113,9 @@ $(document).ready(function () {
 
     //BG CHECK
 
-
     if ($('.ui').length > 0) {
         BackgroundCheck.init({
-            targets: '.header',
+            targets: '.ui',
         });
     }
 
@@ -124,7 +123,9 @@ $(document).ready(function () {
     // BANNER SLIDER
     if ($('.banner-slider').length > 0) {
         const homeBanner = new Swiper('.banner-slider', {
-            loop: true, speed: 3000, autoplay: {
+            loop: true,
+            speed: 3000,
+            autoplay: {
                 delay: 4500,
             }, pagination: {
                 el: ".swiper-pagination",
@@ -176,6 +177,7 @@ $(document).ready(function () {
         }
 
         let isPlaying = false;
+
         function autoplaySlide() {
             if ($('#Something').isInViewport() && !isPlaying) {
                 isPlaying = true;
@@ -197,9 +199,6 @@ $(document).ready(function () {
         });
     }
 
-    //SLIDER-REALIZATION
-    let sliderRealization;
-
     function destroySwiper(sliderInstance) {
         if (sliderInstance instanceof Swiper && sliderInstance.initialized) {
             console.log(sliderInstance.initialized)
@@ -208,36 +207,43 @@ $(document).ready(function () {
         }
     }
 
-    if ($(window).outerWidth() <= 768) {
-        sliderRealization = new Swiper(".slider-realization", {
-            slidesPerView: 1, spaceBetween: 20, pagination: {
-                el: ".swiper-pagination", clickable: true,
-            }, breakpoints: {
-                640: {
-                    slidesPerView: 2,
-                }
-            }
-        });
-    } else {
-        destroySwiper(sliderRealization);
-    }
-
-
-    //  SLIDER PROJECTS
+    let sliderRealization;
     let sliderProject;
-    if ($(window).outerWidth() > 991 && $('.slider-project').length > 0) {
-        sliderProject = new Swiper("#sliderProject", {
-            allowTouchMove: false, spaceBetween: 15, autoplay: {
-                delay: 2000,
-            }, loop: true, speed: 2000,
-        });
-    } else {
-        destroySwiper(sliderProject);
+
+    function initSlider() {
+        //SLIDER-REALIZATION
+
+        if ($(window).outerWidth() <= 768) {
+            sliderRealization = new Swiper(".slider-realization", {
+                slidesPerView: 1,
+                spaceBetween: 20,
+                pagination: {
+                    el: ".swiper-pagination", clickable: true,
+                }, breakpoints: {
+                    640: {
+                        slidesPerView: 2,
+                    }
+                }
+            });
+        } else {
+            destroySwiper(sliderRealization);
+        }
+
+        //  SLIDER PROJECTS
+        if ($(window).outerWidth() > 991 && $('.slider-project').length > 0) {
+            sliderProject = new Swiper("#sliderProject", {
+                allowTouchMove: false, spaceBetween: 15, autoplay: {
+                    delay: 2000,
+                }, loop: true, speed: 2000,
+            });
+        } else {
+            destroySwiper(sliderProject);
+        }
     }
 
 
-//  SINGLE PROJECT
-// project-masonry-block
+    //  SINGLE PROJECT
+    // project-masonry-block
     $('.project-masonry-block__inner').each(function (index, element) {
         let msnry = new Masonry(element, {
             itemSelector: '.project-masonry-block__card',
@@ -245,13 +251,12 @@ $(document).ready(function () {
     });
 
 
-//SLIDER TESTIMONIALS
+    //SLIDER TESTIMONIALS
     if ($('.testimonials').length > 0) {
         const sliderTestimonials = new Swiper(".testimonials", {
             slidesPerView: 'auto', spaceBetween: 30, slidesOffsetAfter: 80, speed: 1500, pagination: {
                 el: ".wrap-pagination .swiper-pagination", clickable: true,
             }, breakpoints: {
-
                 991: {
                     spaceBetween: 80,
                 }
@@ -259,7 +264,7 @@ $(document).ready(function () {
         });
     }
 
-//STICKY BTN
+    //STICKY BTN
     const stickyEl = $('#triggerBtnSticky');
 
     if (stickyEl.length > 0) {
@@ -274,7 +279,7 @@ $(document).ready(function () {
         });
     }
 
-//HIDE TEXT
+    //HIDE TEXT
 
     $(' .open-up').on('click', function (e) {
         e.preventDefault();
@@ -282,8 +287,8 @@ $(document).ready(function () {
         $(this).hide();
     });
 
+    // HOVER BLOCK
 
-// HOVER BLOCK
     if (document.getElementById('sliderMembers')) {
         const $memberItems = $('#membersTeams .members-team__item');
 
@@ -377,7 +382,7 @@ $(document).ready(function () {
         clearTimeout(window.resizedFinished);
         window.resizedFinished = setTimeout(function () {
             initCatFilter();
-            sliderRealization.update();
+            initSlider();
 
         }, 250);
     });
