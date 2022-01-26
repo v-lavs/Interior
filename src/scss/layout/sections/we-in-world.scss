@@ -50,6 +50,26 @@
 @include respond-to($lg){
   .we-in-world{
     padding-bottom: 190px;
+    .wrap-img{
+      width: 100vw;
+      right: auto;
+      left: auto;
+    }
+    .part_right{
+      width: 100%;
+      padding-left: 0;
+      margin-bottom: 40px;
+    }
+    .part_left{
+      width: 100vw;
+      min-height: auto;
+      margin-bottom: 50px;
+      padding-top: 65%;
+    }
+    .btn_main{
+      min-width: 200px;
+      margin-bottom: 150px;
+    }
   }
   .partners{
     flex-wrap: wrap;

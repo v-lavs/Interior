@@ -3,9 +3,9 @@
 * */
 
 //= include ../../node_modules/jquery/dist/jquery.js
+//= include ../lib/bg-check.js
 //= include ../lib/masonry.pkgd.min.js
 //= include ../lib/waypoints/index.js
-//= include ../lib/bg-check.js
 
 
 // CUSTOM SCRIPTS
@@ -104,9 +104,12 @@ $(document).ready(function () {
     });
 
     //BG CHECK
+
+
+
     if ($('.ui').length > 0) {
         BackgroundCheck.init({
-            targets: '.ui',
+            targets: '.header',
         });
     }
 
@@ -140,18 +143,18 @@ $(document).ready(function () {
                 nextEl: ".swiper-button-next",
                 prevEl: ".swiper-button-prev",
             },
-            observer: true,
-            observeParents: true,
-            on: {
-                slideChange: function (frame) {
-                    $('.swiper-slide').each(function () {
-                        let youtubePlayer = $(this).find('iframe').get(0);
-                        if (youtubePlayer) {
-                            youtubePlayer.contentWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
-                        }
-                    });
-                },
-            }
+            // observer: true,
+            // observeParents: true,
+            // on: {
+            //     slideChange: function (frame) {
+            //         $('.swiper-slide').each(function () {
+            //             let youtubePlayer = $(this).find('iframe').get(0);
+            //             if (youtubePlayer) {
+            //                 youtubePlayer.contentWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
+            //             }
+            //         });
+            //     },
+            // }
         });
     }
 
@@ -215,7 +218,7 @@ $(document).ready(function () {
 //SLIDER TESTIMONIALS
     if ($('.testimonials').length > 0) {
         const sliderTestimonials = new Swiper(".testimonials", {
-            slidesPerView: 1,
+            slidesPerView: 'auto',
             spaceBetween: 30,
             slidesOffsetAfter: 80,
             speed: 1500,
@@ -224,9 +227,7 @@ $(document).ready(function () {
                 clickable: true,
             },
             breakpoints: {
-                480: {
-                    slidesPerView: 'auto',
-                },
+
                 991: {
                     spaceBetween: 80,
                 }
@@ -266,13 +267,21 @@ $(document).ready(function () {
 
         const sliderMembers = new Swiper('#sliderMembers', {
             slidesPerView: 1,
-            loop: false,
+            loop: true,
+            autoplay: true,
             effect: 'fade',
             spaceBetween: 10,
             pagination: {
                 el: '.swiper-pagination',
                 clickable: true,
             },
+            breakpoints: {
+                992: {
+                    loop: false,
+                    autoplay: false,
+                    allowTouchMove: false,
+                }
+            }
         });
 
         $memberItems.hover(function () {
@@ -355,8 +364,8 @@ $(document).ready(function () {
         clearTimeout(window.resizedFinished);
         window.resizedFinished = setTimeout(function () {
             initCatFilter();
+            sliderRealization.update();
 
-            console.log('Resized finished.');
         }, 250);
     });
 

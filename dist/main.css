@@ -252,14 +252,6 @@ body.modal-open {
   left: 93%;
 }
 
-.contact-btn.ui.background--dark {
-  filter: invert(1);
-}
-
-.contact-btn.ui.background--white {
-  filter: invert(0);
-}
-
 .contact-btn .img_written {
   vertical-align: middle;
   -webkit-animation: spin 4s linear infinite;
@@ -815,36 +807,10 @@ body.modal-open {
   padding-bottom: 260px;
 }
 
-.members-team .d-flex {
-  flex-wrap: wrap;
-}
-
-.members-team .section__title-big {
-  letter-spacing: 0.45em;
-  margin-bottom: 50px;
-}
-
-.members-team .section__sub-title {
-  font-weight: 500;
-  font-size: 45px;
-  color: #000000;
-  line-height: 1.33;
-  padding-top: 32px;
-}
-
-.members-team .section__sub-title span {
-  color: #ffc200;
-}
-
-.members-team .section__text {
-  color: #a5a5a5;
-  line-height: 1.5;
-  max-width: 545px;
-}
-
-.members-team .members-slider {
-  max-width: 330px;
-  height: 440px;
+.members-team .container {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-template-rows: repeat(6, auto);
 }
 
 .members-team__item.active {
@@ -869,6 +835,8 @@ body.modal-open {
   font-size: 19px;
   line-height: 30px;
   color: #696969;
+  grid-column: 4/8;
+  grid-row: 5 / 6;
 }
 
 .members-team__item {
@@ -879,14 +847,38 @@ body.modal-open {
   margin-right: 0;
 }
 
-.members-team .part_left {
-  width: 45%;
+.members-team .section__title-big {
+  letter-spacing: 0.45em;
+  margin-bottom: 50px;
 }
 
-.members-team .part_right {
-  width: 55%;
-  display: flex;
-  flex-direction: column;
+.members-team .section__sub-title {
+  font-weight: 500;
+  font-size: 45px;
+  color: #000000;
+  line-height: 1.33;
+  padding-top: 32px;
+  grid-column: 4/8;
+  grid-row: 1 / 2;
+}
+
+.members-team .section__sub-title span {
+  color: #ffc200;
+}
+
+.members-team .section__text {
+  color: #a5a5a5;
+  line-height: 1.5;
+  max-width: 545px;
+  grid-column: 4/8;
+  grid-row: 2 / 5;
+}
+
+.members-team .members-slider {
+  max-width: 330px;
+  height: 440px;
+  grid-column: 1/4;
+  grid-row: 1 / 6;
 }
 
 .members-team .achievements {
@@ -897,6 +889,8 @@ body.modal-open {
   padding-top: 100px;
   font-size: 130px;
   color: #ffc200;
+  grid-column: 1/8;
+  grid-row: 6 / 7;
 }
 
 .members-team .achievements__item {
@@ -1439,10 +1433,6 @@ body.modal-open {
   padding: 0 20px;
 }
 
-.container {
-  background: wheat;
-}
-
 .header {
   position: fixed;
   top: 0;
@@ -1456,12 +1446,12 @@ body.modal-open {
   transition: .35s linear;
 }
 
-.header .ui.background--dark {
-  filter: invert(1);
+.header.background--dark {
+  filter: invert(0);
 }
 
-.header .ui.background--white {
-  filter: invert(0);
+.header.background--white {
+  filter: invert(1);
 }
 
 .header .container {
@@ -1978,6 +1968,10 @@ body.modal-open {
     font-size: 16px;
   }
 
+  .members-team__item {
+    margin-right: 60px;
+  }
+
   .section-contacts__heading {
     width: 35%;
   }
@@ -2059,6 +2053,56 @@ body.modal-open {
     display: none;
   }
 
+  .members-team .members-slider {
+    grid-column: 1/5;
+    grid-row: 1 /3;
+    max-width: 100%;
+    height: auto;
+    padding-top: 18%;
+  }
+
+  .members-team .section__sub-title {
+    position: relative;
+    z-index: 2;
+    padding-top: 0;
+  }
+
+  .members-team .achievements {
+    flex-direction: column;
+    grid-column: 5/8;
+    grid-row: 2 / 8;
+    font-size: 85px;
+    align-items: flex-end;
+    padding-top: 70px;
+  }
+
+  .members-team .achievements__item {
+    width: 80%;
+    min-width: 0;
+    padding-bottom: 32px;
+    padding-top: 32px;
+    text-align: left;
+  }
+
+  .members-team .achievements .description {
+    top: auto;
+    left: 0;
+    transform: none;
+    text-align: left;
+    bottom: 0;
+  }
+
+  .members-team .section__text {
+    grid-column: 1/5;
+    grid-row: 3/7;
+    max-width: 100%;
+    padding-top: 26px;
+  }
+
+  .members-team .members-team__list {
+    display: none;
+  }
+
   .section-contacts .container {
     justify-content: space-between;
     align-items: center;
@@ -2122,6 +2166,30 @@ body.modal-open {
 
   .we-in-world {
     padding-bottom: 190px;
+  }
+
+  .we-in-world .wrap-img {
+    width: 100vw;
+    right: auto;
+    left: auto;
+  }
+
+  .we-in-world .part_right {
+    width: 100%;
+    padding-left: 0;
+    margin-bottom: 40px;
+  }
+
+  .we-in-world .part_left {
+    width: 100vw;
+    min-height: auto;
+    margin-bottom: 50px;
+    padding-top: 65%;
+  }
+
+  .we-in-world .btn_main {
+    min-width: 200px;
+    margin-bottom: 150px;
   }
 
   .partners {
@@ -2652,6 +2720,44 @@ body.modal-open {
   .testimonials__title {
     font-size: 33px;
     margin-bottom: 30px;
+  }
+
+  .members-team .container {
+    grid-template-columns: repeat(8, 1fr);
+    padding-left: 0;
+  }
+
+  .members-team .section__sub-title {
+    font-size: 33px;
+    grid-column: 4/9;
+    grid-row: 1 / 2;
+  }
+
+  .members-team .section__sub-title br {
+    display: none;
+  }
+
+  .members-team .achievements {
+    font-size: 50px;
+    padding-top: 30px;
+    grid-column: 6/9;
+  }
+
+  .members-team .achievements__item .description {
+    font-size: 14px;
+  }
+
+  .members-team .members-slider {
+    grid-column: 1/6;
+    grid-row: 1 /7;
+    min-height: 388px;
+  }
+
+  .members-team .section__text {
+    grid-column: 1/6;
+    grid-row: 7/8;
+    font-size: 15px;
+    padding-left: 30px;
   }
 
   .section-contacts {
