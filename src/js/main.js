@@ -10,6 +10,17 @@
 
 // CUSTOM SCRIPTS
 
+$.fn.isInViewport = function () {
+    const elementTop = $(this).offset().top;
+    const elementBottom = elementTop + $(this).outerHeight();
+
+    const viewportTop = $(window).scrollTop();
+    const viewportBottom = viewportTop + $(window).height();
+
+    return elementBottom > viewportTop && elementTop < viewportBottom;
+};
+
+
 $(document).ready(function () {
     //COUNTER UP
     (function ($) {
@@ -29,10 +40,7 @@ $(document).ready(function () {
                 var loops = Math.ceil(settings.speed / settings.refreshInterval),
                     increment = (settings.to - settings.from) / loops;
 
-                var self = this,
-                    $self = $(this),
-                    loopCount = 0,
-                    value = settings.from,
+                var self = this, $self = $(this), loopCount = 0, value = settings.from,
                     data = $self.data('countTo') || {};
 
                 $self.data('countTo', data);
@@ -106,7 +114,6 @@ $(document).ready(function () {
     //BG CHECK
 
 
-
     if ($('.ui').length > 0) {
         BackgroundCheck.init({
             targets: '.header',
@@ -117,12 +124,9 @@ $(document).ready(function () {
     // BANNER SLIDER
     if ($('.banner-slider').length > 0) {
         const homeBanner = new Swiper('.banner-slider', {
-            loop: true,
-            speed: 3000,
-            autoplay: {
+            loop: true, speed: 3000, autoplay: {
                 delay: 4500,
-            },
-            pagination: {
+            }, pagination: {
                 el: ".swiper-pagination",
             },
         });
@@ -135,26 +139,61 @@ $(document).ready(function () {
             spaceBetween: 15,
             speed: 2000,
             pagination: {
-                el: ".swiper-pagination",
-                clickable: true,
-                // dynamicBullets: true,
+                el: ".swiper-pagination", clickable: true, // dynamicBullets: true,
             },
             navigation: {
                 nextEl: ".swiper-button-next",
                 prevEl: ".swiper-button-prev",
             },
-            // observer: true,
-            // observeParents: true,
-            // on: {
-            //     slideChange: function (frame) {
-            //         $('.swiper-slide').each(function () {
-            //             let youtubePlayer = $(this).find('iframe').get(0);
-            //             if (youtubePlayer) {
-            //                 youtubePlayer.contentWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
-            //             }
-            //         });
-            //     },
-            // }
+            on: {
+                slideChange: function (frame) {
+                    $(frame.slides).each(function () {
+                        let youtubePlayer = $(this).find('iframe').get(0);
+                        if (youtubePlayer) {
+                            youtubePlayer.contentWindow.postMessage(JSON.stringify({
+                                "event": "command", "func": "pauseVideo", "args": ""
+                            }), '*');
+                        }
+                    });
+
+                    let youtubePlayer = $(frame.slides[frame.activeIndex]).find('iframe').get(0);
+                    if (youtubePlayer) {
+                        youtubePlayer.contentWindow.postMessage(JSON.stringify({
+                            "event": "command", "func": "playVideo", "args": ""
+                        }), '*');
+                    }
+                },
+            }
+        });
+
+        function findActiveSlide(action) {
+            let youtubePlayer = $('.slider-solutions .swiper-slide-active').find('iframe').get(0);
+            if (youtubePlayer) {
+                youtubePlayer.contentWindow.postMessage(JSON.stringify({
+                    "event": "command", "func": action, "args": ""
+                }), '*');
+            }
+        }
+
+        let isPlaying = false;
+        function autoplaySlide() {
+            if ($('#Something').isInViewport() && !isPlaying) {
+                isPlaying = true;
+                findActiveSlide("playVideo");
+            } else {
+                if (isPlaying) {
+                    isPlaying = false;
+                    findActiveSlide("pauseVideo");
+                }
+            }
+        }
+
+        $(window).on('resize scroll', function () {
+            if ($('.slider-solutions').isInViewport()) {
+                findActiveSlide("playVideo");
+            } else {
+                findActiveSlide("pauseVideo");
+            }
         });
     }
 
@@ -169,15 +208,11 @@ $(document).ready(function () {
         }
     }
 
-    if (($(window).outerWidth() <= 768)) {
+    if ($(window).outerWidth() <= 768) {
         sliderRealization = new Swiper(".slider-realization", {
-            slidesPerView: 1,
-            spaceBetween: 20,
-            pagination: {
-                el: ".swiper-pagination",
-                clickable: true,
-            },
-            breakpoints: {
+            slidesPerView: 1, spaceBetween: 20, pagination: {
+                el: ".swiper-pagination", clickable: true,
+            }, breakpoints: {
                 640: {
                     slidesPerView: 2,
                 }
@@ -190,15 +225,11 @@ $(document).ready(function () {
 
     //  SLIDER PROJECTS
     let sliderProject;
-    if (($(window).outerWidth() > 991) && ($('.slider-project').length > 0)) {
+    if ($(window).outerWidth() > 991 && $('.slider-project').length > 0) {
         sliderProject = new Swiper("#sliderProject", {
-            allowTouchMove: false,
-            spaceBetween: 15,
-            autoplay: {
+            allowTouchMove: false, spaceBetween: 15, autoplay: {
                 delay: 2000,
-            },
-            loop: true,
-            speed: 2000,
+            }, loop: true, speed: 2000,
         });
     } else {
         destroySwiper(sliderProject);
@@ -211,22 +242,15 @@ $(document).ready(function () {
         let msnry = new Masonry(element, {
             itemSelector: '.project-masonry-block__card',
         });
-
     });
 
 
 //SLIDER TESTIMONIALS
     if ($('.testimonials').length > 0) {
         const sliderTestimonials = new Swiper(".testimonials", {
-            slidesPerView: 'auto',
-            spaceBetween: 30,
-            slidesOffsetAfter: 80,
-            speed: 1500,
-            pagination: {
-                el: ".wrap-pagination .swiper-pagination",
-                clickable: true,
-            },
-            breakpoints: {
+            slidesPerView: 'auto', spaceBetween: 30, slidesOffsetAfter: 80, speed: 1500, pagination: {
+                el: ".wrap-pagination .swiper-pagination", clickable: true,
+            }, breakpoints: {
 
                 991: {
                     spaceBetween: 80,
@@ -236,19 +260,17 @@ $(document).ready(function () {
     }
 
 //STICKY BTN
-    const stickyEl = document.getElementById('triggerBtnSticky');
+    const stickyEl = $('#triggerBtnSticky');
 
-    if (stickyEl) {
-        const sticky = new Waypoint({
-            element: stickyEl,
+    if (stickyEl.length > 0) {
+        const sticky = $('#triggerBtnSticky').waypoint(function (direction) {
+            if (direction === 'down') {
+                $('.contact-btn').addClass('sticky');
+            } else if (direction === 'up') {
+                $('.contact-btn').removeClass('sticky');
+            }
+        }, {
             offset: '75%',
-            handler: function (direction) {
-                if (direction === 'down') {
-                    $('.contact-btn').addClass('sticky');
-                } else if (direction === 'up') {
-                    $('.contact-btn').removeClass('sticky');
-                }
-            },
         });
     }
 
@@ -266,20 +288,11 @@ $(document).ready(function () {
         const $memberItems = $('#membersTeams .members-team__item');
 
         const sliderMembers = new Swiper('#sliderMembers', {
-            slidesPerView: 1,
-            loop: true,
-            autoplay: true,
-            effect: 'fade',
-            spaceBetween: 10,
-            pagination: {
-                el: '.swiper-pagination',
-                clickable: true,
-            },
-            breakpoints: {
+            slidesPerView: 1, loop: true, autoplay: true, effect: 'fade', spaceBetween: 10, pagination: {
+                el: '.swiper-pagination', clickable: true,
+            }, breakpoints: {
                 992: {
-                    loop: false,
-                    autoplay: false,
-                    allowTouchMove: false,
+                    loop: false, autoplay: false, allowTouchMove: false,
                 }
             }
         });
