@@ -213,7 +213,7 @@ $(document).ready(function () {
     function initSlider() {
         //SLIDER-REALIZATION
 
-        if ($(window).outerWidth() <= 768) {
+        if ($(window).width() <= 768) {
             sliderRealization = new Swiper(".slider-realization", {
                 slidesPerView: 1,
                 spaceBetween: 20,
