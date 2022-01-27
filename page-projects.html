@@ -55,9 +55,82 @@
 <!--   END SVG SPRITE  -->
 <div class="backdrop"></div>
 <div class="wrapper">
+    <header class="header ui">
+        <div class="container">
+            <button type="button" class="btn-burger" aria-label="бургер-меню">
+                <span class="line"></span>
+                <span class="line"></span>
+                <span class="line"></span>
+            </button>
+            <a href="index.html" class="header__logo">
+                <picture>
+                    <source srcset="assets/img/logo-small.svg" media="(max-width: 991px)">
+                    <img src="assets/img/logo-site.svg" alt="Space Cleaning" class="img img-logo">
+                </picture>
+            </a>
 
+            <nav class="header-nav">
+                <div class="container">
+                    <div class="header-nav__header">
+                        <button type="button" class="btn-close" aria-label="Закрити меню"></button>
+                        <a href="index.html" class="header__logo">
+                            <picture>
+                                <img src="assets/img/logo-small.svg" alt="Space Cleaning" class="img img-logo">
+                            </picture>
+                        </a>
+                        <a href="tel:+380979641919" class="header__link">
+                            <span class="header__icon">
+                                <svg class="svg-icon svg-icon_phone">
+                                    <use xlink:href="#phone"></use>
+                                </svg>
+                            </span>
+                        </a>
+                    </div>
+                    <ul class="menu">
+                        <li class="menu__item">
+                            <a href="page-projects.html" class="menu__link">Проекти</a>
+                        </li>
+                        <li class="menu__item">
+                            <a href="page-blog.html" class="menu__link">Блог</a>
+                        </li>
+                    </ul>
+                    <div class="header-nav__footer">
+                        <a href="tel:+380979641919" class="header-nav__link-phone">+38 097 964 19 19</a>
+                        <div class="address">Львів, вул. Залізнична 56</div>
+                        <button type="button" class="btn btn_main popup-trigger">ЗАМОВИТИ ПРОЄКТ</button>
+                        <div class="social-bar">
+                            <a href="#" class="social-bar__link"><span class="hide">Instagram</span>
+                                <svg class="svg-icon svg-icon_social">
+                                    <use xlink:href="#instagram"></use>
+                                </svg>
+                            </a>
 
-    <main class="main projects">
+                            <a href="#" class="social-bar__link"><span class="hide">Behance</span>
+                                <svg class="svg-icon svg-icon_social">
+                                    <use xlink:href="#facebook"></use>
+                                </svg>
+                            </a>
+                            <a href="#" class="social-bar__link"><span class="hide">Facebook</span>
+                                <svg class="svg-icon svg-icon_social">
+                                    <use xlink:href="#behance"></use>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+            <a href="tel:+380979641919" class="header__link">
+                <span class="header__icon">
+                     <svg class="svg-icon svg-icon_phone">
+                         <use xlink:href="#phone"></use>
+                     </svg>
+                </span>
+                <span class="text">Зв’язок</span>
+            </a>
+        </div>
+    </header>
+
+    <main class="main projects" id="triggerBtnSticky">
         <header>
             <h1 class="section__title-big">ПРОЄКТИ</h1>
         </header>
@@ -94,7 +167,7 @@
                     <img src="assets/img/btn-written.svg" alt="" class="img_written">
                 </span>
         </button>
-        <div class="projects-list" id="triggerBtnSticky">
+        <div class="projects-list">
             <div class="project-masonry-block  section_anim">
                 <div class="container">
                     <div class="project-masonry-block__inner">

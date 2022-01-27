@@ -121,18 +121,25 @@ body {
 }
 
 .contact-btn {
-  position: sticky;
-  position: -webkit-sticky;
+  position: absolute;
   right: 50px;
-  top: 30%;
+  top:50%;
+  bottom: 0;
   width: 90px;
   height: 90px;
   background-color: transparent;
   border-radius: 50%;
   overflow: hidden;
   border: none;
-  z-index: 300;
-  left: 93%;
+  z-index: 1300;
+
+
+ &.sticky {
+    position: fixed;
+    top: auto;
+    bottom: 80px;
+
+  }
   &.ui.background--dark {
     filter: invert(1);
   }
@@ -140,8 +147,6 @@ body {
   &.ui.background--white {
     filter: invert(0);
   }
-
-
 
   .img_written {
     vertical-align: middle;
@@ -196,12 +201,7 @@ body {
     }
   }
 }
-.sticky {
-  position: fixed;
-  top: auto;
-  bottom: 80px;
-  right: 7%;
-}
+
 .section_anim {
   opacity: 0;
   -webkit-transition: opacity ease-in .5s;

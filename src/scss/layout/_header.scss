@@ -6,18 +6,23 @@
   z-index: 750;
   background-color: transparent;
   line-height: 1.28;
-  color: #ffffff;
+
   padding: 25px 0;
   transition: .35s linear;
 
-  &.background--dark {
+
+  &.ui.background--light ,
+  &.ui.background--complex{
     filter: invert(0);
   }
-
-  &.background--white {
+  &.ui.background--dark{
     filter: invert(1);
   }
 
+  &.header_home.ui.background--light ,
+  &.header_home.ui.background--complex{
+    filter: invert(1);
+  }
   .container {
     display: flex;
     justify-content: flex-end;
@@ -29,13 +34,7 @@
     height: auto;
     display: block;
     margin-right: auto;
-    &.ui.background--dark {
-      filter: invert(1);
-    }
-
-    &.ui.background--white {
-      filter: invert(0);
-    }
+    filter: invert(1);
   }
 
   &-nav {
@@ -71,7 +70,7 @@
     padding: 0;
     width: 41px;
     height: 18px;
-
+    filter: invert(1);
     .line {
       display: block;
       width: 100%;
@@ -93,13 +92,7 @@
     line-height: 1;
     color: #ffffff;
     margin-left: 135px;
-    &.ui.background--dark {
-      filter: invert(1);
-    }
-
-    &.ui.background--white {
-      filter: invert(0);
-    }
+    filter: invert(1);
     &:hover,
     &:focus {
       -webkit-text-stroke: 1px #ffffff;
@@ -110,13 +103,6 @@
     width: 26px;
     height: 26px;
     margin-right: 15px;
-    &.ui.background--dark {
-      filter: invert(1);
-    }
-
-    &.ui.background--white {
-      filter: invert(0);
-    }
     .svg-icon_phone {
       width: 26px;
       height: 26px;
@@ -168,7 +154,7 @@
         align-items: center;
         padding-top: 37px;
         padding-bottom: 20px;
-        filter: invert(1);
+
       }
 
       &__link-phone {

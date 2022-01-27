@@ -63,7 +63,7 @@
                 <span class="line"></span>
                 <span class="line"></span>
             </button>
-            <a href="/" class="header__logo ui">
+            <a href="index.html" class="header__logo">
                 <picture>
                     <source srcset="assets/img/logo-small.svg" media="(max-width: 991px)">
                     <img src="assets/img/logo-site.svg" alt="Space Cleaning" class="img img-logo">
@@ -177,7 +177,6 @@
             </div>
         </section>
 
-
         <section class="members-team section_anim">
             <button class="contact-btn ui">
                             <span class="wrap-img-written">
@@ -185,7 +184,7 @@
                             </span>
             </button>
             <h2 class="section__title-big">КОМАНДА</h2>
-            <div class="container">
+            <div class="container" id="triggerBtnSticky">
 
                 <div class="swiper-container members-slider" id="sliderMembers">
                     <div class="swiper-wrapper">
@@ -237,7 +236,7 @@
                         клієнтів.
                     </p>
                 </div>
-                <ul class="members-team__list" id="membersTeams">
+                <ul class="members-team__list" id="membersTeams" >
                     <li class="members-team__item  active">
                         <span class="member-name">Олег</span>
                     </li>
@@ -279,9 +278,10 @@
                     </div>
                 </div>
             </div>
+
         </section>
 
-        <section class="our-solutions section_anim" id="triggerBtnSticky">
+        <section class="our-solutions section_anim">
             <div class="swiper slider-solutions" id="sliderSolutions">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide slider-solutions__slide d-flex">

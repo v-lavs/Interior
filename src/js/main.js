@@ -140,25 +140,12 @@ $(document).ready(function () {
     if ($('.banner-slider').length > 0) {
         const homeBanner = new Swiper('.banner-slider', {
             loop: true,
-            speed: 2000,
+            speed: 3000,
             autoplay: {
                 delay: 4500,
             }, pagination: {
                 el: ".swiper-pagination",
             },
-            on: {
-                afterInit: function () {
-                    const currSlide = this.slides[this.activeIndex];
-                    $(currSlide).find('.banner-slider__img').addClass('animated');
-
-                }
-            }
-        });
-
-        homeBanner.on('slideChange', function () {
-            const currSlide = this.slides[this.activeIndex];
-            $(currSlide).find('.banner-slider__img').addClass('animated');
-
         });
     }
     // SLIDER SOLUTION
@@ -300,7 +287,7 @@ $(document).ready(function () {
                 $('.contact-btn').removeClass('sticky');
             }
         }, {
-            offset: '75%',
+            offset: '45%',
         });
     }
 

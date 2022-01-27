@@ -77,9 +77,8 @@
       top: 0;
       bottom: 0;
       background-image: linear-gradient(to bottom, transparent, rgba(0, 0, 0, .3));
-      opacity: 0;
       z-index: 1;
-      transition: opacity .5s;
+      transition: .5s;
     }
 
     .signature {
@@ -97,10 +96,6 @@
 
     &:hover,
     &:focus {
-      &:before {
-        opacity: 1;
-      }
-
       .gallery__img {
         transform: scale(1.2);
       }
