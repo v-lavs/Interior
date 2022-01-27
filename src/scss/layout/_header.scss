@@ -29,7 +29,13 @@
     height: auto;
     display: block;
     margin-right: auto;
+    &.ui.background--dark {
+      filter: invert(1);
+    }
 
+    &.ui.background--white {
+      filter: invert(0);
+    }
   }
 
   &-nav {
@@ -87,7 +93,13 @@
     line-height: 1;
     color: #ffffff;
     margin-left: 135px;
+    &.ui.background--dark {
+      filter: invert(1);
+    }
 
+    &.ui.background--white {
+      filter: invert(0);
+    }
     &:hover,
     &:focus {
       -webkit-text-stroke: 1px #ffffff;
@@ -98,7 +110,13 @@
     width: 26px;
     height: 26px;
     margin-right: 15px;
+    &.ui.background--dark {
+      filter: invert(1);
+    }
 
+    &.ui.background--white {
+      filter: invert(0);
+    }
     .svg-icon_phone {
       width: 26px;
       height: 26px;

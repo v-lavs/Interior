@@ -252,6 +252,14 @@ body.modal-open {
   left: 93%;
 }
 
+.contact-btn.ui.background--dark {
+  filter: invert(1);
+}
+
+.contact-btn.ui.background--white {
+  filter: invert(0);
+}
+
 .contact-btn .img_written {
   vertical-align: middle;
   -webkit-animation: spin 4s linear infinite;
@@ -580,10 +588,6 @@ body.modal-open {
   z-index: 2;
 }
 
-.banner-slider .swiper-slide-active .banner-slider__img {
-  animation: zoom 30s;
-}
-
 .banner-slider__img {
   position: absolute;
   left: 0;
@@ -593,6 +597,10 @@ body.modal-open {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+.banner-slider__img.animated {
+  animation: zoom 30s linear forwards;
 }
 
 @keyframes zoom {
@@ -949,6 +957,11 @@ body.modal-open {
 .section-contacts .btn_main.btn-mob {
   display: none;
   background-color: transparent;
+}
+
+.section-contacts .btn_main.btn-mob:hover,
+.section-contacts .btn_main.btn-mob:focus {
+  background-color: #000000;
 }
 
 .our-solutions {
@@ -1467,6 +1480,14 @@ body.modal-open {
   margin-right: auto;
 }
 
+.header__logo.ui.background--dark {
+  filter: invert(1);
+}
+
+.header__logo.ui.background--white {
+  filter: invert(0);
+}
+
 .header-nav__header,
 .header-nav__footer {
   display: none;
@@ -1522,6 +1543,14 @@ body.modal-open {
   margin-left: 135px;
 }
 
+.header__link.ui.background--dark {
+  filter: invert(1);
+}
+
+.header__link.ui.background--white {
+  filter: invert(0);
+}
+
 .header__link:hover,
 .header__link:focus {
   -webkit-text-stroke: 1px #ffffff;
@@ -1531,6 +1560,14 @@ body.modal-open {
   width: 26px;
   height: 26px;
   margin-right: 15px;
+}
+
+.header__icon.ui.background--dark {
+  filter: invert(1);
+}
+
+.header__icon.ui.background--white {
+  filter: invert(0);
 }
 
 .header__icon .svg-icon_phone {

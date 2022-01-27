@@ -21,6 +21,10 @@
   .btn_main.btn-mob {
     display: none;
     background-color: transparent;
+    &:hover,
+    &:focus{
+      background-color: #000000;
+    }
   }
 }
 

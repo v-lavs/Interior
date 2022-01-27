@@ -30,11 +30,6 @@
     z-index: 2;
   }
 
-  .swiper-slide-active {
-    .banner-slider__img {
-      animation: zoom 30s;
-    }
-  }
 
   &__img {
     position: absolute;
@@ -45,8 +40,11 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-
+    &.animated{
+      animation: zoom 30s linear forwards;
+    }
   }
+
 }
 
 @keyframes zoom {

@@ -112,8 +112,7 @@ $(document).ready(function () {
     });
 
     //BG CHECK
-
-    if ($('.ui').length > 0) {
+   if ($('.ui').length > 0) {
         BackgroundCheck.init({
             targets: '.ui',
         });
@@ -124,15 +123,27 @@ $(document).ready(function () {
     if ($('.banner-slider').length > 0) {
         const homeBanner = new Swiper('.banner-slider', {
             loop: true,
-            speed: 3000,
+            speed: 2000,
             autoplay: {
                 delay: 4500,
             }, pagination: {
                 el: ".swiper-pagination",
             },
+            on: {
+                afterInit: function () {
+                    const currSlide = this.slides[this.activeIndex];
+                    $(currSlide).find('.banner-slider__img').addClass('animated');
+
+                }
+            }
+        });
+
+        homeBanner.on('slideStart', function () {
+            const currSlide = this.slides[this.activeIndex];
+            $(currSlide).find('.banner-slider__img').addClass('animated');
+
         });
     }
-
     // SLIDER SOLUTION
     if ($('.slider-solutions').length > 0) {
         const sliderSolution = new Swiper(".slider-solutions", {
@@ -212,7 +223,6 @@ $(document).ready(function () {
 
     function initSlider() {
         //SLIDER-REALIZATION
-
         if ($(window).width() <= 768) {
             sliderRealization = new Swiper(".slider-realization", {
                 slidesPerView: 1,
@@ -241,7 +251,6 @@ $(document).ready(function () {
         }
     }
 
-
     //  SINGLE PROJECT
     // project-masonry-block
     $('.project-masonry-block__inner').each(function (index, element) {
@@ -249,7 +258,6 @@ $(document).ready(function () {
             itemSelector: '.project-masonry-block__card',
         });
     });
-
 
     //SLIDER TESTIMONIALS
     if ($('.testimonials').length > 0) {
@@ -280,7 +288,6 @@ $(document).ready(function () {
     }
 
     //HIDE TEXT
-
     $(' .open-up').on('click', function (e) {
         e.preventDefault();
         $('.description').removeClass('text-hide');
@@ -288,7 +295,6 @@ $(document).ready(function () {
     });
 
     // HOVER BLOCK
-
     if (document.getElementById('sliderMembers')) {
         const $memberItems = $('#membersTeams .members-team__item');
 
@@ -357,14 +363,12 @@ $(document).ready(function () {
     if ($('.achievements').length > 0) {
         $('.achievements').waypoint(function (direction) {
             jQuery(function ($) {
-                // custom formatting example
                 $('.count-number').data('countToOptions', {
                     formatter: function (value, options) {
                         return value.toFixed(options.decimals).replace(/\B(?=(?:\d{3})+(?!\d))/g, ',');
                     }
                 });
 
-                // start all the timers
                 $('.timer').each(count);
 
                 function count(options) {
@@ -383,7 +387,6 @@ $(document).ready(function () {
         window.resizedFinished = setTimeout(function () {
             initCatFilter();
             initSlider();
-
         }, 250);
     });
 
