@@ -129,7 +129,8 @@ $(document).ready(function () {
 
 
     //BG CHECK
-   if ($('.ui').length > 0) {
+
+    if ($('.ui').length > 0) {
         BackgroundCheck.init({
             targets: '.ui',
         });
@@ -137,15 +138,30 @@ $(document).ready(function () {
 
 
     // BANNER SLIDER
+    const slideSpeed =3000;
     if ($('.banner-slider').length > 0) {
         const homeBanner = new Swiper('.banner-slider', {
             loop: true,
-            speed: 3000,
+            speed: slideSpeed,
             autoplay: {
                 delay: 4500,
             }, pagination: {
                 el: ".swiper-pagination",
             },
+            on: {
+                afterInit: function () {
+                    const currSlide = this.slides[this.activeIndex];
+                    $(currSlide).addClass('animated');
+                },
+                slideChange: function () {
+                    const currSlide = this.slides[this.activeIndex];
+                    console.log(currSlide)
+                    $(currSlide).addClass('animated');
+                    setTimeout(() => {
+                        $('.banner-slider:not(.swiper-slide-active)').removeClass('animated');
+                    },slideSpeed);
+                }
+            }
         });
     }
     // SLIDER SOLUTION

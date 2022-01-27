@@ -50,6 +50,7 @@
 @include respond-to($lg){
   .we-in-world{
     padding-bottom: 190px;
+    overflow: hidden;
     .wrap-img{
       direction: rtl;
       width: 100vw;

@@ -24,6 +24,10 @@
   margin-bottom: 107px;
   position: relative;
 
+  .mob-img {
+    display: none;
+  }
+
   .container {
     position: relative;
     z-index: 2;
@@ -71,6 +75,14 @@
       min-height: 630px;
       align-items: flex-end;
       margin-bottom: 70px;
+
+      .mob-img {
+        display: block;
+      }
+
+      .desktop-img {
+        display: none;
+      }
     }
 
     .page__title {
