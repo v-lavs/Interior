@@ -21,6 +21,23 @@
   background-size: cover;
   background-position: center;
   margin-bottom: 107px;
+  position: relative;
+  .container{
+    position: relative;
+    z-index: 2;
+  }
+  .wrap-img{
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    img{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
 }
 
 @include respond-to($lg){
@@ -44,11 +61,13 @@
 
 @include respond-to($sm){
   .single-article{
-   .section-intro{
+    .section-intro{
+      min-height: 630px;
+      align-items: flex-end;
      margin-bottom: 70px;
    }
     .page__title{
-      font-size: 50px;
+      font-size: 45px;
     }
   }
 }
@@ -56,8 +75,6 @@
 @include respond-to($xs){
   .single-article{
     .section-intro{
-      min-height: 630px;
-      align-items: flex-end;
       margin-bottom: 40px;
     }
     .page__title{
