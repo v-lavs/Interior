@@ -103,13 +103,30 @@ $(document).ready(function () {
         e.preventDefault();
         nav.toggleClass('open');
         $(this).toggleClass('open');
-        $('body').toggleClass('modal-open');
+        jQuery('.backdrop').fadeIn();
+        $('body').addClass('modal_open');
     });
 
     $('.menu__link, .btn-close').on('click', function (e) {
         nav.removeClass('open');
-        $('body').removeClass('modal-open');
+        jQuery('.backdrop').fadeOut();
+        $('body').removeClass('modal_open');
     });
+
+    // POPUP
+    $('.popup-trigger').on('click', function (e) {
+        e.preventDefault();
+        $('#popup').addClass('open_modal');
+        jQuery('.backdrop').fadeIn();
+        $('body').addClass('modal_open');
+    })
+
+    $('#closePopup,  .backdrop').on('click', function () {
+        $('#popup').removeClass('open_modal');
+        jQuery('.backdrop').fadeOut();
+        $('body').removeClass('modal_open');
+    });
+
 
     //BG CHECK
    if ($('.ui').length > 0) {
@@ -138,7 +155,7 @@ $(document).ready(function () {
             }
         });
 
-        homeBanner.on('slideStart', function () {
+        homeBanner.on('slideChange', function () {
             const currSlide = this.slides[this.activeIndex];
             $(currSlide).find('.banner-slider__img').addClass('animated');
 
@@ -224,7 +241,7 @@ $(document).ready(function () {
     function initSlider() {
         //SLIDER-REALIZATION
         if ($(window).width() <= 768) {
-            sliderRealization = new Swiper(".slider-realization", {
+            sliderRealization = new Swiper("#sliderRealization", {
                 slidesPerView: 1,
                 spaceBetween: 20,
                 pagination: {

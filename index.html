@@ -288,7 +288,8 @@
                     <div class="swiper-slide slider-solutions__slide d-flex">
                         <div class="part_left">
                             <iframe class="slider-solutions__thumb video" width="560" height="315"
-                                    src="https://www.youtube.com/embed/QhqGCPMfkNM?&mute=1&enablejsapi=1" title="YouTube video player"
+                                    src="https://www.youtube.com/embed/QhqGCPMfkNM?&mute=1&enablejsapi=1"
+                                    title="YouTube video player"
                                     frameborder="0"
                                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                                     allowfullscreen>
@@ -319,7 +320,7 @@
                                     src="https://www.youtube.com/embed/U3_uxUSeZV4?mute=1&enablejsapi=1"
                                     frameborder="0"
                                     allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                    allowfullscreen="" >
+                                    allowfullscreen="">
                             </iframe>
                         </div>
                         <div class="part_right">
@@ -406,35 +407,35 @@
             <h2 class="section__title-big">ПОСЛУГИ</h2>
             <div class="container">
                 <div class="services-block">
-                    <button class="services-block__btn">
+                    <button type="button" class="services-block__btn popup-trigger" aria-label="Відкрити попап">
                         <span class="text_md">Архітектура</span>
                         <span class="text_small">
                                   Готуємо варіанти функціонально
                                   зонування та планування
                             </span>
                     </button>
-                    <button class="services-block__btn">
+                    <button type="button" class="services-block__btn popup-trigger" aria-label="Відкрити попап">
                         <span class="text_md">Дизайн інтер’єру</span>
                         <span class="text_small">
                                 Робота над дизайном, та розробка
                                 робочих креслень
                             </span>
                     </button>
-                    <button class="services-block__btn">
+                    <button type="button" class="services-block__btn popup-trigger" aria-label="Відкрити попап">
                         <span class="text_md">Проект під ключ</span>
                         <span class="text_small">
                                 Комплексний підхід та авторський
                                 дизайн проект для Вас
                             </span>
                     </button>
-                    <button class="services-block__btn">
+                    <button type="button" class="services-block__btn popup-trigger" aria-label="Відкрити попап">
                         <span class="text_md">Замовити проєкт</span>
                         <span class="text_small">
                                 Давайте реалізувати Вашу мрію разом!
                             </span>
                     </button>
                 </div>
-                <div class="wrap-realization swiper slider-realization">
+                <div class="wrap-realization swiper slider-realization" id="sliderRealization">
                     <div class="realization swiper-wrapper">
                         <div class="realization__step swiper-slide">
                             <h4 class="title">Знайомство</h4>
@@ -636,7 +637,7 @@
                 </div>
                 <button type="submit" class="btn btn_main btn_submit">НАДІСЛАТИ</button>
             </form>
-            <button class="btn btn_main btn-mob trigger-popup">ЗАМОВИТИ</button>
+            <button class="btn btn_main btn-mob popup-trigger">ЗАМОВИТИ</button>
         </div>
     </div>
     <div class="container">
@@ -745,7 +746,61 @@
         </div>
     </div>
 </footer>
+<div class="popup" tabindex="-1" id="popup">
+    <div class="popup__header">
+        <div class="popup__header_top">
+            <a href="index.html" class="header__logo">
+                <picture>
+                    <img src="assets/img/logo-small.svg" alt="Space Cleaning" class="img img-logo">
+                </picture>
+            </a>
+            <a href="tel:+380979641919" class="header__link">
+                            <span class="header__icon">
+                                <svg class="svg-icon svg-icon_phone">
+                                    <use xlink:href="#phone"></use>
+                                </svg>
+                            </span>
+            </a>
+        </div>
+        <button type="button" id="closePopup" class="btn-close" aria-label="Закрити"></button>
+        <h3 class="popup__title">Запит</h3>
+        <p>Ми оперативно зв'яжемося з Вами</p>
+    </div>
+    <form action="#" class="form">
+        <div class="form-group">
+            <div class="form-group">
+                <label class="hide">Email</label>
+                <input type="text" class="input" placeholder="Email">
+            </div>
+            <div class="form-group">
+                <label class="hide">Номер телефону</label>
+                <input type="email" class="input" placeholder="Номер телефону">
+            </div>
+            <label class="hide">Ваше Ім’я </label>
+            <input type="text" class="input" placeholder="Ваше Ім’я ">
+        </div>
 
+        <button type="submit" class="btn btn_main btn_submit">НАДІСЛАТИ</button>
+    </form>
+    <div class="social-bar">
+        <a href="#" class="social-bar__link"><span class="hide">Instagram</span>
+            <svg class="svg-icon svg-icon_social">
+                <use xlink:href="#instagram"></use>
+            </svg>
+        </a>
+
+        <a href="#" class="social-bar__link"><span class="hide">Behance</span>
+            <svg class="svg-icon svg-icon_social">
+                <use xlink:href="#facebook"></use>
+            </svg>
+        </a>
+        <a href="#" class="social-bar__link"><span class="hide">Facebook</span>
+            <svg class="svg-icon svg-icon_social">
+                <use xlink:href="#behance"></use>
+            </svg>
+        </a>
+    </div>
+</div>
 
 <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
 <script src="dist/main.js"></script>

@@ -65,12 +65,6 @@
 }
 
 
-@include respond-to($md) {
-  .section-banner {
-
-  }
-}
-
 @include respond-to($sm) {
   .banner-slider {
     &__slide {

@@ -193,8 +193,12 @@
 
 
 @include respond-to($md) {
-  .members-team .section__title-big {
-    letter-spacing: 0.22em;
+  .members-team {
+    padding-bottom: 114px;
+    padding-top: 110px;
+    .section__title-big {
+      letter-spacing: 0.22em;
+    }
   }
 }
 

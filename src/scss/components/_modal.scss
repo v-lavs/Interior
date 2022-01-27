@@ -1,23 +1,111 @@
-.popup-wrapper {
-  display: none;
-  max-height: 553px;
-  padding: 55px 60px 68px;
+
+.popup{
   position: fixed;
-  top: 0;
-  left: 0;
+  top: 50%;
+  left:50%;
+  transform: translate(-50%,-50%);
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.6);
-  z-index: 1100;
-  align-items: center;
-  justify-content: center;
- &.active {
-    display: flex;
+  max-width: 456px;
+  width: 100%;
+  height: 553px;
+  background-color: #ffffff;
+  padding: 55px 60px 68px;
+  font-size: 16px;
+  text-align: center;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity .35s;
+  overflow: hidden;
+  &.open_modal {
+    opacity: 1;
+    overflow: visible;
+    z-index: 9999;
+    overflow-y: auto;
+    overflow: visible;
   }
-
-  .btn-close{
-    right: 0;
-    top: 0;
-    z-index: 100;
+  &__header{
+    margin-bottom: 76px;
+    .header__logo,
+    .header__link{
+      filter: invert(1);
+    }
+  }
+  &__header_top {
+    display: none;
+    justify-content: flex-end;
+    padding-bottom: 79px;
+  }
+  &__title{
+    font-weight: 500;
+    font-size: 45px;
+    line-height: 1.18;
+    color: #000000;
+    margin-bottom: 5px;
+  }
+  .social-bar {
+    display: none;
+    padding-top: 46px;
+    justify-content: center;
+    &__link {
+      display: block;
+      width: 27px;
+      height: 27px;
+      margin: 0 30px;
+      .svg-icon_social {
+        width: 27px;
+        height: 27px;
+        fill: #000000;
+      }
+    }
+  }
+  .btn-close {
+  position: absolute;
+  width: 19px;
+  height: 19px;
+  right: 35px;
+  top: 35px;
+  z-index: 100;
+}
+  .form{
+    width: 100%;
+    .form-group{
+      max-width: 100%;
+      margin-right: 0;
+      margin-bottom: 20px;
+    }
+    .input{
+      font-size: 15px;
+      border-bottom: 1px solid #969696;
+      padding-bottom: 8px;
+      ::placeholder {
+        color: #b4b4b4;
+      }
+    }
+    .btn_submit{
+      background-color: #ffffff;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 76px;
+      &:hover,
+      &:focus{
+        background-color: #000000;
+      }
+    }
+  }
+  @include respond-to($xs){
+    height: 100%;
+    padding: 40px 30px;
+    &__header_top,
+    .social-bar{
+      display: flex;
+    }
+    .btn-close{
+      width: 31px;
+      height: 29px;
+      left: 35px;
+      right: auto;
+      top: 40px;
+    }
   }
 }

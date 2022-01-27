@@ -66,7 +66,8 @@
     .part_right{
       width: 100%;
       padding-left: 0;
-      margin-bottom: 40px;
+      margin-bottom:0;
+      padding-bottom: 160px;
     }
     .part_left{
       width: 100vw;
@@ -76,7 +77,6 @@
     }
     .btn_main{
       min-width: 200px;
-      margin-bottom: 150px;
     }
   }
   .partners{
