@@ -2,7 +2,7 @@
   position: relative;
   padding-top: 170px;
   padding-bottom: 260px;
-
+  overflow: hidden;
   .container {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
