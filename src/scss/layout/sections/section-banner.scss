@@ -62,7 +62,7 @@
     transform: translateX(0) scale(1, 1);
   }
   to {
-    transform: translateX(-100%) scale(1, 1);
+    transform: translateX(-100vw) scale(1, 1);
   }
 }
 
@@ -94,16 +94,13 @@
 
     .animated {
       .banner-slider__img {
-        width: 200%;
-        animation: slideRight 30s;
+        width: 200vw;
+        right: auto;
+        max-width: none;
+        animation: slideRight 20s;
       }
     }
   }
 }
-
-
-
-
-
 
 

@@ -131,9 +131,9 @@ $(document).ready(function () {
     //BG CHECK
 
     if ($('.ui').length > 0) {
-        // BackgroundCheck.init({
-        //     targets: '.ui',
-        // });
+        BackgroundCheck.init({
+            targets: '.ui',
+        });
     }
 
 
@@ -152,7 +152,6 @@ $(document).ready(function () {
                 afterInit: function () {
                     const currSlide = this.slides[this.activeIndex];
                     $(currSlide).addClass('animated');
-
                 },
                 slideChange: function () {
                     const currSlide = this.slides[this.activeIndex];

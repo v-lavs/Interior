@@ -706,7 +706,7 @@ body.modal-open {
   }
 
   to {
-    transform: translateX(-100%) scale(1, 1);
+    transform: translateX(-100vw) scale(1, 1);
   }
 }
 
@@ -2822,8 +2822,10 @@ body.modal-open {
   }
 
   .banner-slider .animated .banner-slider__img {
-    width: 200%;
-    animation: slideRight 30s;
+    width: 200vw;
+    right: auto;
+    max-width: none;
+    animation: slideRight 20s;
   }
 
   .section-gallery {
