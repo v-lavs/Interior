@@ -152,18 +152,22 @@ $(document).ready(function () {
                 afterInit: function () {
                     const currSlide = this.slides[this.activeIndex];
                     $(currSlide).addClass('animated');
+
                 },
                 slideChange: function () {
                     const currSlide = this.slides[this.activeIndex];
                     console.log(currSlide)
                     $(currSlide).addClass('animated');
+
                     setTimeout(() => {
-                        $('.banner-slider:not(.swiper-slide-active)').removeClass('animated');
+                        $('.banner-slider__slide:not(.swiper-slide-active)').removeClass('animated');
                     },slideSpeed);
                 }
             }
         });
+
     }
+
     // SLIDER SOLUTION
     if ($('.slider-solutions').length > 0) {
         const sliderSolution = new Swiper(".slider-solutions", {
