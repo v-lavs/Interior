@@ -247,20 +247,24 @@ $(document).ready(function () {
     function initSlider() {
         //SLIDER-REALIZATION
         if ($(window).width() <= 768) {
-            sliderRealization = new Swiper("#sliderRealization", {
+            sliderRealization = new Swiper(".slider-realization", {
                 slidesPerView: 1,
                 spaceBetween: 20,
                 pagination: {
                     el: ".swiper-pagination", clickable: true,
                 },
                 breakpoints: {
-                    640: {
+                        640: {
                         slidesPerView: 2,
                     }
                 }
             });
         } else {
-            destroySwiper(sliderRealization);
+            if (sliderRealization) {
+                sliderRealization.destroy(true, true);
+                sliderRealization = null;
+            }
+            // destroySwiper(sliderRealization);
         }
 
         //  SLIDER PROJECTS
@@ -417,7 +421,6 @@ $(document).ready(function () {
         window.resizedFinished = setTimeout(function () {
             initCatFilter();
             initSlider();
-        }, 250);
+         }, 250);
     });
-
 });
