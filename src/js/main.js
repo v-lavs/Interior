@@ -131,14 +131,14 @@ $(document).ready(function () {
     //BG CHECK
 
     if ($('.ui').length > 0) {
-        BackgroundCheck.init({
-            targets: '.ui',
-        });
+        // BackgroundCheck.init({
+        //     targets: '.ui',
+        // });
     }
 
 
     // BANNER SLIDER
-    const slideSpeed =3000;
+    const slideSpeed = 2000;
     if ($('.banner-slider').length > 0) {
         const homeBanner = new Swiper('.banner-slider', {
             loop: true,

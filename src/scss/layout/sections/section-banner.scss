@@ -31,7 +31,6 @@
     z-index: 2;
   }
 
-
   &__img {
     position: absolute;
     left: 0;
@@ -58,12 +57,22 @@
   }
 }
 
-@include respond-to($xl) {
-.section-banner {
-  .section__title{
-    font-size: 48px;
+@keyframes slideRight {
+  from {
+    transform: translateX(0) scale(1, 1);
+  }
+  to {
+    transform: translateX(-100%) scale(1, 1);
   }
 }
+
+
+@include respond-to($xl) {
+  .section-banner {
+    .section__title {
+      font-size: 48px;
+    }
+  }
 }
 
 
@@ -78,8 +87,16 @@
     &__slide {
       padding-bottom: 63px;
     }
-    .section__title{
+
+    .section__title {
       font-size: 40px;
+    }
+
+    .animated {
+      .banner-slider__img {
+        width: 200%;
+        animation: slideRight 30s;
+      }
     }
   }
 }
