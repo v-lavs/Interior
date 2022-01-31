@@ -1,5 +1,4 @@
 @import "../layout/sections/project-masonry";
-
 .single-project {
   padding-top: 164px;
 
@@ -10,6 +9,7 @@
 
   article {
     margin-bottom: 170px;
+    overflow: hidden;
   }
 
   .description {

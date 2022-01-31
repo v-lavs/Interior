@@ -22244,7 +22244,8 @@ $(document).ready(function () {
                 spaceBetween: 20,
                 pagination: {
                     el: ".swiper-pagination", clickable: true,
-                }, breakpoints: {
+                },
+                breakpoints: {
                     640: {
                         slidesPerView: 2,
                     }
@@ -22314,9 +22315,15 @@ $(document).ready(function () {
         const $memberItems = $('#membersTeams .members-team__item');
 
         const sliderMembers = new Swiper('#sliderMembers', {
-            slidesPerView: 1, loop: true, autoplay: true, effect: 'fade', spaceBetween: 10, pagination: {
+            slidesPerView: 1,
+            loop: true,
+            autoplay: true,
+            effect: 'fade',
+            spaceBetween: 10,
+            pagination: {
                 el: '.swiper-pagination', clickable: true,
-            }, breakpoints: {
+            },
+            breakpoints: {
                 992: {
                     loop: false, autoplay: false, allowTouchMove: false,
                 }
