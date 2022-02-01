@@ -1916,6 +1916,11 @@ body.modal-open {
   margin-bottom: 143px;
 }
 
+.blog-list__item:hover .card-post__wrap-thumb img,
+.blog-list__item:focus .card-post__wrap-thumb img {
+  transform: scale(1.05);
+}
+
 .blog-list .card-post {
   display: block;
 }
@@ -1930,12 +1935,14 @@ body.modal-open {
 .blog-list .card-post__wrap-thumb {
   min-height: 416px;
   margin-bottom: 11px;
+  overflow: hidden;
 }
 
 .blog-list .card-post__wrap-thumb img {
   height: 100%;
   width: 100%;
   object-fit: cover;
+  transition: .8s;
 }
 
 .single-article .page__title {
