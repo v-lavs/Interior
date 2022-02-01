@@ -92,6 +92,7 @@
       }
 
       strong {
+        display: inline-block;
         width: 30%;
         flex-shrink: 0;
         font-size: 16px;
@@ -103,8 +104,8 @@
 @include respond-to($sm) {
 
   .single-project {
-    article {
-      margin-bottom: 130px;
+    article{
+      margin-bottom: 20px;
     }
 
     .text-hide {
@@ -128,6 +129,13 @@
 
 @include respond-to($xs) {
   .single-project {
+    padding-top: 145px;
+    .properties-block strong{
+      padding-left: 20px;
+      width: 50%;
+      margin: 0;
+    }
+
     .page-title {
       font-size: 35px;
     }

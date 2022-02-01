@@ -1,9 +1,9 @@
 
-.popup{
+.popup {
   position: fixed;
   top: 50%;
-  left:50%;
-  transform: translate(-50%,-50%);
+  left: 50%;
+  transform: translate(-50%, -50%);
   right: 0;
   bottom: 0;
   max-width: 456px;
@@ -17,6 +17,7 @@
   opacity: 0;
   transition: opacity .35s;
   overflow: hidden;
+
   &.open_modal {
     opacity: 1;
     overflow: visible;
@@ -24,34 +25,47 @@
     overflow-y: auto;
     overflow: visible;
   }
-  &__header{
+
+  &__header {
     margin-bottom: 76px;
+
     .header__logo,
-    .header__link{
+    .header__link,
+    .svg-icon_phone {
       filter: invert(1);
     }
+
+    .header__link {
+      margin-left: 0;
+    }
   }
+
   &__header_top {
     display: none;
     justify-content: flex-end;
     padding-bottom: 79px;
+    padding-left: 26px;
   }
-  &__title{
+
+  &__title {
     font-weight: 500;
     font-size: 45px;
     line-height: 1.18;
     color: #000000;
     margin-bottom: 5px;
   }
+
   .social-bar {
     display: none;
     padding-top: 46px;
     justify-content: center;
+
     &__link {
       display: block;
       width: 27px;
       height: 27px;
       margin: 0 30px;
+
       .svg-icon_social {
         width: 27px;
         height: 27px;
@@ -59,53 +73,70 @@
       }
     }
   }
+
   .btn-close {
-  position: absolute;
-  width: 19px;
-  height: 19px;
-  right: 35px;
-  top: 35px;
-  z-index: 100;
-}
-  .form{
+    position: absolute;
+    width: 19px;
+    height: 19px;
+    right: 35px;
+    top: 35px;
+    z-index: 100;
+  }
+
+  .form {
     width: 100%;
-    .form-group{
+
+    .form-group {
       max-width: 100%;
       margin-right: 0;
       margin-bottom: 20px;
     }
-    .input{
+
+    .input {
       font-size: 15px;
       border-bottom: 1px solid #969696;
       padding-bottom: 8px;
+
       ::placeholder {
         color: #b4b4b4;
       }
     }
-    .btn_submit{
+
+    .btn_submit {
       background-color: #ffffff;
       margin-left: auto;
       margin-right: auto;
       margin-top: 76px;
+
       &:hover,
-      &:focus{
+      &:focus {
         background-color: #000000;
       }
     }
   }
-  @include respond-to($xs){
+
+  @include respond-to($xs) {
     height: 100%;
-    padding: 40px 30px;
+    padding: 37px 30px 40px;
     &__header_top,
-    .social-bar{
+    .social-bar {
       display: flex;
     }
-    .btn-close{
+    .btn-close {
       width: 31px;
       height: 29px;
-      left: 35px;
+      left: 29px;
       right: auto;
       top: 40px;
+    }
+  }
+  @media screen and (max-width: 380px) {
+    padding-top: 20px;
+    padding-right: 15px;
+    padding-left: 15px;
+    .btn-close {
+      top: 24px;
+      left: 14px;
     }
   }
 }

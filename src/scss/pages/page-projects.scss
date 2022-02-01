@@ -93,7 +93,9 @@
     .project-masonry-block {
       &__card {
         width: 100%;
-
+        &:last-child {
+          margin-bottom: 20px;
+        }
         &.break {
           display: none;
         }
@@ -121,4 +123,11 @@
     }
   }
 }
+
+@include respond-to($xs){
+  .projects{
+    padding-top: 145px;
+  }
+}
+
 

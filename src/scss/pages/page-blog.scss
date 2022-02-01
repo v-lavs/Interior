@@ -97,3 +97,9 @@
   }
 }
 
+@include respond-to($xs){
+  .blog{
+    padding-top: 145px;
+  }
+}
+

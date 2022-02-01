@@ -198,6 +198,16 @@
   }
 
   @include respond-to($xs) {
+      .btn-burger{
+        width: 37px;
+        .line{
+          height: 3px;
+          margin-bottom: 6px;
+        }
+      }
+    &__link{
+      margin-left: 11px;
+    }
     .header-nav {
       text-align: left;
       .container {
@@ -216,8 +226,12 @@
     }
   }
 
-  @media screen and (max-width: 360px) {
+  @media screen and (max-width: 380px) {
       padding-top: 20px;
+    .header-nav .container{
+      padding-left: 15px;
+      padding-right: 15px;
+    }
     .header-nav__header{
       padding-top: 20px;
     }
