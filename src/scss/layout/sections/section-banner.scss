@@ -87,16 +87,20 @@
     &__slide {
       padding-bottom: 63px;
     }
-
+    &__img {
+      width: 200vw;
+      right: auto;
+      max-width: none;
+    }
     .section__title {
       font-size: 40px;
     }
 
     .animated {
       .banner-slider__img {
-        width: 200vw;
-        right: auto;
-        max-width: none;
+        //width: 200vw;
+        //right: auto;
+
         animation: slideRight 20s;
       }
     }

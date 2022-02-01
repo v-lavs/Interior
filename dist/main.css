@@ -2836,14 +2836,17 @@ body.modal-open {
     padding-bottom: 63px;
   }
 
+  .banner-slider__img {
+    width: 200vw;
+    right: auto;
+    max-width: none;
+  }
+
   .banner-slider .section__title {
     font-size: 40px;
   }
 
   .banner-slider .animated .banner-slider__img {
-    width: 200vw;
-    right: auto;
-    max-width: none;
     animation: slideRight 20s;
   }
 
