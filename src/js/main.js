@@ -127,6 +127,19 @@ $(document).ready(function () {
         $('body').removeClass('modal_open');
     });
 
+    let header = $('.header'),
+        scrollPrev = 0;
+
+    $(window).scroll(function () {
+        let scrolled = $(window).scrollTop();
+
+        if (scrolled > 40 && scrolled > scrollPrev) {
+            header.addClass('header_active');
+        } else {
+            header.removeClass('header_active');
+        }
+        scrollPrev = scrolled;
+    });
 
     //BG CHECK
 
@@ -180,54 +193,52 @@ $(document).ready(function () {
                 prevEl: ".swiper-button-prev",
             },
             on: {
-                slideChange: function (frame) {
-                    $(frame.slides).each(function () {
-                        let youtubePlayer = $(this).find('iframe').get(0);
-                        if (youtubePlayer) {
-                            youtubePlayer.contentWindow.postMessage(JSON.stringify({
-                                "event": "command", "func": "pauseVideo", "args": ""
-                            }), '*');
+                slideChange: function (s) {
+                    $(s.slides).each(function () {
+                        let video = $(this).find('video').get(0);
+                        if (video) {
+                            video.pause();
                         }
                     });
 
-                    let youtubePlayer = $(frame.slides[frame.activeIndex]).find('iframe').get(0);
-                    if (youtubePlayer) {
-                        youtubePlayer.contentWindow.postMessage(JSON.stringify({
-                            "event": "command", "func": "playVideo", "args": ""
-                        }), '*');
+                    let video = $(s.slides[s.activeIndex]).find('video').get(0);
+                    if (video) {
+                        video.play();
                     }
                 },
             }
         });
 
         function findActiveSlide(action) {
-            let youtubePlayer = $('.slider-solutions .swiper-slide-active').find('iframe').get(0);
-            if (youtubePlayer) {
-                youtubePlayer.contentWindow.postMessage(JSON.stringify({
-                    "event": "command", "func": action, "args": ""
-                }), '*');
+            const video = $('.slider-solutions .swiper-slide-active video').get(0);
+            if(video) {
+                const actionFunc = video[action];
+                if(actionFunc) {
+                    actionFunc.call(video);
+                }
             }
         }
 
         let isPlaying = false;
 
         function autoplaySlide() {
-            if ($('#Something').isInViewport() && !isPlaying) {
+            if ($('.slider-solutions').isInViewport() && !isPlaying) {
                 isPlaying = true;
-                findActiveSlide("playVideo");
+                findActiveSlide("play");
             } else {
                 if (isPlaying) {
                     isPlaying = false;
-                    findActiveSlide("pauseVideo");
+                    findActiveSlide("pause");
                 }
             }
         }
 
-        $(window).on('resize scroll', function () {
+        $(window).on('resize scroll load', function () {
             if ($('.slider-solutions').isInViewport()) {
-                findActiveSlide("playVideo");
+                console.log('play!!!!!!!!!!!!!!')
+                findActiveSlide("play");
             } else {
-                findActiveSlide("pauseVideo");
+                findActiveSlide("pause");
             }
         });
     }
@@ -239,7 +250,6 @@ $(document).ready(function () {
             console.log('destroy')
         }
     }
-
 
     let sliderRealization;
     let sliderProject;

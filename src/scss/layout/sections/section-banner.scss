@@ -1,6 +1,5 @@
 .section-banner {
   height: 100vh;
-  min-height: -webkit-fill-available;
 }
 
 .banner-slider {
@@ -107,6 +106,7 @@
 
 @include respond-to($xs){
   .section-banner{
+    height: 90vh;
     margin-bottom: 0;
   }
 }

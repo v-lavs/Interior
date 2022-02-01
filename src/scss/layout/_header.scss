@@ -10,6 +10,9 @@
   padding: 25px 0;
   transition: .35s linear;
 
+  &_active {
+    transform: translateY(-100%);
+  }
 
   &.ui.background--light ,
   &.ui.background--complex{

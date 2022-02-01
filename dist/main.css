@@ -129,7 +129,7 @@ body {
   flex-direction: column;
 }
 
-body.modal-open {
+body.modal_open {
   overflow: hidden;
   height: 100vh;
 }
@@ -249,6 +249,7 @@ body.modal-open {
   overflow: hidden;
   border: none;
   z-index: 1300;
+  padding: 0;
 }
 
 .contact-btn.sticky {
@@ -648,7 +649,6 @@ body.modal-open {
 
 .section-banner {
   height: 100vh;
-  min-height: -webkit-fill-available;
 }
 
 .banner-slider {
@@ -744,7 +744,6 @@ body.modal-open {
 
 .category-nav__item:hover,
 .category-nav__item:focus {
-  color: #0000;
   -webkit-text-stroke: 1px #000000;
 }
 
@@ -1556,6 +1555,10 @@ body.modal-open {
   line-height: 1.28;
   padding: 25px 0;
   transition: .35s linear;
+}
+
+.header_active {
+  transform: translateY(-100%);
 }
 
 .header.ui.background--light,
@@ -3286,6 +3289,7 @@ body.modal-open {
   }
 
   .section-banner {
+    height: 90vh;
     margin-bottom: 0;
   }
 
