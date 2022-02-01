@@ -3285,6 +3285,10 @@ body.modal-open {
     margin-bottom: 45px;
   }
 
+  .section-banner {
+    margin-bottom: 0;
+  }
+
   .gallery__item .signature {
     font-size: 14px;
   }

@@ -105,4 +105,10 @@
   }
 }
 
+@include respond-to($xs){
+  .section-banner{
+    margin-bottom: 0;
+  }
+}
+
 
