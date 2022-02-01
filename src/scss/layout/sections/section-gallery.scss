@@ -24,8 +24,8 @@
 
     &:hover,
     &:focus {
-      //color: #0000;
-      -webkit-text-stroke: 1px #000000;
+      color: #000000;
+      text-shadow: 0 0 1px #000000, 0 0 1px #000000;
     }
   }
 }
@@ -156,7 +156,8 @@
 @include respond-to($sm) {
   .section-gallery {
     padding-bottom: 107px;
-    .section__title-big{
+
+    .section__title-big {
       margin-bottom: 30px;
     }
   }

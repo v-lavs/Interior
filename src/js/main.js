@@ -211,9 +211,9 @@ $(document).ready(function () {
 
         function findActiveSlide(action) {
             const video = $('.slider-solutions .swiper-slide-active video').get(0);
-            if(video) {
+            if (video) {
                 const actionFunc = video[action];
-                if(actionFunc) {
+                if (actionFunc) {
                     actionFunc.call(video);
                 }
             }
@@ -257,19 +257,20 @@ $(document).ready(function () {
     function initSlider() {
         //SLIDER-REALIZATION
         if ($(window).width() <= 768) {
-            sliderRealization = new Swiper(".slider-realization", {
-                slidesPerView: 1,
-                spaceBetween: 20,
-                pagination: {
-                    el: ".swiper-pagination", clickable: true,
-                },
-                breakpoints: {
-                    640: {
-                        slidesPerView: 2,
+            if (".slider-realization") {
+                sliderRealization = new Swiper(".slider-realization", {
+                    slidesPerView: 1,
+                    spaceBetween: 20,
+                    pagination: {
+                        el: ".swiper-pagination", clickable: true,
+                    },
+                    breakpoints: {
+                        640: {
+                            slidesPerView: 2,
+                        }
                     }
-                }
-            });
-            console.log(sliderRealization.initialized)
+                });
+            }
         } else {
             if (sliderRealization) {
                 sliderRealization.destroy(true, true);

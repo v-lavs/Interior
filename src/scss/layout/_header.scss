@@ -14,18 +14,20 @@
     transform: translateY(-100%);
   }
 
-  &.ui.background--light ,
-  &.ui.background--complex{
+  &.ui.background--light,
+  &.ui.background--complex {
     filter: invert(0);
   }
-  &.ui.background--dark{
+
+  &.ui.background--dark {
     filter: invert(1);
   }
 
-  &.header_home.ui.background--light ,
-  &.header_home.ui.background--complex{
+  &.header_home.ui.background--light,
+  &.header_home.ui.background--complex {
     filter: invert(1);
   }
+
   .container {
     display: flex;
     justify-content: flex-end;
@@ -74,6 +76,7 @@
     width: 41px;
     height: 18px;
     filter: invert(1);
+
     .line {
       display: block;
       width: 100%;
@@ -95,10 +98,11 @@
     line-height: 1;
     color: #000000;
     margin-left: 135px;
+    transition: .35s;
 
     &:hover,
     &:focus {
-      -webkit-text-stroke: 1px #000000;
+      text-shadow: 0 0 1px #000000, 0 0 1px #000000;
     }
   }
 
@@ -107,6 +111,7 @@
     height: 26px;
     margin-right: 15px;
     filter: invert(1);
+
     .svg-icon_phone {
       width: 26px;
       height: 26px;
@@ -138,6 +143,7 @@
       height: 100vh;
       z-index: 900;
       overflow-y: auto;
+
       &.open {
         transform: translateX(0);
       }
@@ -201,28 +207,32 @@
   }
 
   @include respond-to($xs) {
-      .btn-burger{
-        width: 37px;
-        .line{
-          height: 3px;
-          margin-bottom: 6px;
-        }
+    .btn-burger {
+      width: 37px;
+
+      .line {
+        height: 3px;
+        margin-bottom: 6px;
       }
-    &__link{
+    }
+    &__link {
       margin-left: 11px;
     }
     .header-nav {
       text-align: left;
+
       .container {
         align-items: flex-start;
         padding: 0 34px 160px;
       }
     }
-    .social-bar{
+    .social-bar {
       justify-content: flex-start;
-      &__link{
+
+      &__link {
         margin-right: 60px;
-        &:last-child{
+
+        &:last-child {
           margin-right: 0;
         }
       }
@@ -230,15 +240,15 @@
   }
 
   @media screen and (max-width: 380px) {
-      padding-top: 20px;
-    .header-nav .container{
+    padding-top: 20px;
+    .header-nav .container {
       padding-left: 15px;
       padding-right: 15px;
     }
-    .header-nav__header{
+    .header-nav__header {
       padding-top: 20px;
     }
-    .header-nav__link-phone{
+    .header-nav__link-phone {
       font-size: 30px;
     }
   }

@@ -368,7 +368,7 @@ body.modal_open {
 
 .menu__item:hover,
 .menu__item:focus {
-  -webkit-text-stroke: 1px #000000;
+  text-shadow: 0 0 1px #000000, 0 0 1px #000000;
 }
 
 .popup {
@@ -744,7 +744,8 @@ body.modal_open {
 
 .category-nav__item:hover,
 .category-nav__item:focus {
-  -webkit-text-stroke: 1px #000000;
+  color: #000000;
+  text-shadow: 0 0 1px #000000, 0 0 1px #000000;
 }
 
 .gallery {
@@ -1643,11 +1644,12 @@ body.modal_open {
   line-height: 1;
   color: #000000;
   margin-left: 135px;
+  transition: .35s;
 }
 
 .header__link:hover,
 .header__link:focus {
-  -webkit-text-stroke: 1px #000000;
+  text-shadow: 0 0 1px #000000, 0 0 1px #000000;
 }
 
 .header__icon {
