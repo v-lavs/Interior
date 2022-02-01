@@ -267,17 +267,18 @@ $(document).ready(function () {
             }
             // destroySwiper(sliderRealization);
             console.log('destroy')
-        }
 
-        //  SLIDER PROJECTS
-        if ($(window).outerWidth() > 991 && $('.slider-project').length > 0) {
-            sliderProject = new Swiper("#sliderProject", {
-                allowTouchMove: false, spaceBetween: 15, autoplay: {
-                    delay: 2000,
-                }, loop: true, speed: 2000,
-            });
-        } else {
-            destroySwiper(sliderProject);
+
+            //  SLIDER PROJECTS
+            if ($(window).outerWidth() > 991 && $('.slider-project').length > 0) {
+                sliderProject = new Swiper(".slider-project", {
+                    allowTouchMove: false, spaceBetween: 15, autoplay: {
+                        delay: 2000,
+                    }, loop: true, speed: 2000,
+                });
+            } else {
+                destroySwiper(sliderProject);
+            }
         }
     }
 
