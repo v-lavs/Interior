@@ -2840,6 +2840,24 @@ body.modal_open {
     padding: 12px 10px 13px;
   }
 
+  .popup {
+    height: 100%;
+    padding: 37px 30px 40px;
+  }
+
+  .popup__header_top,
+  .popup .social-bar {
+    display: flex;
+  }
+
+  .popup .btn-close {
+    width: 31px;
+    height: 29px;
+    left: 29px;
+    right: auto;
+    top: 40px;
+  }
+
   .swiper-horizontal > .swiper-pagination-bullets,
   .swiper-pagination-bullets.swiper-pagination-horizontal {
     bottom: 25px;
@@ -3272,24 +3290,6 @@ body.modal_open {
     font-size: 20px;
     margin-top: 0;
     margin-bottom: 12px;
-  }
-
-  .popup {
-    height: 100%;
-    padding: 37px 30px 40px;
-  }
-
-  .popup__header_top,
-  .popup .social-bar {
-    display: flex;
-  }
-
-  .popup .btn-close {
-    width: 31px;
-    height: 29px;
-    left: 29px;
-    right: auto;
-    top: 40px;
   }
 
   .services-list .btn-service {

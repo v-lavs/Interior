@@ -115,7 +115,7 @@
     }
   }
 
-  @include respond-to($xs) {
+  @include respond-to($sm) {
     height: 100%;
     padding: 37px 30px 40px;
     &__header_top,
