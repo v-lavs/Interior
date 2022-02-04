@@ -6,12 +6,11 @@
   z-index: 750;
   background-color: transparent;
   line-height: 1.28;
-
   padding: 25px 0;
   transition: .35s linear;
 
   &_active {
-    transform: translateY(-100%);
+   top: -100%;
   }
 
   &.ui.background--light,
@@ -52,12 +51,13 @@
   .social-bar {
     display: flex;
     padding-top: 46px;
-    justify-content: space-between;
+    justify-content: center;
 
     &__link {
       display: block;
       width: 27px;
       height: 27px;
+      margin: 0 28px;
 
       .svg-icon_social {
         width: 27px;
@@ -167,6 +167,11 @@
 
       }
 
+      &__footer {
+        text-align: center;
+        width: 100%;
+      }
+
       &__link-phone {
         font-size: 36px;
         margin-bottom: 5px;
@@ -204,6 +209,7 @@
     &__icon {
       margin-right: 0;
     }
+
   }
 
   @include respond-to($xs) {
@@ -222,19 +228,7 @@
       text-align: left;
 
       .container {
-        align-items: flex-start;
         padding: 0 34px 160px;
-      }
-    }
-    .social-bar {
-      justify-content: flex-start;
-
-      &__link {
-        margin-right: 60px;
-
-        &:last-child {
-          margin-right: 0;
-        }
       }
     }
   }

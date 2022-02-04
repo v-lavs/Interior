@@ -15,7 +15,7 @@ a, a:hover {
     overflow: hidden
 }
 
-.btn, .category-nav, .popup, .section-gallery {
+.btn, .category-nav, .menu, .popup, .section-gallery {
     text-align: center
 }
 
@@ -1683,8 +1683,7 @@ body.modal_open {
 }
 
 .header_active {
-    -webkit-transform: translateY(-100%);
-    transform: translateY(-100%)
+    top: -100%
 }
 
 .header.ui.background--complex, .header.ui.background--light {
@@ -1727,15 +1726,16 @@ body.modal_open {
     display: -ms-flexbox;
     display: flex;
     padding-top: 46px;
-    -webkit-box-pack: justify;
-    -ms-flex-pack: justify;
-    justify-content: space-between
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center
 }
 
 .header .social-bar__link {
     display: block;
     width: 27px;
-    height: 27px
+    height: 27px;
+    margin: 0 28px
 }
 
 .header .social-bar__link .svg-icon_social {
@@ -2497,6 +2497,11 @@ body.modal_open {
         padding-left: 0
     }
 
+    .header .header-nav, .header .header-nav__footer {
+        text-align: center;
+        width: 100%
+    }
+
     .services-block__btn {
         font-size: 33px
     }
@@ -2625,9 +2630,7 @@ body.modal_open {
         right: 0;
         bottom: 0;
         top: 0;
-        width: 100%;
         color: #000;
-        text-align: center;
         background-image: url(../assets/img/bg-nav.png);
         background-color: #f3f3f3;
         background-repeat: no-repeat;
@@ -3187,6 +3190,10 @@ body.modal_open {
         font-size: 15px
     }
 
+    .slider-solutions .swiper-pagination {
+        padding-right: 23px
+    }
+
     .slider-realization .swiper-pagination {
         bottom: 0
     }
@@ -3525,28 +3532,11 @@ body.modal_open {
     }
 
     .header .header-nav .container {
-        -webkit-box-align: start;
-        -ms-flex-align: start;
-        align-items: flex-start;
         padding: 0 34px 160px
     }
 
     .blog, .projects, .single-project {
         padding-top: 145px
-    }
-
-    .header .social-bar {
-        -webkit-box-pack: start;
-        -ms-flex-pack: start;
-        justify-content: flex-start
-    }
-
-    .header .social-bar__link {
-        margin-right: 60px
-    }
-
-    .header .social-bar__link:last-child {
-        margin-right: 0
     }
 
     .single-project .properties-block strong {
