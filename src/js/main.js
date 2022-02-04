@@ -119,6 +119,8 @@ $(document).ready(function () {
         $('#popup').addClass('open_modal');
         jQuery('.backdrop').fadeIn();
         $('body').addClass('modal_open');
+        nav.removeClass('open');
+
     })
 
     $('#closePopup,  .backdrop').on('click', function () {
