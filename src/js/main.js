@@ -391,7 +391,7 @@ $(document).ready(function () {
             $(".category-filter__current").unbind("click", onFileterClick);
             $(".category-filter__link").unbind("click", onFilterLinkClick);
 
-            $('.category-filter').removeClass('opened');
+            // $('.category-filter').removeClass('opened');
             $('.category-filter__list-wrap').css({display: ''});
         }
     }
