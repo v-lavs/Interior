@@ -368,7 +368,7 @@ $(document).ready(function () {
 //   CATEGORY FILTER
     function onFileterClick(e) {
         $(this).parents('.category-filter').toggleClass('opened');
-        $('.category-filter__list-wrap').slideToggle(700);
+        $('.category-filter__list-wrap').slideDown(700);
     }
 
     function onFilterLinkClick(e) {
@@ -380,19 +380,20 @@ $(document).ready(function () {
         $('.category-filter__current').text(activeText);
 
         $(this).parents('.category-filter').removeClass('opened');
-        $('.category-filter__list-wrap').slideToggle(700);
+        $('.category-filter__list-wrap').slideUp(700);
     }
 
     function initCatFilter() {
         if (($(window).outerWidth() <= 1200) && ($('.category-filter').length > 0)) {
             $(".category-filter__current").bind("click", onFileterClick);
             $(".category-filter__link").bind("click", onFilterLinkClick);
+
         } else {
             $(".category-filter__current").unbind("click", onFileterClick);
             $(".category-filter__link").unbind("click", onFilterLinkClick);
 
-            // $('.category-filter').removeClass('opened');
             $('.category-filter__list-wrap').css({display: ''});
+            console.log(onFilterLinkClick)
         }
     }
 
