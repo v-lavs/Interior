@@ -1,0 +1,54 @@
+.pagination {
+  position: absolute;
+  padding: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  font-weight: 300;
+  font-size: 22px;
+  line-height: 1.18;
+  align-items: center;
+  justify-content: center;
+  bottom: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+
+  &__btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 9px;
+    height: 26px;
+
+    color: rgba(0, 0, 0, 0.2);
+    margin: 0 9px;
+
+    &:hover {
+      color: #000000;
+    }
+
+    &_active {
+      color: #000000;
+      pointer-events: none;
+    }
+
+  }
+
+  &__placeholder{
+    color: rgba(0,0,0, .9);
+  }
+
+  @include respond-to($xl) {
+    bottom: 35px;
+  }
+  @include respond-to($sm) {
+    bottom: 0;
+  }
+  @media all and (max-width: 480px) {
+    flex-wrap: nowrap;
+    &__btn {
+      min-width: 18px;
+      height: 18px;
+    }
+  }
+}

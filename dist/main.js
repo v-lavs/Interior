@@ -11347,7 +11347,6 @@ $(document).ready(function () {
 
         $(window).on('resize scroll load', function () {
             if ($('.slider-solutions').isInViewport()) {
-                console.log('play!!!!!!!!!!!!!!')
                 findActiveSlide("play");
             } else {
                 findActiveSlide("pause");
@@ -11357,9 +11356,7 @@ $(document).ready(function () {
 
     function destroySwiper(sliderInstance) {
         if (sliderInstance instanceof Swiper && sliderInstance.initialized) {
-            console.log(sliderInstance.initialized)
             sliderInstance.destroy(true, true);
-            console.log('destroy')
         }
     }
 
@@ -11388,8 +11385,6 @@ $(document).ready(function () {
                 sliderRealization.destroy(true, true);
                 sliderRealization = null;
             }
-            // destroySwiper(sliderRealization);
-            console.log('destroy')
 
 
             //  SLIDER PROJECTS
@@ -11504,7 +11499,6 @@ $(document).ready(function () {
             $(".category-filter__link").unbind("click", onFilterLinkClick);
 
             $('.category-filter__list-wrap').css({display: ''});
-            console.log(onFilterLinkClick)
         }
     }
 

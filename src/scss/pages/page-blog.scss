@@ -2,6 +2,10 @@
   padding-top: 188px;
   overflow: hidden;
 
+  .container {
+    position: relative;
+  }
+
   .section__title-big {
     margin-bottom: 37px;
   }
@@ -16,9 +20,10 @@
     width: 33.33%;
     padding: 0 62px;
     margin-bottom: 143px;
+
     &:hover,
-    &:focus{
-      .card-post__wrap-thumb img{
+    &:focus {
+      .card-post__wrap-thumb img {
         transform: scale(1.05);
       }
     }
@@ -37,15 +42,33 @@
   }
 
   .card-post__wrap-thumb {
+    position: relative;
     min-height: 416px;
     margin-bottom: 11px;
     overflow: hidden;
-    img{
+
+    img {
+      position: absolute;
       height: 100%;
       width: 100%;
       object-fit: cover;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      right: 0;
       transition: .8s;
+      z-index: 1;
     }
+  }
+}
+
+@include respond-to($xxl) {
+  .blog-list {
+    margin-right: -50px;
+    margin-left: -50px;
+&__item{
+  padding: 0 50px;
+}
   }
 }
 
@@ -97,8 +120,8 @@
   }
 }
 
-@include respond-to($xs){
-  .blog{
+@include respond-to($xs) {
+  .blog {
     padding-top: 145px;
   }
 }
